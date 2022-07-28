@@ -1,6 +1,9 @@
 <template>
-  <div>
-    Some default layout shared across all pages
+  <div id="default-layout">
+    <TheTop/>
     <slot/>
   </div>
 </template>
+<script setup>
+import TheTop from "~/components/layouts/TheTop.vue";
+</script>
