@@ -11,7 +11,7 @@ import {ref} from 'vue'
 
 const navlinks = ref([
   {
-    name: 'Summary',
+    name: '< Summary />',
     path: '/',
   },
   {
@@ -33,7 +33,7 @@ const navlinks = ref([
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 60px;
+  height: 40px;
   background: $MAIN_AQUAMARINE;
 
   .link {
