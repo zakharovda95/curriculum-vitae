@@ -15,7 +15,7 @@ const navlinks = ref([
   },
   {
     name: 'Stack',
-    path: 'stack',
+    path: '/stack',
   },
   {
     name: 'Code Examples',

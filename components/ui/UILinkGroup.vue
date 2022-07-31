@@ -1,15 +1,16 @@
 <template>
   <div class="ui-link-group">
     <NuxtLink v-for="link in links" class="link" :to="link.path" :key="link.name">
-      <span v-if="$route.fullPath === link.path">&lt </span>
+      <span v-if="route.fullPath === link.path">&lt </span>
       <span>{{ link.name }}</span>
-      <span v-if="$route.fullPath === link.path"> /&gt</span>
+      <span v-if="route.fullPath === link.path"> /&gt</span>
     </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
 import {PropType} from "vue";
+import {useRoute} from "vue-router";
 
 defineProps({
   links: {
@@ -22,10 +23,15 @@ defineProps({
     default: 'flex-start'
   }
 })
+
+const route = useRoute()
+
+console.log(route)
 </script>
 
 <style scoped lang="scss">
 @import "../../assets/css/_constants.scss";
+@import "../../assets/css/hoverable.css";
 
 .ui-link-group {
   display: flex;

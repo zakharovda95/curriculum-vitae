@@ -50,8 +50,8 @@ const showContacts = (): void => {
 
   .contacts {
     position: absolute;
-    top: 70px;
-    right: 140px;
+    top: 180px;
+    right: 100px;
     z-index: 1;
 
   }
