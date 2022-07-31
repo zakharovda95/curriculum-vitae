@@ -1,0 +1,6 @@
+.link:hover,
+.ui-button:hover {
+    backdrop-filter: blur(10px);
+    background-color: rgba(44, 44, 45, 0.2);
+    border-radius: 19px;
+}

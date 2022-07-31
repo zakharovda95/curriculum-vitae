@@ -1,19 +1,33 @@
 <template>
   <div class="the-header">
-    <MainBanner class="banner"/>
-    <UIButton class="show-contacts">
-      Click to show contacts
+    <MainBanner :is-showed="isShowed" class="banner"/>
+    <UIButton class="show-contacts" @click="showContacts">
       <template #icon-right>
-        <img src="assets/img/click.svg">
+        <UIIcon src="assets/img/tap.svg" :style="style"/>
       </template>
+      {{ buttonName }}
     </UIButton>
   </div>
 </template>
 
 <script setup lang="ts">
 
-import MainBanner from "~/components/shared/MainBanner.vue";
+import MainBanner from "~/components/pages/main/MainBanner.vue";
 import UIButton from "~/components/ui/UIButton.vue";
+import UIIcon from "~/components/ui/UIIcon.vue"
+import {computed, Ref, ref} from "vue";
+
+const isShowed: Ref<boolean> = ref(false)
+
+const style: Ref<{ [key: string]: string }> = computed(() => ({
+  transform: 'rotate(90deg)'
+}))
+
+const buttonName: Ref<string> = computed(() => isShowed.value ? 'Click to hide contacts' : 'Click to show contacts')
+
+const showContacts = (): void => {
+  isShowed.value = !isShowed.value
+}
 </script>
 
 <style scoped lang="scss">
@@ -26,12 +40,13 @@ import UIButton from "~/components/ui/UIButton.vue";
   background: $MAIN_AQUAMARINE;
 
   .show-contacts {
-    height: 20px;
-    width: 200px;
-    margin: -80px;
+    width: 290px;
+    display: flex;
+    align-items: center;
     transform: rotate(270deg);
     align-self: center;
     font-size: 1.2rem;
+    margin: -120px;
   }
 }
 </style>

@@ -21,7 +21,8 @@
 
   p {
     color: whitesmoke;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-family: Nunito-SemiBold, sans-serif;
   }
 }
 </style>

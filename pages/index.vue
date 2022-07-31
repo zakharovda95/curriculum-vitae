@@ -3,6 +3,7 @@
     <div class="content">
       <TheHeader/>
       <TheNavigation/>
+      <MainPageContent/>
     </div>
   </div>
 </template>
