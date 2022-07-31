@@ -1,6 +1,7 @@
 <template>
   <div class="the-header">
     <MainBanner :is-showed="isShowed" class="banner"/>
+    <TheContacts class="contacts"/>
     <UIButton class="show-contacts" @click="showContacts">
       <template #icon-right>
         <UIIcon src="assets/img/tap.svg" :style="style"/>
@@ -16,6 +17,7 @@ import MainBanner from "~/components/pages/main/MainBanner.vue";
 import UIButton from "~/components/ui/UIButton.vue";
 import UIIcon from "~/components/ui/UIIcon.vue"
 import {computed, Ref, ref} from "vue";
+import TheContacts from "~/components/pages/main/TheContacts.vue";
 
 const isShowed: Ref<boolean> = ref(false)
 
@@ -38,8 +40,24 @@ const showContacts = (): void => {
   width: 100%;
   height: 582px;
   background: $MAIN_AQUAMARINE;
+  position: relative;
+  z-index: 1;
+
+  .banner {
+    position: relative;
+    z-index: 2;
+  }
+
+  .contacts {
+    position: absolute;
+    top: 70px;
+    right: 140px;
+    z-index: 1;
+
+  }
 
   .show-contacts {
+    position: relative;
     width: 290px;
     display: flex;
     align-items: center;
@@ -47,6 +65,7 @@ const showContacts = (): void => {
     align-self: center;
     font-size: 1.2rem;
     margin: -120px;
+    z-index: 2;
   }
 }
 </style>

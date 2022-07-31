@@ -17,7 +17,7 @@ defineProps({
 
 .the-avatar {
   display: flex;
-  width: 550px;
+  width: 750px;
   height: calc(100% - 48px);
   align-self: center;
   border-radius: 0 0 32px 0;

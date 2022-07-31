@@ -11,15 +11,15 @@ import UILinkGroup from "~/components/ui/UILinkGroup.vue";
 const navlinks = ref([
   {
     name: 'Summary',
-    path: '/',
+    path: '/summary',
   },
   {
     name: 'Stack',
-    path: '/',
+    path: 'stack',
   },
   {
     name: 'Code Examples',
-    path: '/',
+    path: '/code-examples',
   },
 ])
 </script>

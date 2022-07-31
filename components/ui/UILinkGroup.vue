@@ -1,45 +1,27 @@
 <template>
   <div class="ui-link-group">
-    <div class="nuxt-links" v-if="!hardLink">
-      <NuxtLink @click="active" v-for="link in links" class="link" :to="link.path" :key="link.name">
-        <span v-if="active" class="active-elem">&lt </span>
-        <span>{{ link.name }}</span>
-        <span v-if="active" class="active-elem"> /&gt</span>
-      </NuxtLink>
-    </div>
-    <div class="hard-links" v-if="hardLink">
-      <a @click="active" v-for="link in links" class="link" :href="link.path" :key="link.name">
-        <span class="active-elem">&lt</span>
-        {{ link.name }}
-        <span class="active-elem"> /&gt</span>
-      </a>
-    </div>
+    <NuxtLink v-for="link in links" class="link" :to="link.path" :key="link.name">
+      <span v-if="$route.fullPath === link.path">&lt </span>
+      <span>{{ link.name }}</span>
+      <span v-if="$route.fullPath === link.path"> /&gt</span>
+    </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
-import {PropType, ref} from "vue";
+import {PropType} from "vue";
 
-const props = defineProps({
+defineProps({
   links: {
     type: Array as PropType<Array<{ name: string, path: string }>>,
     required: true,
   },
-  hardLink: {
-    type: Boolean,
+  direction: {
+    type: String as PropType<'flex-start' | 'column'>,
     required: false,
-    default: false,
+    default: 'flex-start'
   }
 })
-const active = (e) => {
-  const isActive = ref(false);
-  props.links.forEach(item => {
-    if (e.target.textContent === item.name) {
-      isActive.value = true
-    }
-  })
-  return isActive.value
-}
 </script>
 
 <style scoped lang="scss">
@@ -48,28 +30,22 @@ const active = (e) => {
 .ui-link-group {
   display: flex;
   width: 100%;
+  justify-content: space-around;
+  flex-direction: v-bind(direction);
 
-  .nuxt-links,
-  .hard-links {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+  .link {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: $MAIN_BLACK;
+    font-family: Nunito-SemiBold, sans-serif;
+    padding-right: 8px;
+    padding-left: 8px;
+    text-decoration: none;
+  }
 
-    .link {
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.5rem;
-      color: $MAIN_BLACK;
-      font-family: Nunito-SemiBold, sans-serif;
-      padding-right: 8px;
-      padding-left: 8px;
-
-      .active-elem {
-        font-weight: bold;
-        font-size: 1.5rem;
-        color: #2C2C2D;
-      }
-    }
+  .router-link-active {
+    font-weight: 600;
+    text-decoration: underline;
   }
 }
 </style>
