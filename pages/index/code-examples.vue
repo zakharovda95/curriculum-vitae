@@ -2,20 +2,22 @@
   <div class="code-examples-page">
     <div class="content">
       <div class="preview">
-        <h1>Here are my small projects that I have prepared to demonstrate my skills and coding style, as well as links
-          to projects in which I participate</h1>
-        <UIIcon size="192px" class="go-to" src="assets/img/arrow-go.svg"/>
+        <h1>
+          Here you will find my small projects that I have prepared to demonstrate my skills and
+          coding style
+        </h1>
+        <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import UIIcon from "~/components/ui/UIIcon.vue";
+import UIIcon from '~/components/ui/UIIcon.vue';
 </script>
 
 <style lang="scss">
-@import "../assets/css/_constants.scss";
+@import '../assets/css/_constants.scss';
 
 .code-examples-page {
   margin: 24px;
@@ -26,8 +28,9 @@ import UIIcon from "~/components/ui/UIIcon.vue";
       width: 100%;
 
       h1 {
+        width: 80%;
         color: $MAIN_BLACK;
-        font-size: 2.7rem;
+        font-size: 2.5rem;
       }
 
       .go-to {
@@ -35,7 +38,6 @@ import UIIcon from "~/components/ui/UIIcon.vue";
         align-self: center;
         cursor: pointer;
         margin: 20px;
-
       }
 
       .go-to:hover {

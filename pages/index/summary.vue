@@ -2,21 +2,19 @@
   <div class="summary-page">
     <div class="content">
       <div class="preview">
-        <h1>Here you will find basic information about me, my career, experience and education. As well as small goals
-          for
-          the future :)</h1>
-        <UIIcon size="192px" class="go-to" src="assets/img/arrow-go.svg"/>
+        <h1>Here you will find basic information about me, my career, experience and education</h1>
+        <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import UIIcon from "~/components/ui/UIIcon.vue";
+import UIIcon from '~/components/ui/UIIcon.vue';
 </script>
 
 <style lang="scss">
-@import "../assets/css/_constants.scss";
+@import '../assets/css/_constants.scss';
 
 .summary-page {
   margin: 24px;
@@ -27,8 +25,9 @@ import UIIcon from "~/components/ui/UIIcon.vue";
       width: 100%;
 
       h1 {
+        width: 80%;
         color: $MAIN_BLACK;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
       }
 
       .go-to {

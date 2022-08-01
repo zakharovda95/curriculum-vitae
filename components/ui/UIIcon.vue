@@ -1,11 +1,11 @@
 <template>
   <div class="ui-icon">
-    <img class="icon" :src="src" alt="icon" :style="style">
+    <img class="icon" :src="src" alt="icon" :style="style" />
   </div>
 </template>
 
 <script setup lang="ts">
-import {PropType} from "vue";
+import { PropType } from 'vue';
 
 defineProps({
   src: {
@@ -13,16 +13,18 @@ defineProps({
     required: true,
   },
   size: {
-    type: String as PropType<'16px' | '24px' | '32px' | '48px' | '56px'| '72px' | '144px' | '192px'>,
+    type: String as PropType<
+      '16px' | '24px' | '32px' | '48px' | '56px' | '72px' | '128px' | '144px' | '192px'
+    >,
     required: false,
-    default: () => '32px'
+    default: () => '32px',
   },
   style: {
     type: Object as PropType<{ [key: string]: string | number }>,
     required: false,
-    default: () => ({})
-  }
-})
+    default: () => ({}),
+  },
+});
 </script>
 
 <style scoped lang="scss">

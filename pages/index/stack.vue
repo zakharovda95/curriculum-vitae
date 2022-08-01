@@ -2,20 +2,22 @@
   <div class="stack-page">
     <div class="content">
       <div class="preview">
-        <h1>Here you will find information about my hard and soft skills, tech stack that I met, and also some comments
-          to them</h1>
-        <UIIcon size="192px" class="go-to" src="assets/img/arrow-go.svg"/>
+        <h1>
+          Here you will find information about my hard and soft skills, tech stack that I met, and
+          also some comments to them
+        </h1>
+        <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import UIIcon from "~/components/ui/UIIcon.vue";
+import UIIcon from '~/components/ui/UIIcon.vue';
 </script>
 
 <style lang="scss">
-@import "../assets/css/_constants.scss";
+@import '../assets/css/_constants.scss';
 
 .stack-page {
   margin: 24px;
@@ -26,8 +28,9 @@ import UIIcon from "~/components/ui/UIIcon.vue";
       width: 100%;
 
       h1 {
+        width: 80%;
         color: $MAIN_BLACK;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
       }
 
       .go-to {
