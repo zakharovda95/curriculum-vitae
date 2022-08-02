@@ -6,7 +6,11 @@
           Here you will find my small projects that I have prepared to demonstrate my skills and
           coding style
         </h1>
-        <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
+        <Shift>
+          <template #button>
+            <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
+          </template>
+        </Shift>
       </div>
     </div>
   </div>
@@ -14,6 +18,7 @@
 
 <script setup lang="ts">
 import UIIcon from '~/components/ui/UIIcon.vue';
+import Shift from '~/components/shared/Shift.vue';
 </script>
 
 <style lang="scss">

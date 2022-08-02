@@ -1,5 +1,5 @@
 <template>
-  <div class="the-header">
+  <div class="the-header" id="header">
     <MainBanner :is-showed="isShowed" class="banner" />
     <TheContacts class="contacts" />
     <UIButton class="show-contacts" @click="showContacts">
@@ -43,6 +43,7 @@ const showContacts = (): void => {
   background: $MAIN_AQUAMARINE;
   position: relative;
   z-index: 1;
+  margin-top: 60px;
 
   .banner {
     position: relative;

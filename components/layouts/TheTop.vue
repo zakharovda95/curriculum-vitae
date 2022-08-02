@@ -1,15 +1,13 @@
 <template>
-  <div class="the-top">
+  <div class="the-top" id="top">
     <p>@zakharovda95</p>
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
-@import "../../assets/css/constants";
+@import '../../assets/css/constants';
 
 .the-top {
   display: flex;
@@ -18,6 +16,8 @@
   width: 100%;
   height: 60px;
   background: $MAIN_BLACK;
+  position: fixed;
+  z-index: 3;
 
   p {
     color: whitesmoke;

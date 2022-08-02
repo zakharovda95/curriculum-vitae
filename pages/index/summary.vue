@@ -3,14 +3,20 @@
     <div class="content">
       <div class="preview">
         <h1>Here you will find basic information about me, my career, experience and education</h1>
-        <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
+        <Shift>
+          <template #button>
+            <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
+          </template>
+        </Shift>
       </div>
+      <div class="page-content"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import UIIcon from '~/components/ui/UIIcon.vue';
+import Shift from '~/components/shared/Shift.vue';
 </script>
 
 <style lang="scss">
