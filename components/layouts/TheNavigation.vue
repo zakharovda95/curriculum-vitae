@@ -5,9 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, Ref, ref, watch } from 'vue';
+import { Ref, ref, watch } from 'vue';
 import UILinkGroup from '~/components/ui/UILinkGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
+import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
 
 const navlinks = ref([
   {
@@ -24,16 +25,11 @@ const navlinks = ref([
   },
 ]);
 
-const totalHeight: Ref<number> = ref(0);
-const styles: Ref<{ [key: string]: string } | null> = ref(null);
+const styles: Ref<{ [key: string]: string } | null> = ref('fixed');
 
 const { offset } = useOffsetWatcher();
 
-onMounted(() => {
-  const headerHeight = document.querySelector('#header');
-  const topHeight = document.querySelector('#top');
-  totalHeight.value = headerHeight.clientHeight + topHeight.clientHeight;
-});
+const totalHeight = useCalculateDOMElementsHeight(['#header', '#top']);
 
 watch(
   offset,

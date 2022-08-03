@@ -5,13 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
-
 const shiftTo = (): void => {
+  const screen: HTMLElement = document.querySelector('#container');
+  const screenHeight: number = screen.clientHeight;
   window.scrollTo({
-    top: document.documentElement.clientHeight,
+    top: screenHeight + 12,
     left: 0,
     behavior: 'smooth',
   });

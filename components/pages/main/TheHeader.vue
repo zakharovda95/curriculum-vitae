@@ -1,5 +1,5 @@
 <template>
-  <div class="the-header" id="header">
+  <div class="the-header">
     <MainBanner :is-showed="isShowed" class="banner" />
     <TheContacts class="contacts" />
     <UIButton class="show-contacts" @click="showContacts">

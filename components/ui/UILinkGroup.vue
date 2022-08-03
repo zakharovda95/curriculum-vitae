@@ -9,29 +9,27 @@
 </template>
 
 <script setup lang="ts">
-import {PropType} from "vue";
-import {useRoute} from "vue-router";
+import { PropType } from 'vue';
+import { useRoute } from 'vue-router';
 
 defineProps({
   links: {
-    type: Array as PropType<Array<{ name: string, path: string }>>,
+    type: Array as PropType<Array<{ name: string; path: string }>>,
     required: true,
   },
   direction: {
     type: String as PropType<'flex-start' | 'column'>,
     required: false,
-    default: 'flex-start'
-  }
-})
+    default: 'flex-start',
+  },
+});
 
-const route = useRoute()
-
-console.log(route)
+const route = useRoute();
 </script>
 
 <style scoped lang="scss">
-@import "../../assets/css/_constants.scss";
-@import "../../assets/css/hoverable.css";
+@import '../../assets/css/_constants.scss';
+@import '../../assets/css/hoverable.css';
 
 .ui-link-group {
   display: flex;
