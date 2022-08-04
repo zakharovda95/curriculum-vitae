@@ -16,12 +16,12 @@
         <span v-if="activeAnchor === anchor.id"> /&gt</span>
       </UIButton>
     </div>
-    <UIButton class="to-the-top" @click="toTheTop"> To the Top</UIButton>
+    <UIButton class="to-the-top" @click="toTheTop">Наверх</UIButton>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, PropType, ref, Ref } from 'vue';
+import { PropType, ref, Ref } from 'vue';
 import UIButton from '~/components/ui/UIButton.vue';
 
 const props = defineProps({
@@ -50,6 +50,8 @@ const toTheTop = (): void => {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/css/_constants.scss';
+
 .anchor-group {
   display: flex;
   flex-direction: column;
@@ -61,6 +63,7 @@ const toTheTop = (): void => {
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   height: 30vh;
   width: 15vw;
+  color: $MAIN_BLACK;
 
   .to-the-top {
     font-size: 1.5rem;

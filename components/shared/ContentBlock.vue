@@ -32,12 +32,15 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
   font-family: Nunito-SemiBold, sans-serif;
   color: whitesmoke;
   box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
+  border-right: 15px solid $MAIN_AQUAMARINE;
 
   .header {
     flex-direction: column;
     justify-content: space-around;
     height: 10%;
     width: 100%;
+    border-bottom: 1px solid $MAIN_AQUAMARINE;
+    color: $MAIN_AQUAMARINE;
   }
 
   .content {

@@ -12,15 +12,15 @@ import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElem
 
 const navlinks = ref([
   {
-    name: 'Summary',
+    name: 'Резюме',
     path: '/summary',
   },
   {
-    name: 'Stack',
+    name: 'Навыки',
     path: '/stack',
   },
   {
-    name: 'Code Examples',
+    name: 'Примеры кода',
     path: '/code-examples',
   },
 ]);

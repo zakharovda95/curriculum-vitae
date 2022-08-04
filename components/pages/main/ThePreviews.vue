@@ -20,11 +20,11 @@ const route = useRoute();
 const previews = computed(() => {
   switch (route.name) {
     case 'index-summary':
-      return 'Here you will find basic information about me, my career, experience and education';
+      return 'Здесь находится основная информация обо мне, моем опыте работы и образовании';
     case 'index-stack':
-      return 'Here you will find information about my hard and soft skills, tech stack that I met, and also some comments to them';
+      return 'Здесь находятся описание моих профессиональных навыков и личностных качеств. Стек технологий с которыми я сталкивался, и комментарии к ним';
     case 'index-code-examples':
-      return 'Here you will find my small projects that I have prepared to demonstrate my skills and coding style';
+      return 'Здесь находятся небольшие проекты, которые я подготовил для демонстрации моих навыков и код стайла.';
   }
 });
 </script>

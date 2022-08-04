@@ -15,69 +15,71 @@
       <PageContentContainer name="personal-information">
         <ContentBlock class="section">
           <template #header>
-            <h1>Personal Information</h1>
+            <h1>Личная Информация</h1>
           </template>
           <template #content>
-            <h2>Name: Dmitry Zakharov</h2>
-            <h2>Date of birth: 13th May 1995 (27 yo)</h2>
-            <h2>Address: Yoshkar-Ola, Russia</h2>
-            <h2>Nationality: Russian</h2>
-            <h2>Marital status: Single</h2>
-            <h2>Language: Russian (native), English - A2 (but I improve my skill every day)</h2>
+            <UIParagraph tag="h2" title="Имя">Дмитрий Захаров</UIParagraph>
+            <UIParagraph tag="h2" title="Дата рождения">13 мая 1995 (27 лет)</UIParagraph>
+            <UIParagraph tag="h2" title="Адрес">Йошкар-Ола, Россия</UIParagraph>
+            <UIParagraph tag="h2" title="Гражданство">Российская Федерация</UIParagraph>
+            <UIParagraph tag="h2" title="Семейное положение">Не женат</UIParagraph>
+            <UIParagraph tag="h2" title="Языки">
+              Русский (основной), Английский - A2 (но я повышаю свои навыки каждый день!)
+            </UIParagraph>
           </template>
         </ContentBlock>
       </PageContentContainer>
       <PageContentContainer name="objective">
         <ContentBlock class="section">
           <template #header>
-            <h1>Objective</h1>
+            <h1>Цели</h1>
           </template>
           <template #content>
-            <h2>
-              I am a young but perspective developer with little experience in a real project. I am
-              looking for my first job, which will be the basis of my future career. I am applying
-              for the position of trainee/junior front-end developer.
-            </h2>
-            <h2>
-              What I can give: my little experience in the project (my main task was to find and fix
-              bugs), 100% of my professional and personal skills. My heart and my soul :)
-            </h2>
-            <h2>
-              What I expect to receive: First of all, experience. As well as a cool team,
-              interesting tasks (but I am ready for any, the most boring, until I prove that I can
-              do more) As well as salary and career growth based on the results of my work.
-            </h2>
-            <h3>
-              If you are looking for a junior with 100 years of experience and knowledge of all
-              unearthly technologies - this is not me. But if you need a man who will really try
-              because this is what he wants to do all his life - you can give me a chance!
-            </h3>
+            <UIParagraph tag="h2">
+              Я - начинающий, но перспективный разработчик с небольшим опытом работы в реальном
+              проекте. Я ищу свою первую работу, чтобы она стала основой моей будущей карьеры. Я
+              претендую на позицию трейни или junior frontend разработчика.
+            </UIParagraph>
+            <UIParagraph tag="h2" title="Что я смогу дать">
+              свой небольшой опыт работы в проекте (где основной задачей был поиск и исправление
+              багов), свои провессиональные и личностные качества на 100%, а так же свою душу и
+              сердце :)
+            </UIParagraph>
+            <UIParagraph tag="h2" title="Что я ожидаю получить">
+              прежде всего - опыт. Так же крутую комманду, интересные таски (но я готов браться за
+              любые, самые скучные задания, пока не докажу, что я способен на большее). А так же
+              зарплату и возможность карьерного роста по результатам моей работы.
+            </UIParagraph>
+            <UIParagraph tag="h3">
+              Если вы ищете джуниора с опытом работы 100+ лет и знанием всех неземных технологий -
+              это не я. Но если вам нужен человек, кто реально будет стараться, потому что это то,
+              чем он хочет заниматься всю жизнь - вы можете дать мне шанс! :)
+            </UIParagraph>
           </template>
         </ContentBlock>
       </PageContentContainer>
       <PageContentContainer name="education">
         <ContentBlock class="section">
           <template #header>
-            <h1>Education</h1>
+            <h1>Образование</h1>
           </template>
           <template #content>
-            <h2>
-              Secondary special education: 2011 - 2016; Construction and operation of buildings and
-              structures, Yoshkar-Ola Construction College, Yoshkar-Ola, Russia
-            </h2>
-            <h2>
-              Incomplete higher education: 2016 - 2019; Institute of construction and architecture,
-              Federal State Budgetary Educational Institution of Higher Education «Volga State
-              University of Technology», Yoshkar-Ola, Russia
-            </h2>
-            <h2>As a developer:</h2>
+            <UIParagraph tag="h2" title="Среднее специальное образование">
+              2011 - 2016; Строительство и эксплуатации зданий и сооружений, Йошкар-Олинский
+              Строительный Техникум, Йошкар-Ола
+            </UIParagraph>
+            <UIParagraph tag="h2" title="Высшее образование (неоконченное)">
+              2016 - 2019; Институт строительства и архитектуры, Поволжский Государственный
+              Технологический Университет, Йошкар-Ола
+            </UIParagraph>
+            <UIParagraph tag="h2" title="В качестве программиста"></UIParagraph>
             <div class="course">
-              <h2>Courses JavaScript.ru - JavaScript/DOM/Interfaces</h2>
-              <UIButton class="certificate">certificate</UIButton>
+              <UIParagraph tag="h2"> Курсы JavaScript.ru - JavaScript/DOM/Interfaces</UIParagraph>
+              <UIButton class="certificate">сертификат</UIButton>
             </div>
             <div class="course">
-              <h2>Courses JavaScript.ru - Vue.Js 3</h2>
-              <UIButton class="certificate">certificate</UIButton>
+              <UIParagraph tag="h2"> Курсы JavaScript.ru - Vue.Js 3</UIParagraph>
+              <UIButton class="certificate">сертификат</UIButton>
             </div>
           </template>
         </ContentBlock>
@@ -85,18 +87,32 @@
       <PageContentContainer name="work-experience">
         <ContentBlock class="section">
           <template #header>
-            <h1>Work Experience</h1>
+            <h1>Опыт Работы</h1>
           </template>
           <template #content>
-            <h2>
-              Secondary special education: 2011 - 2016; Construction and operation of buildings and
-              structures, Yoshkar-Ola Construction College, Yoshkar-Ola, Russia
-            </h2>
-            <h2>
-              Incomplete higher education: 2016 - 2019; Institute of construction and architecture,
-              Federal State Budgetary Educational Institution of Higher Education «Volga State
-              University of Technology», Yoshkar-Ola, Russia
-            </h2>
+            <UIParagraph tag="h3">
+              К сожалению, у меня нет официального опыта работы, и возможно ваша работа будет для
+              меня первой. <br />
+              У меня есть опыт работы в реальном проекте с коммандой, опыт с учебной практики и опыт
+              на стартап-проекте, в котором я являюсь junior frontend разработчиком
+            </UIParagraph>
+            <UIParagraph tag="h2" title="Учебная практика">
+              <br />
+              - практика на курсе по нативному JS (c 26 августа 2021 по 14 октября 2021) <br />
+              - практика на курсе по Vue.JS (c 25 января 2022 по 18 марта 2022)
+            </UIParagraph>
+            <UIParagraph tag="h2" title="Самостоятельная работа">
+              <br />
+              Работа в свободное время (в сумме 4 месяца). Получил опыт работы в коммерческом
+              проекте. Научился свободно ориентироваться в проекте, локализовывать и устранять баги.
+              Узнал как происходит реальная разработка в комманде
+            </UIParagraph>
+            <UIParagraph tag="h2" title="Стартап">
+              <br />
+              Я являюсь разработчиком в стартап проекте - браузерной игры CastleKeepers. Это
+              некоммерческий проект с небольшой коммандой, и небольшой (пока) целевой аудиторией.
+              Подробнее в разделе "Примеры кода"
+            </UIParagraph>
           </template>
         </ContentBlock>
       </PageContentContainer>
@@ -113,6 +129,7 @@ import ContentBlock from '~/components/shared/ContentBlock.vue';
 import UIButton from '~/components/ui/UIButton.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
+import UIParagraph from '~/components/ui/UIParagraph.vue';
 
 const headerHeight: Ref<number> = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
 const previewHeight: Ref<string> = computed(() => `100vh - ${headerHeight.value}px`);
@@ -121,19 +138,19 @@ const { offset } = useOffsetWatcher();
 
 const anchors: Ref<Array<{ name: string; id: string }>> = ref([
   {
-    name: 'Personal Information',
+    name: 'Личная Информация',
     id: 'personal-information',
   },
   {
-    name: 'Objective',
+    name: 'Цели',
     id: 'objective',
   },
   {
-    name: 'Education',
+    name: 'Образование',
     id: 'education',
   },
   {
-    name: 'Work Experience',
+    name: 'Опыт Работы',
     id: 'work-experience',
   },
 ]);

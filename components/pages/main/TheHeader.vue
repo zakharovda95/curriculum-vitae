@@ -25,7 +25,7 @@ const style: Ref<{ [key: string]: string }> = computed(() => ({
 }));
 
 const buttonName: Ref<string> = computed(() =>
-  isShowed.value ? 'Click to hide contacts' : 'Click to show contacts',
+  isShowed.value ? 'Скрыть контакты' : 'Показать контакты',
 );
 
 const showContacts = (): void => {

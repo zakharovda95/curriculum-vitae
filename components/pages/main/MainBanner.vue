@@ -1,39 +1,41 @@
 <template>
   <div class="main-banner">
     <div class="text-wrapper">
-      <h1 class="row-1">Hello!</h1>
-      <p class="row-2">My name is</p>
-      <p class="row-3">Dmitry Zakharov</p>
-      <br>
-      <p class="row-4">I am a beginner frontend developer </p>
-      <p class="row-5" v-if="!isShowed">My main programming language is JavaScript/TypeScript with Vue.js framework</p>
+      <h1 class="row-1">Привет!</h1>
+      <p class="row-2">Меня зовут</p>
+      <p class="row-3">Дмитрий Захаров</p>
+      <br />
+      <p class="row-4">Я - начинающий frontend разработчик</p>
+      <p class="row-5" v-if="!isShowed">
+        Мой основной язык программирования - JavaScript/TypeScript с фреймворком Vue.js
+      </p>
     </div>
-    <TheAvatar/>
+    <TheAvatar />
   </div>
 </template>
 
 <script setup lang="ts">
-import TheAvatar from "~/components/pages/main/TheAvatar.vue";
-import {computed, Ref} from "vue";
+import TheAvatar from '~/components/pages/main/TheAvatar.vue';
+import { computed, Ref } from 'vue';
 
 const props = defineProps({
   isShowed: {
     type: Boolean,
     required: false,
     default: () => false,
-  }
-})
+  },
+});
 
-const width: Ref<string> = computed(() => props.isShowed ? '70%' : '100%');
+const width: Ref<string> = computed(() => (props.isShowed ? '70%' : '100%'));
 </script>
 <style scoped lang="scss">
-@import "../../../assets/css/constants";
+@import '../../../assets/css/constants';
 
 .main-banner {
   display: flex;
   justify-content: space-between;
   height: 582px;
-  background: #34394D;
+  background: #34394d;
   border-radius: 0 0 52px 0;
   min-width: 70%;
   width: v-bind(width);
