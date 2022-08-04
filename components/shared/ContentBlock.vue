@@ -9,20 +9,25 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
+import { computed } from 'vue';
+
+const height = useCalculateDOMElementsHeight(['#top', '#navbar']);
+const totalHeight = computed(() => `95vh - ${height.value}px`);
+</script>
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
 .content-block {
   width: 70%;
-  height: 80%;
+  height: calc(v-bind(totalHeight));
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   background: $MAIN_BLACK;
   padding: 24px;
-  border-radius: 0 0 24px 0;
   font-size: 1.2rem;
   font-family: Nunito-SemiBold, sans-serif;
   color: whitesmoke;

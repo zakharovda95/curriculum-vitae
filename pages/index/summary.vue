@@ -1,10 +1,18 @@
 <template>
   <div class="summary-page">
     <div class="content">
-      <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">
-        <ThePreviews />
-      </PageContentContainer>
-      <PageContentContainer id="container" name="personal-information">
+      <AnchorGroup
+        v-if="offset > headerHeight"
+        class="anchors"
+        :anchors="anchors"
+        @custom:change-section="scrollIntoSection"
+      />
+      <div>
+        <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">
+          <ThePreviews />
+        </PageContentContainer>
+      </div>
+      <PageContentContainer name="personal-information">
         <ContentBlock class="section">
           <template #header>
             <h1>Personal Information</h1>
@@ -74,6 +82,24 @@
           </template>
         </ContentBlock>
       </PageContentContainer>
+      <PageContentContainer name="work-experience">
+        <ContentBlock class="section">
+          <template #header>
+            <h1>Work Experience</h1>
+          </template>
+          <template #content>
+            <h2>
+              Secondary special education: 2011 - 2016; Construction and operation of buildings and
+              structures, Yoshkar-Ola Construction College, Yoshkar-Ola, Russia
+            </h2>
+            <h2>
+              Incomplete higher education: 2016 - 2019; Institute of construction and architecture,
+              Federal State Budgetary Educational Institution of Higher Education «Volga State
+              University of Technology», Yoshkar-Ola, Russia
+            </h2>
+          </template>
+        </ContentBlock>
+      </PageContentContainer>
     </div>
   </div>
 </template>
@@ -82,12 +108,40 @@
 import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 import PageContentContainer from '~/components/shared/PageContentContainer.vue';
 import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
-import { computed } from 'vue';
+import { computed, ref, Ref } from 'vue';
 import ContentBlock from '~/components/shared/ContentBlock.vue';
 import UIButton from '~/components/ui/UIButton.vue';
+import AnchorGroup from '~/components/shared/AnchorGroup.vue';
+import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 
-const headerHeight = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
-const previewHeight = computed(() => `100vh - ${headerHeight.value}px`);
+const headerHeight: Ref<number> = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
+const previewHeight: Ref<string> = computed(() => `100vh - ${headerHeight.value}px`);
+
+const { offset } = useOffsetWatcher();
+
+const anchors: Ref<Array<{ name: string; id: string }>> = ref([
+  {
+    name: 'Personal Information',
+    id: 'personal-information',
+  },
+  {
+    name: 'Objective',
+    id: 'objective',
+  },
+  {
+    name: 'Education',
+    id: 'education',
+  },
+  {
+    name: 'Work Experience',
+    id: 'work-experience',
+  },
+]);
+
+const scrollIntoSection = (anchorName: string) => {
+  const sectionName = document.querySelector(`#${anchorName}`);
+  sectionName.scrollIntoView({ block: 'start', behavior: 'smooth' });
+};
 </script>
 
 <style lang="scss">
@@ -97,6 +151,13 @@ const previewHeight = computed(() => `100vh - ${headerHeight.value}px`);
   padding: 24px;
 
   .content {
+    .anchors {
+      position: fixed;
+      top: 36vh;
+      right: 6vw;
+      text-decoration: none;
+    }
+
     .section {
       .course {
         display: flex;

@@ -25,7 +25,7 @@ const navlinks = ref([
   },
 ]);
 
-const styles: Ref<{ [key: string]: string } | null> = ref('fixed');
+const styles: Ref<{ [key: string]: string } | null> = ref(null);
 
 const { offset } = useOffsetWatcher();
 
