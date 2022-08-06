@@ -31,45 +31,92 @@ const width: Ref<string> = computed(() => (props.isShowed ? '70%' : '100%'));
 <style scoped lang="scss">
 @import '../../../assets/css/constants';
 
-.main-banner {
-  display: flex;
-  justify-content: space-between;
-  height: 582px;
-  background: #34394d;
-  border-radius: 0 0 52px 0;
-  min-width: 70%;
-  width: v-bind(width);
-
-  .text-wrapper {
+@media (min-height: 1600px) and (max-height: 1799px) {
+  .main-banner {
     display: flex;
-    flex-direction: column;
-    margin-left: 300px;
-    margin-top: 30px;
-    margin-right: 150px;
+    justify-content: space-between;
+    height: 582px;
+    background: #34394d;
+    border-radius: 0 0 52px 0;
+    min-width: 70%;
+    width: v-bind(width);
 
-    h1 {
-      color: whitesmoke;
-      font-size: 3rem;
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-left: 300px;
+      margin-top: 30px;
+      margin-right: 150px;
+
+      h1 {
+        color: whitesmoke;
+        font-size: 3rem;
+      }
+
+      .row-2 {
+        color: whitesmoke;
+        font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 3rem;
+      }
+
+      .row-3 {
+        color: whitesmoke;
+        font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 3.5rem;
+      }
+
+      .row-4,
+      .row-5 {
+        margin-top: 20px;
+        color: whitesmoke;
+        font-family: Nunito-SemiBold, sans-serif;
+        font-size: 2.8rem;
+      }
     }
+  }
+}
 
-    .row-2 {
-      color: whitesmoke;
-      font-family: Nunito-ExtraBold, sans-serif;
-      font-size: 3rem;
-    }
+@media (min-height: 1800px) {
+  .main-banner {
+    display: flex;
+    justify-content: space-between;
+    height: 582px;
+    background: #34394d;
+    border-radius: 0 0 52px 0;
+    min-width: 70%;
+    width: v-bind(width);
 
-    .row-3 {
-      color: whitesmoke;
-      font-family: Nunito-ExtraBold, sans-serif;
-      font-size: 3.5rem;
-    }
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-left: 300px;
+      margin-top: 30px;
+      margin-right: 150px;
 
-    .row-4,
-    .row-5 {
-      margin-top: 20px;
-      color: whitesmoke;
-      font-family: Nunito-SemiBold, sans-serif;
-      font-size: 2.8rem;
+      h1 {
+        color: whitesmoke;
+        font-size: 3rem;
+      }
+
+      .row-2 {
+        color: whitesmoke;
+        font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 3rem;
+      }
+
+      .row-3 {
+        color: whitesmoke;
+        font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 3.5rem;
+      }
+
+      .row-4,
+      .row-5 {
+        margin-top: 20px;
+        color: whitesmoke;
+        font-family: Nunito-SemiBold, sans-serif;
+        font-size: 2.8rem;
+      }
     }
   }
 }

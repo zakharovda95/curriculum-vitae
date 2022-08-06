@@ -1,7 +1,7 @@
 <template>
   <div class="anchor-group">
     <div class="header">
-      <h2>Summary</h2>
+      {{ title }}
     </div>
     <div class="sections">
       <UIButton
@@ -12,8 +12,8 @@
         :key="anchor.name"
       >
         <span v-if="activeAnchor === anchor.id">&lt </span>
-        <span>{{ anchor.name }}</span>
-        <span v-if="activeAnchor === anchor.id"> /&gt</span>
+        <span class="text">{{ anchor.name }}</span>
+        <span v-if="activeAnchor === anchor.id">&gt</span>
       </UIButton>
     </div>
     <UIButton class="to-the-top" @click="toTheTop">Наверх</UIButton>
@@ -28,6 +28,11 @@ const props = defineProps({
   anchors: {
     type: Array as PropType<Array<{ name: string; id: string }>>,
     required: true,
+  },
+  title: {
+    type: String,
+    required: false,
+    default: () => 'Sections',
   },
 });
 
@@ -59,11 +64,12 @@ const toTheTop = (): void => {
   margin: 0 auto;
   background: white;
   border-radius: 24px;
-  padding: 24px;
+  padding: 12px;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   height: 30vh;
-  width: 15vw;
+  width: 14vw;
   color: $MAIN_BLACK;
+  border: 4px solid $MAIN_AQUAMARINE;
 
   .to-the-top {
     font-size: 1.5rem;
@@ -72,6 +78,8 @@ const toTheTop = (): void => {
 
   .header {
     height: 20%;
+    font-size: 1.8rem;
+    font-weight: 400;
   }
 
   .sections {
@@ -79,14 +87,19 @@ const toTheTop = (): void => {
     align-items: center;
 
     .section {
-      margin: 5px;
+      display: flex;
+      margin: 10px 0;
       padding: 0 10px;
+      align-items: center;
+      justify-content: center;
+      .text {
+        margin: 0 5px;
+      }
     }
   }
 }
 
 .active {
   font-weight: 600;
-  text-decoration: underline;
 }
 </style>

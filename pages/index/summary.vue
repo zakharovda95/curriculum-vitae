@@ -6,6 +6,7 @@
         class="anchors"
         :anchors="anchors"
         @custom:change-section="scrollIntoSection"
+        title="Резюме"
       />
       <div>
         <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">
@@ -111,7 +112,7 @@
               <br />
               Я являюсь разработчиком в стартап проекте - браузерной игры CastleKeepers. Это
               некоммерческий проект с небольшой коммандой, и небольшой (пока) целевой аудиторией.
-              Подробнее в разделе "Примеры кода"
+              Подробнее в разделе <span class="to-code-examples">"Примеры кода"</span>
             </UIParagraph>
           </template>
         </ContentBlock>
@@ -176,6 +177,11 @@ const scrollIntoSection = (anchorName: string) => {
     }
 
     .section {
+      .to-code-examples {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
       .course {
         display: flex;
 
