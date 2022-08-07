@@ -62,13 +62,13 @@ const toTheTop = (): void => {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  background: white;
+  background: $MAIN_BLACK;
   border-radius: 24px;
   padding: 12px;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
   height: 30vh;
   width: 14vw;
-  color: $MAIN_BLACK;
+  color: whitesmoke;
   border: 4px solid $MAIN_AQUAMARINE;
 
   .to-the-top {
@@ -80,6 +80,8 @@ const toTheTop = (): void => {
     height: 20%;
     font-size: 1.8rem;
     font-weight: 400;
+    color: $MAIN_AQUAMARINE;
+    border-bottom: 1px solid $MAIN_AQUAMARINE;
   }
 
   .sections {
@@ -92,6 +94,7 @@ const toTheTop = (): void => {
       padding: 0 10px;
       align-items: center;
       justify-content: center;
+
       .text {
         margin: 0 5px;
       }

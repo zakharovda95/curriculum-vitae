@@ -2,15 +2,20 @@
   <div class="main-page">
     <TheHeader id="header" />
     <TheNavigation class="navbar" id="navbar" />
-    <div class="pages">
-      <NuxtPage />
-    </div>
+    <!--    <div class="pages">-->
+    <!--      <NuxtPage />-->
+    <!--    </div>-->
   </div>
 </template>
 
 <script setup lang="ts">
 import TheNavigation from '~/components/layouts/TheNavigation.vue';
 import TheHeader from '~/components/pages/main/TheHeader.vue';
+import { definePageMeta } from '#imports';
+
+definePageMeta({
+  middleware: 'index-summary-redirect-middleware',
+});
 </script>
 
 <style scoped lang="scss">

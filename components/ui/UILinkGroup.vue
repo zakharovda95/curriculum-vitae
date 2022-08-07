@@ -9,8 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import { useRoute } from 'vue-router';
+import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 defineProps({
   links: {
@@ -28,6 +29,10 @@ defineProps({
 });
 
 const route = useRoute();
+
+// const { widthX } = useWindowWidthWatcher();
+//
+// const fontSize = computed(() => (widthX.value <= 800 ? '1.2rem' : '1.5rem'));
 </script>
 
 <style scoped lang="scss">
@@ -42,7 +47,7 @@ const route = useRoute();
 
   .link {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: v-bind(fontSize);
     color: $MAIN_BLACK;
     font-family: Nunito-SemiBold, sans-serif;
     padding-right: 8px;

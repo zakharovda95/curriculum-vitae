@@ -1,14 +1,14 @@
 <template>
   <div class="main-banner">
     <div class="text-wrapper">
-      <h1 class="row-1">Привет!</h1>
-      <p class="row-2">Меня зовут</p>
-      <p class="row-3">Дмитрий Захаров</p>
+      <UIText size="2rem" class="row-1">Привет!</UIText>
+      <UIText size="2rem" class="row-2">Меня зовут</UIText>
+      <UIText size="2rem" class="row-3">Дмитрий Захаров</UIText>
       <br />
-      <p class="row-4">Я - начинающий frontend разработчик</p>
-      <p class="row-5" v-if="!isShowed">
+      <UIText size="1.1rem" class="row-4">Я - начинающий frontend разработчик</UIText>
+      <UIText size="1.1rem" class="row-5" v-if="!isShowed">
         Мой основной язык программирования - JavaScript/TypeScript с фреймворком Vue.js
-      </p>
+      </UIText>
     </div>
     <TheAvatar />
   </div>
@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import TheAvatar from '~/components/pages/main/TheAvatar.vue';
 import { computed, Ref } from 'vue';
+import UIText from '~/components/ui/UIText.vue';
 
 const props = defineProps({
   isShowed: {
@@ -31,46 +32,33 @@ const width: Ref<string> = computed(() => (props.isShowed ? '70%' : '100%'));
 <style scoped lang="scss">
 @import '../../../assets/css/constants';
 
-@media (min-height: 1600px) and (max-height: 1799px) {
+@media (max-width: 800px) {
   .main-banner {
     display: flex;
     justify-content: space-between;
-    height: 582px;
+    flex-direction: column;
+    align-items: center;
     background: #34394d;
-    border-radius: 0 0 52px 0;
-    min-width: 70%;
-    width: v-bind(width);
+    min-width: calc(100% - 24px);
+    width: calc(100% - 24px);
+    padding: 12px;
 
     .text-wrapper {
       display: flex;
       flex-direction: column;
-      margin-left: 300px;
-      margin-top: 30px;
-      margin-right: 150px;
-
-      h1 {
-        color: whitesmoke;
-        font-size: 3rem;
-      }
 
       .row-2 {
-        color: whitesmoke;
         font-family: Nunito-ExtraBold, sans-serif;
-        font-size: 3rem;
       }
 
       .row-3 {
-        color: whitesmoke;
         font-family: Nunito-ExtraBold, sans-serif;
-        font-size: 3.5rem;
       }
 
       .row-4,
       .row-5 {
         margin-top: 20px;
-        color: whitesmoke;
         font-family: Nunito-SemiBold, sans-serif;
-        font-size: 2.8rem;
       }
     }
   }

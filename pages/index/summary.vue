@@ -8,15 +8,15 @@
         @custom:change-section="scrollIntoSection"
         title="Резюме"
       />
-      <div>
-        <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">
-          <ThePreviews />
-        </PageContentContainer>
-      </div>
+      <!--      <div>-->
+      <!--        <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">-->
+      <!--          <ThePreviews />-->
+      <!--        </PageContentContainer>-->
+      <!--      </div>-->
       <PageContentContainer name="personal-information">
         <ContentBlock class="section">
           <template #header>
-            <h1>Личная Информация</h1>
+            <h1>Информация</h1>
           </template>
           <template #content>
             <UIParagraph tag="h2" title="Имя">Дмитрий Захаров</UIParagraph>
@@ -139,7 +139,7 @@ const { offset } = useOffsetWatcher();
 
 const anchors: Ref<Array<{ name: string; id: string }>> = ref([
   {
-    name: 'Личная Информация',
+    name: 'Информация',
     id: 'personal-information',
   },
   {

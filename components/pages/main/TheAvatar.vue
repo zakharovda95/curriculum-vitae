@@ -1,5 +1,5 @@
 <template>
-  <div class="the-avatar"/>
+  <div class="the-avatar" />
 </template>
 
 <script setup lang="ts">
@@ -8,23 +8,36 @@ defineProps({
     type: String,
     required: false,
     default: () => 'url("assets/img/avatar.jpg")',
-  }
-})
+  },
+});
 </script>
 
 <style scoped lang="scss">
-@import "../../../assets/css/constants";
+@import '../../../assets/css/constants';
+@media (max-width: 1800px) {
+  .the-avatar {
+    display: flex;
+    width: 150px;
+    height: 200px;
+    align-self: flex-start;
+    margin-right: 26px;
+    background-size: cover;
+    background-position: center;
+    background-image: v-bind(avatar);
+  }
+}
 
-.the-avatar {
-  display: flex;
-  width: 750px;
-  height: calc(100% - 48px);
-  align-self: center;
-  border-radius: 0 0 32px 0;
-  margin-right: 26px;
-  background-size: cover;
-  background-position: center;
-  background-image: v-bind(avatar)
-
+@media (min-width: 1800px) {
+  .the-avatar {
+    display: flex;
+    width: 750px;
+    height: calc(100% - 48px);
+    align-self: center;
+    border-radius: 0 0 32px 0;
+    margin-right: 26px;
+    background-size: cover;
+    background-position: center;
+    background-image: v-bind(avatar);
+  }
 }
 </style>
