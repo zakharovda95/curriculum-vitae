@@ -1,13 +1,18 @@
 <template>
   <div class="the-header">
     <MainBanner :is-showed="isShowed" class="banner" />
-    <TheContacts class="contacts" />
-    <!--    <UIButton class="show-contacts" @click="showContacts">-->
-    <!--      <template #icon-right>-->
-    <!--        <UIIcon src="assets/img/tap.svg" :style="style" />-->
-    <!--      </template>-->
-    <!--      {{ buttonName }}-->
-    <!--    </UIButton>-->
+    <TheContacts v-if="widthX >= 800" class="contacts" />
+    <UIButton v-if="widthX >= 800" class="show-contacts" @click="showContacts">
+      <template #icon-right>
+        <UIIcon src="assets/img/tap.svg" :style="style" />
+      </template>
+      {{ buttonName }}
+    </UIButton>
+    <UIButton v-if="widthX < 800" class="show-contacts-mobile" @click="showContacts">
+      <template #icon-right>
+        <UIIcon class="icon" src="assets/img/tap.svg" size="48px" />
+      </template>
+    </UIButton>
   </div>
 </template>
 
@@ -17,6 +22,7 @@ import UIButton from '~/components/ui/UIButton.vue';
 import UIIcon from '~/components/ui/UIIcon.vue';
 import { computed, Ref, ref } from 'vue';
 import TheContacts from '~/components/pages/main/TheContacts.vue';
+import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 const isShowed: Ref<boolean> = ref(false);
 
@@ -29,14 +35,21 @@ const buttonName: Ref<string> = computed(() =>
 );
 
 const showContacts = (): void => {
-  isShowed.value = !isShowed.value;
+  if (widthX.value < 800) {
+    isShowed.value = !isShowed.value;
+  }
+  if (widthX.value >= 800) {
+    isShowed.value = !isShowed.value;
+  }
 };
+
+const { widthX } = useWindowWidthWatcher();
 </script>
 
 <style scoped lang="scss">
 @import '../../../assets/css/_constants.scss';
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .the-header {
     display: flex;
     width: 100%;
@@ -44,7 +57,6 @@ const showContacts = (): void => {
     background: $MAIN_AQUAMARINE;
     position: relative;
     z-index: 1;
-    margin-top: 60px;
 
     .banner {
       position: relative;
@@ -53,26 +65,31 @@ const showContacts = (): void => {
 
     .contacts {
       position: absolute;
-      top: 180px;
-      right: 80px;
-      z-index: 3;
+      bottom: 30px;
+      left: 17vw;
+      z-index: 2;
     }
 
-    .show-contacts {
-      position: relative;
-      width: 290px;
-      display: flex;
-      align-items: center;
-      transform: rotate(270deg);
-      align-self: center;
-      font-size: 1.2rem;
-      margin: -120px;
+    .show-contacts-mobile {
+      position: absolute;
       z-index: 2;
+      width: 60px;
+      height: 60px;
+      background: whitesmoke;
+      border: 4px solid $MAIN_AQUAMARINE;
+      top: 25px;
+      right: 25px;
+      border-radius: 32px;
+
+      .icon {
+        margin-right: 16px;
+        margin-top: 5px;
+      }
     }
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1700px) {
   .the-header {
     display: flex;
     width: 100%;

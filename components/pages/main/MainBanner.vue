@@ -10,7 +10,8 @@
         Мой основной язык программирования - JavaScript/TypeScript с фреймворком Vue.js
       </UIText>
     </div>
-    <TheAvatar />
+    <TheAvatar class="avatar" />
+    <TheContacts v-if="widthX < 800 && isShowed" class="contacts" />
   </div>
 </template>
 
@@ -18,6 +19,8 @@
 import TheAvatar from '~/components/pages/main/TheAvatar.vue';
 import { computed, Ref } from 'vue';
 import UIText from '~/components/ui/UIText.vue';
+import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+import TheContacts from '~/components/pages/main/TheContacts.vue';
 
 const props = defineProps({
   isShowed: {
@@ -28,6 +31,7 @@ const props = defineProps({
 });
 
 const width: Ref<string> = computed(() => (props.isShowed ? '70%' : '100%'));
+const { widthX } = useWindowWidthWatcher();
 </script>
 <style scoped lang="scss">
 @import '../../../assets/css/constants';
@@ -35,7 +39,7 @@ const width: Ref<string> = computed(() => (props.isShowed ? '70%' : '100%'));
 @media (max-width: 800px) {
   .main-banner {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     background: #34394d;
@@ -61,10 +65,18 @@ const width: Ref<string> = computed(() => (props.isShowed ? '70%' : '100%'));
         font-family: Nunito-SemiBold, sans-serif;
       }
     }
+
+    .avatar {
+      align-self: center;
+      margin-top: 20px;
+    }
+    .contacts {
+      align-self: center;
+    }
   }
 }
 
-@media (min-height: 1800px) {
+@media (min-width: 1700px) {
   .main-banner {
     display: flex;
     justify-content: space-between;

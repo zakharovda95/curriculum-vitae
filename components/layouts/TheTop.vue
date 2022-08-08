@@ -17,8 +17,6 @@
     width: 100%;
     height: 60px;
     background: $MAIN_BLACK;
-    position: fixed;
-    z-index: 3;
 
     p {
       text-align: center;

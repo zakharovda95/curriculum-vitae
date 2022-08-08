@@ -10,7 +10,7 @@
 import { useScrollPreventer } from '~/composables/useScrollPreventer';
 import { useNuxtApp } from '#app';
 
-useScrollPreventer();
+// useScrollPreventer();
 
 const nuxtApp = useNuxtApp();
 

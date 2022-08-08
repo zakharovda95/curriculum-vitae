@@ -20,7 +20,7 @@ const navlinks = ref([
     path: '/stack',
   },
   {
-    name: 'Примеры кода',
+    name: 'Код',
     path: '/code-examples',
   },
 ]);

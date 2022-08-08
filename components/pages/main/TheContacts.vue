@@ -1,29 +1,28 @@
 <template>
   <div class="the-contacts">
+    <div class="header">Мои контакты:</div>
     <div class="github">
-      <UIIcon class="icon" src="assets/img/github.svg" :size="widthX >= 800 ? '42px' : '48px'" />
+      <UIIcon class="icon" src="assets/img/github.svg" size="56px" />
       <nuxt-link class="link" to="https://github.com/zakharovda95">GitHub</nuxt-link>
     </div>
     <div class="vk">
-      <UIIcon class="icon" src="assets/img/vk.svg" :size="widthX >= 800 ? '42px' : '48px'" />
+      <UIIcon class="icon" src="assets/img/vk.svg" size="56px" />
       <nuxt-link class="link" to="https://vk.com/id625689222">VK.com</nuxt-link>
     </div>
     <div class="telegram">
-      <UIIcon src="assets/img/telegram.svg" :size="widthX >= 800 ? '32px' : '42px'" />
-      <p class="text">@zakharovda95</p>
+      <UIIcon src="assets/img/telegram.svg" size="48px" />
+      <UIText class="text">@zakharovda95</UIText>
     </div>
     <div class="gmail">
-      <UIIcon src="assets/img/gmail.svg" :size="widthX >= 800 ? '32px' : '42px'" />
-      <p class="text">zakharovda95@gmail.com</p>
+      <UIIcon src="assets/img/gmail.svg" size="48px" />
+      <UIText class="text">zakharovda95@gmail.com</UIText>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import UIIcon from '~/components/ui/UIIcon.vue';
-import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
-
-const { widthX } = useWindowWidthWatcher();
+import UIText from '~/components/ui/UIText.vue';
 </script>
 
 <style scoped lang="scss">
@@ -35,6 +34,11 @@ const { widthX } = useWindowWidthWatcher();
     display: flex;
     flex-direction: column;
 
+    .header {
+      color: whitesmoke;
+      font-size: 1.2rem;
+    }
+
     .github,
     .vk,
     .telegram,
@@ -44,10 +48,9 @@ const { widthX } = useWindowWidthWatcher();
 
       .link,
       .text {
-        padding: 5px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         text-decoration: none;
-        color: $MAIN_BLACK;
+        color: whitesmoke;
         margin-left: 10px;
         margin-top: 10px;
       }
@@ -59,7 +62,7 @@ const { widthX } = useWindowWidthWatcher();
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1700px) {
   .the-contacts {
     display: flex;
     flex-direction: column;

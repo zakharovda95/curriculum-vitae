@@ -9,9 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed, PropType } from 'vue';
+import { PropType } from 'vue';
 import { useRoute } from 'vue-router';
-import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 defineProps({
   links: {
@@ -29,37 +28,61 @@ defineProps({
 });
 
 const route = useRoute();
-
-// const { widthX } = useWindowWidthWatcher();
-//
-// const fontSize = computed(() => (widthX.value <= 800 ? '1.2rem' : '1.5rem'));
 </script>
 
 <style scoped lang="scss">
 @import '../../assets/css/_constants.scss';
 @import '../../assets/css/hoverable.css';
 
-.ui-link-group {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-direction: v-bind(direction);
+@media (max-width: 800px) {
+  .ui-link-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: v-bind(direction);
 
-  .link {
-    font-weight: 500;
-    font-size: v-bind(fontSize);
-    color: $MAIN_BLACK;
-    font-family: Nunito-SemiBold, sans-serif;
-    padding-right: 8px;
-    padding-left: 8px;
-    text-decoration: none;
-    text-align: center;
-    margin: 10px;
+    .link {
+      font-weight: 500;
+      font-size: 1rem;
+      color: $MAIN_BLACK;
+      font-family: Nunito-SemiBold, sans-serif;
+      padding-right: 8px;
+      padding-left: 8px;
+      text-decoration: none;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .router-link-active {
+      font-weight: 600;
+      text-decoration: underline;
+    }
   }
+}
 
-  .router-link-active {
-    font-weight: 600;
-    text-decoration: underline;
+@media (min-width: 1700px) {
+  .ui-link-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: v-bind(direction);
+
+    .link {
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: $MAIN_BLACK;
+      font-family: Nunito-SemiBold, sans-serif;
+      padding-right: 8px;
+      padding-left: 8px;
+      text-decoration: none;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .router-link-active {
+      font-weight: 600;
+      text-decoration: underline;
+    }
   }
 }
 </style>

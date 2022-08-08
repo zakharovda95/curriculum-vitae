@@ -2,9 +2,9 @@
   <div class="main-page">
     <TheHeader id="header" />
     <TheNavigation class="navbar" id="navbar" />
-    <!--    <div class="pages">-->
-    <!--      <NuxtPage />-->
-    <!--    </div>-->
+    <div class="pages">
+      <NuxtPage />
+    </div>
   </div>
 </template>
 
@@ -21,16 +21,18 @@ definePageMeta({
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
-.main-page {
-  display: flex;
-  flex-direction: column;
-
-  .content {
+@media (min-width: 1700px) {
+  .main-page {
     display: flex;
     flex-direction: column;
 
-    .pages {
-      width: 100%;
+    .content {
+      display: flex;
+      flex-direction: column;
+
+      .pages {
+        width: 100%;
+      }
     }
   }
 }

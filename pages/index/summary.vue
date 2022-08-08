@@ -8,11 +8,11 @@
         @custom:change-section="scrollIntoSection"
         title="Резюме"
       />
-      <!--      <div>-->
-      <!--        <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">-->
-      <!--          <ThePreviews />-->
-      <!--        </PageContentContainer>-->
-      <!--      </div>-->
+      <div>
+        <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">
+          <ThePreviews />
+        </PageContentContainer>
+      </div>
       <PageContentContainer name="personal-information">
         <ContentBlock class="section">
           <template #header>

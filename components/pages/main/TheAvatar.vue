@@ -14,20 +14,20 @@ defineProps({
 
 <style scoped lang="scss">
 @import '../../../assets/css/constants';
-@media (max-width: 1800px) {
+@media (max-width: 800px) {
   .the-avatar {
     display: flex;
-    width: 150px;
-    height: 200px;
+    width: 60vw;
+    height: 74vw;
     align-self: flex-start;
-    margin-right: 26px;
+    margin-left: 0.5vw;
     background-size: cover;
     background-position: center;
     background-image: v-bind(avatar);
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1700px) {
   .the-avatar {
     display: flex;
     width: 750px;
