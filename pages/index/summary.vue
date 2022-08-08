@@ -165,29 +165,62 @@ const scrollIntoSection = (anchorName: string) => {
 <style lang="scss">
 @import '../assets/css/_constants.scss';
 
-.summary-page {
-  padding: 24px;
+@media (min-width: 1700px) {
+  .summary-page {
+    padding: 24px;
 
-  .content {
-    .anchors {
-      position: fixed;
-      top: 36vh;
-      right: 6vw;
-      text-decoration: none;
-    }
-
-    .section {
-      .to-code-examples {
-        text-decoration: underline;
-        cursor: pointer;
+    .content {
+      .anchors {
+        position: fixed;
+        top: 36vh;
+        right: 6vw;
+        text-decoration: none;
       }
 
-      .course {
-        display: flex;
-
-        .certificate {
-          margin-left: 20px;
+      .section {
+        .to-code-examples {
           text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .course {
+          display: flex;
+
+          .certificate {
+            margin-left: 20px;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1700px) {
+  .summary-page {
+    padding: 24px;
+
+    .content {
+      .anchors {
+        position: fixed;
+        top: 36vh;
+        right: 6vw;
+        text-decoration: none;
+      }
+
+      .section {
+        .to-code-examples {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .course {
+          display: flex;
+
+          .certificate {
+            margin-left: 20px;
+            text-decoration: underline;
+          }
         }
       }
     }

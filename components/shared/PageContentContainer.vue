@@ -26,13 +26,25 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
-.page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: v-bind(justify);
-  width: 100%;
-  height: calc(v-bind(height));
-  max-height: calc(v-bind(height));
-  min-height: calc(v-bind(height));
+@media (max-width: 800px) {
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: v-bind(justify);
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: v-bind(justify);
+    width: 100%;
+    height: calc(v-bind(height));
+    max-height: calc(v-bind(height));
+    min-height: calc(v-bind(height));
+  }
 }
 </style>

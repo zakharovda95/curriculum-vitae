@@ -10,7 +10,7 @@
         Мой основной язык программирования - JavaScript/TypeScript с фреймворком Vue.js
       </UIText>
     </div>
-    <TheAvatar class="avatar" />
+    <TheAvatar v-if="widthX > 800 || (widthX < 800 && !isShowed)" class="avatar" />
     <TheContacts v-if="widthX < 800 && isShowed" class="contacts" />
   </div>
 </template>
@@ -70,6 +70,7 @@ const { widthX } = useWindowWidthWatcher();
       align-self: center;
       margin-top: 20px;
     }
+
     .contacts {
       align-self: center;
     }
