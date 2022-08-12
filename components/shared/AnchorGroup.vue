@@ -6,7 +6,7 @@
     <div class="sections">
       <UIButton
         class="section"
-        :class="{ 'active': activeAnchor === anchor.id }"
+        :class="{ 'active': activeAnchor === anchor.id ||  }"
         @click="changeSection(anchor)"
         v-for="anchor in anchors"
         :key="anchor.name"
@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, ref, Ref } from 'vue';
+import { PropType, ref, Ref, watch } from 'vue';
 import UIButton from '~/components/ui/UIButton.vue';
 
 const props = defineProps({
@@ -33,6 +33,11 @@ const props = defineProps({
     type: String,
     required: false,
     default: () => 'Sections',
+  },
+  crossAnchor: {
+    type: String,
+    required: false,
+    default: () => '',
   },
 });
 

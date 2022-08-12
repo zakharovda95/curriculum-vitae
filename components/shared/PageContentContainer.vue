@@ -1,11 +1,13 @@
 <template>
   <div class="page-container" :id="name">
+    <UIObserver @custom:cross-section="crossSection" :target="name" />
     <slot />
   </div>
 </template>
 
 <script setup lang="ts">
 import { PropType } from 'vue';
+import UIObserver from '~/components/ui/UIObserver.vue';
 
 defineProps({
   name: {
@@ -23,6 +25,12 @@ defineProps({
     default: () => 'flex-end',
   },
 });
+
+const emits = defineEmits(['custom:cross-section']);
+
+const crossSection = (event: string): void => {
+  emits('custom:cross-section', event);
+};
 </script>
 
 <style scoped lang="scss">
