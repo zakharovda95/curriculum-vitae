@@ -9,7 +9,7 @@
 <style scoped lang="scss">
 @import '../../assets/css/constants';
 
-@media (max-width: 800px) {
+@media (max-width: 1399px) {
   .the-top {
     display: flex;
     justify-content: center;
@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1400px) {
   .the-top {
     display: flex;
     justify-content: center;

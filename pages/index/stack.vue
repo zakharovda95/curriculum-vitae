@@ -1,10 +1,10 @@
 <template>
   <div class="stack-page">
     <div class="content">
-      <PageContentContainer :height="previewHeight" name="preview">
+      <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">
         <ThePreviews />
       </PageContentContainer>
-      <PageContentContainer :style="blockPadding" name="test-content"> </PageContentContainer>
+      <PageContentContainer :style="blockPadding" name="test-content"></PageContentContainer>
     </div>
   </div>
 </template>

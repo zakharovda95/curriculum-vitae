@@ -21,7 +21,7 @@ definePageMeta({
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
-@media (min-width: 1700px) {
+@media (min-width: 1400px) {
   .main-page {
     display: flex;
     flex-direction: column;

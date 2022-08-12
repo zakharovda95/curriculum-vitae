@@ -112,7 +112,7 @@
               <br />
               Я являюсь разработчиком в стартап проекте - браузерной игры CastleKeepers. Это
               некоммерческий проект с небольшой коммандой, и небольшой (пока) целевой аудиторией.
-              Подробнее в разделе <span class="to-code-examples">"Примеры кода"</span>
+              Подробнее в разделе <span class="to-code-examples">"Примеры&nbsp;кода"</span>
             </UIParagraph>
           </template>
         </ContentBlock>
@@ -160,14 +160,45 @@ const anchors: Ref<Array<{ name: string; id: string }>> = ref([
 
 const scrollIntoSection = (anchorName: string) => {
   const sectionName = document.querySelector(`#${anchorName}`);
-  sectionName.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  sectionName.scrollIntoView({ block: 'end', behavior: 'smooth' });
 };
 </script>
 
 <style lang="scss">
 @import '../assets/css/_constants.scss';
 
-@media (min-width: 1700px) {
+@media (max-width: 800px) {
+  .summary-page {
+    padding: 24px;
+
+    .content {
+      .anchors {
+        position: fixed;
+        top: 36vh;
+        right: 6vw;
+        text-decoration: none;
+      }
+
+      .section {
+        .to-code-examples {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .course {
+          display: flex;
+
+          .certificate {
+            margin-left: 5px;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1399px) {
   .summary-page {
     padding: 24px;
 
@@ -198,7 +229,7 @@ const scrollIntoSection = (anchorName: string) => {
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1400px) {
   .summary-page {
     padding: 24px;
 

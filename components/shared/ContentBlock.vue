@@ -21,7 +21,7 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
 @import '../assets/css/_constants.scss';
 @media (max-width: 800px) {
   .content-block {
-    width: calc(96% - 10px);
+    width: calc(95% - 10px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -48,7 +48,38 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
     }
   }
 }
-@media (min-width: 1700px) {
+
+@media (min-width: 801px) and (max-width: 1399px) {
+  .content-block {
+    width: calc(95% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: $MAIN_BLACK;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-family: Nunito-SemiBold, sans-serif;
+    color: whitesmoke;
+    border-right: 10px solid $MAIN_AQUAMARINE;
+
+    .header {
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      border-bottom: 1px solid $MAIN_AQUAMARINE;
+      color: $MAIN_AQUAMARINE;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: baseline;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
   .content-block {
     width: 70%;
     height: calc(v-bind(totalHeight));
@@ -65,7 +96,7 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
 
     .header {
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
       height: 10%;
       width: 100%;
       border-bottom: 1px solid $MAIN_AQUAMARINE;
@@ -77,7 +108,7 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
       flex-direction: column;
       justify-content: space-around;
       align-items: baseline;
-      height: 80%;
+      height: 85%;
       width: 100%;
     }
   }

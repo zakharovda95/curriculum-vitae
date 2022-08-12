@@ -52,27 +52,40 @@ const previews: Ref<string> = computed(() => {
     .shift {
       display: none;
     }
-
-    .go-to {
-      align-self: center;
-      cursor: pointer;
-      margin: 20px;
-    }
-
-    .go-to:hover {
-      transition: 0.5s;
-      transform: scale(1.1);
-    }
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 801px) and (max-width: 1399px) {
   .the-previews {
     display: flex;
     width: 70%;
     background: whitesmoke;
     padding: 24px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+      width: 80%;
+      color: $MAIN_BLACK;
+      font-size: 2rem;
+    }
+
+    .shift {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .the-previews {
+    display: flex;
+    width: 70%;
+    background: whitesmoke;
+    padding: 24px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
 
     h1 {
       width: 80%;

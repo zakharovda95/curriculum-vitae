@@ -15,7 +15,7 @@
     </div>
     <div class="gmail">
       <UIIcon src="assets/img/gmail.svg" size="48px" />
-      <UIText class="text">zakharovda95@gmail.com</UIText>
+      <UIText class="text">zakharovda95<br />@gmail.com</UIText>
     </div>
   </div>
 </template>
@@ -62,7 +62,40 @@ import UIText from '~/components/ui/UIText.vue';
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 801px) and (max-width: 1399px) {
+  .the-contacts {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      color: whitesmoke;
+      font-size: 1.4rem;
+    }
+
+    .github,
+    .vk,
+    .telegram,
+    .gmail {
+      display: flex;
+      align-items: center;
+
+      .link,
+      .text {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: whitesmoke;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+    }
+
+    .icon {
+      margin-left: -5px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
   .the-contacts {
     display: flex;
     flex-direction: column;

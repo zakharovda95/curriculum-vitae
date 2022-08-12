@@ -38,7 +38,7 @@ watch(
   offset,
   () => {
     if (widthX.value > 800) {
-      if (totalHeight.value <= offset.value) {
+      if (totalHeight.value < offset.value) {
         position.value = 'fixed';
         marginTop.value = '60px';
       } else {
@@ -72,7 +72,20 @@ watch(
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 801px) and (max-width: 1399px) {
+  .the-navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background: $MAIN_AQUAMARINE;
+    z-index: 3;
+    position: static;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1400px) {
   .the-navigation {
     display: flex;
     align-items: center;

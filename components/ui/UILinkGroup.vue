@@ -50,7 +50,6 @@ const route = useRoute();
       padding-left: 8px;
       text-decoration: none;
       text-align: center;
-      margin: 10px;
     }
 
     .router-link-active {
@@ -60,7 +59,32 @@ const route = useRoute();
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 801px) and (max-width: 1399px) {
+  .ui-link-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: v-bind(direction);
+
+    .link {
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: $MAIN_BLACK;
+      font-family: Nunito-SemiBold, sans-serif;
+      padding-right: 8px;
+      padding-left: 8px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .router-link-active {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
   .ui-link-group {
     display: flex;
     width: 100%;

@@ -36,9 +36,18 @@ defineProps({
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 801px) and (max-width: 1399px) {
   .page-container {
     display: flex;
+    flex-direction: column;
+    justify-content: v-bind(justify);
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .page-container {
     flex-direction: column;
     justify-content: v-bind(justify);
     width: 100%;

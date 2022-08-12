@@ -1,7 +1,7 @@
 <template>
   <div class="the-header">
     <MainBanner :is-showed="isShowed" class="banner" />
-    <TheContacts v-if="widthX > 800" class="contacts" />
+    <TheContacts v-if="widthX >= 1400" class="contacts" />
     <UIButton v-if="widthX > 800" class="show-contacts" @click="showContacts">
       <template #icon-right>
         <UIIcon src="assets/img/tap.svg" :style="style" />
@@ -20,7 +20,7 @@
 import MainBanner from '~/components/pages/main/MainBanner.vue';
 import UIButton from '~/components/ui/UIButton.vue';
 import UIIcon from '~/components/ui/UIIcon.vue';
-import { computed, Ref, ref } from 'vue';
+import { computed, Ref, ref, watch } from 'vue';
 import TheContacts from '~/components/pages/main/TheContacts.vue';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
@@ -64,10 +64,7 @@ const { widthX } = useWindowWidthWatcher();
     }
 
     .contacts {
-      position: absolute;
-      bottom: 30px;
-      left: 17vw;
-      z-index: 2;
+      display: none;
     }
 
     .show-contacts {
@@ -93,7 +90,35 @@ const { widthX } = useWindowWidthWatcher();
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 801px) and (max-width: 1399px) {
+  .the-header {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 101px);
+    background: $MAIN_AQUAMARINE;
+    position: relative;
+    z-index: 1;
+
+    .banner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contacts {
+      display: none;
+    }
+
+    .show-contacts {
+      display: none;
+    }
+
+    .show-contacts-mobile {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1599px) {
   .the-header {
     display: flex;
     width: 100%;
@@ -111,7 +136,7 @@ const { widthX } = useWindowWidthWatcher();
     .contacts {
       position: absolute;
       top: 180px;
-      right: 80px;
+      right: 3.2vw;
       z-index: 1;
     }
 
@@ -126,6 +151,47 @@ const { widthX } = useWindowWidthWatcher();
       margin: -120px;
       z-index: 2;
     }
+
+    .show-contacts-mobile {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .the-header {
+    display: flex;
+    width: 100%;
+    height: 582px;
+    background: $MAIN_AQUAMARINE;
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+
+    .banner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contacts {
+      position: absolute;
+      top: 180px;
+      right: 100px;
+      z-index: 1;
+    }
+
+    .show-contacts {
+      position: relative;
+      width: 290px;
+      display: flex;
+      align-items: center;
+      transform: rotate(270deg);
+      align-self: center;
+      font-size: 1.2rem;
+      margin: -120px;
+      z-index: 2;
+    }
+
     .show-contacts-mobile {
       display: none;
     }

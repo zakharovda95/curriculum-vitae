@@ -6,6 +6,7 @@ export function useWindowWidthWatcher(): { widthX: Ref<number> } {
   const watchSize = (): number => (widthX.value = window.innerWidth);
 
   onMounted((): void => {
+    widthX.value = window.innerWidth;
     window.addEventListener('resize', watchSize);
   });
 

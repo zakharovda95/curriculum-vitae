@@ -57,13 +57,13 @@ const toTheTop = (): void => {
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
-@media (max-width: 800px) {
+@media (max-width: 1399px) {
   .anchor-group {
     display: none;
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1400px) {
   .anchor-group {
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@ const toTheTop = (): void => {
     padding: 12px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     height: 30vh;
-    width: 14vw;
+    width: 15vw;
     color: $MAIN_BLACK;
     border: 4px solid $MAIN_AQUAMARINE;
 

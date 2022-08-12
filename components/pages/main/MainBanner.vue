@@ -1,17 +1,20 @@
 <template>
   <div class="main-banner">
     <div class="text-wrapper">
-      <UIText size="2rem" class="row-1">Привет!</UIText>
-      <UIText size="2rem" class="row-2">Меня зовут</UIText>
-      <UIText size="2rem" class="row-3">Дмитрий Захаров</UIText>
+      <UIText :size="fontSizes.title" class="row-1">Привет!</UIText>
+      <UIText :size="fontSizes.title" class="row-2">Меня зовут</UIText>
+      <UIText :size="fontSizes.title" class="row-3">Дмитрий Захаров</UIText>
       <br />
-      <UIText size="1.1rem" class="row-4">Я - начинающий frontend разработчик</UIText>
-      <UIText size="1.1rem" class="row-5" v-if="!isShowed">
+      <UIText :size="fontSizes.content" class="row-4">Я - начинающий frontend разработчик</UIText>
+      <UIText :size="fontSizes.content" class="row-5" v-if="!isShowed">
         Мой основной язык программирования - JavaScript/TypeScript с фреймворком Vue.js
       </UIText>
     </div>
-    <TheAvatar v-if="widthX > 800 || (widthX < 800 && !isShowed)" class="avatar" />
-    <TheContacts v-if="widthX < 800 && isShowed" class="contacts" />
+    <TheAvatar v-if="widthX > 800 || (widthX <= 800 && !isShowed)" class="avatar" />
+    <TheContacts
+      v-if="(widthX <= 800 && isShowed) || (widthX > 800 && widthX < 1400)"
+      class="contacts"
+    />
   </div>
 </template>
 
@@ -30,8 +33,37 @@ const props = defineProps({
   },
 });
 
-const width: Ref<string> = computed(() => (props.isShowed ? '70%' : '100%'));
+const width: Ref<string> = computed(() => (props.isShowed ? '72%' : '100%'));
 const { widthX } = useWindowWidthWatcher();
+
+const fontSizes: Ref<{ [key: string]: string }> = computed(() => {
+  if (widthX.value <= 800) {
+    return {
+      title: '2rem',
+      content: '1.1rem',
+    };
+  }
+
+  if (widthX.value <= 1600) {
+    return {
+      title: '2.8rem',
+      content: '2rem',
+    };
+  }
+
+  if (widthX.value <= 1799) {
+    return {
+      title: '3rem',
+      content: '2.4rem',
+    };
+  }
+  if (widthX.value > 1800) {
+    return {
+      title: '3rem',
+      content: '2.8rem',
+    };
+  }
+});
 </script>
 <style scoped lang="scss">
 @import '../../../assets/css/constants';
@@ -77,7 +109,54 @@ const { widthX } = useWindowWidthWatcher();
   }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 801px) and (max-width: 1399px) {
+  .main-banner {
+    display: grid;
+    grid-template-areas:
+      'text text'
+      'avatar contacts';
+    background: #34394d;
+    min-width: calc(100% - 24px);
+    width: calc(100% - 24px);
+    padding: 12px;
+
+    .text-wrapper {
+      display: flex;
+      grid-area: text;
+      flex-direction: column;
+      margin-left: 50px;
+      margin-right: 20px;
+
+      .row-2 {
+        font-family: Nunito-ExtraBold, sans-serif;
+      }
+
+      .row-3 {
+        font-family: Nunito-ExtraBold, sans-serif;
+      }
+
+      .row-4,
+      .row-5 {
+        margin-top: 20px;
+        font-family: Nunito-SemiBold, sans-serif;
+      }
+    }
+
+    .avatar {
+      grid-area: avatar;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .contacts {
+      grid-area: contacts;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
   .main-banner {
     display: flex;
     justify-content: space-between;
@@ -90,25 +169,22 @@ const { widthX } = useWindowWidthWatcher();
     .text-wrapper {
       display: flex;
       flex-direction: column;
-      margin-left: 300px;
+      margin-left: 200px;
       margin-top: 30px;
-      margin-right: 150px;
+      margin-right: 100px;
 
       h1 {
         color: whitesmoke;
-        font-size: 3rem;
       }
 
       .row-2 {
         color: whitesmoke;
         font-family: Nunito-ExtraBold, sans-serif;
-        font-size: 3rem;
       }
 
       .row-3 {
         color: whitesmoke;
         font-family: Nunito-ExtraBold, sans-serif;
-        font-size: 3.5rem;
       }
 
       .row-4,
@@ -116,7 +192,6 @@ const { widthX } = useWindowWidthWatcher();
         margin-top: 20px;
         color: whitesmoke;
         font-family: Nunito-SemiBold, sans-serif;
-        font-size: 2.8rem;
       }
     }
   }
