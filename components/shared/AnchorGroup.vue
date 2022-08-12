@@ -57,52 +57,59 @@ const toTheTop = (): void => {
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
-.anchor-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  background: $MAIN_BLACK;
-  border-radius: 24px;
-  padding: 12px;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-  height: 30vh;
-  width: 14vw;
-  color: whitesmoke;
-  border: 4px solid $MAIN_AQUAMARINE;
-
-  .to-the-top {
-    font-size: 1.5rem;
-    padding: 0 10px;
-  }
-
-  .header {
-    height: 20%;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: $MAIN_AQUAMARINE;
-    border-bottom: 1px solid $MAIN_AQUAMARINE;
-  }
-
-  .sections {
-    padding: 12px;
-    align-items: center;
-
-    .section {
-      display: flex;
-      margin: 10px 0;
-      padding: 0 10px;
-      align-items: center;
-      justify-content: center;
-
-      .text {
-        margin: 0 5px;
-      }
-    }
+@media (max-width: 800px) {
+  .anchor-group {
+    display: none;
   }
 }
 
-.active {
-  font-weight: 600;
+@media (min-width: 1700px) {
+  .anchor-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    background: whitesmoke;
+    padding: 12px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    height: 30vh;
+    width: 14vw;
+    color: $MAIN_BLACK;
+    border: 4px solid $MAIN_AQUAMARINE;
+
+    .to-the-top {
+      font-size: 1.5rem;
+      padding: 0 10px;
+    }
+
+    .header {
+      height: 20%;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: $MAIN_BLACK;
+      border-bottom: 1px solid $MAIN_AQUAMARINE;
+    }
+
+    .sections {
+      padding: 12px;
+      align-items: center;
+
+      .section {
+        display: flex;
+        margin: 10px 0;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: center;
+
+        .text {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+  .active {
+    font-weight: 600;
+  }
 }
 </style>

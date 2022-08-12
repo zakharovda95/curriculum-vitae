@@ -131,11 +131,13 @@ import UIButton from '~/components/ui/UIButton.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import UIParagraph from '~/components/ui/UIParagraph.vue';
+import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 const headerHeight: Ref<number> = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
 const previewHeight: Ref<string> = computed(() => `100vh - ${headerHeight.value}px`);
 
 const { offset } = useOffsetWatcher();
+const { widthX } = useWindowWidthWatcher();
 
 const anchors: Ref<Array<{ name: string; id: string }>> = ref([
   {

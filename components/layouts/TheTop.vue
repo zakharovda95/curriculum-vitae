@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1700px) {
   .the-top {
     display: flex;
     justify-content: center;

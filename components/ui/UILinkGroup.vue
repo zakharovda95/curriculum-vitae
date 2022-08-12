@@ -76,7 +76,6 @@ const route = useRoute();
       padding-left: 8px;
       text-decoration: none;
       text-align: center;
-      margin: 10px;
     }
 
     .router-link-active {

@@ -21,7 +21,7 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
 @import '../assets/css/_constants.scss';
 @media (max-width: 800px) {
   .content-block {
-    width: calc(95% - 5px);
+    width: calc(96% - 10px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

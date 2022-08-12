@@ -17,8 +17,12 @@ defineProps({
 @media (max-width: 800px) {
   .the-avatar {
     display: flex;
-    width: 60vw;
+    min-width: 200px;
+    width: 50vw;
+    max-width: 270px;
+    min-height: 240px;
     height: 74vw;
+    max-height: 300px;
     align-self: flex-start;
     margin-left: 0.5vw;
     background-size: cover;

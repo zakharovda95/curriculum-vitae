@@ -1,14 +1,14 @@
 <template>
   <div class="the-header">
     <MainBanner :is-showed="isShowed" class="banner" />
-    <TheContacts v-if="widthX >= 800" class="contacts" />
-    <UIButton v-if="widthX >= 800" class="show-contacts" @click="showContacts">
+    <TheContacts v-if="widthX > 800" class="contacts" />
+    <UIButton v-if="widthX > 800" class="show-contacts" @click="showContacts">
       <template #icon-right>
         <UIIcon src="assets/img/tap.svg" :style="style" />
       </template>
       {{ buttonName }}
     </UIButton>
-    <UIButton v-if="widthX < 800" class="show-contacts-mobile" @click="showContacts">
+    <UIButton v-if="widthX <= 800" class="show-contacts-mobile" @click="showContacts">
       <template #icon-right>
         <UIIcon class="icon" src="assets/img/tap.svg" size="48px" />
       </template>
@@ -49,7 +49,7 @@ const { widthX } = useWindowWidthWatcher();
 <style scoped lang="scss">
 @import '../../../assets/css/_constants.scss';
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .the-header {
     display: flex;
     width: 100%;
@@ -70,16 +70,20 @@ const { widthX } = useWindowWidthWatcher();
       z-index: 2;
     }
 
+    .show-contacts {
+      display: none;
+    }
+
     .show-contacts-mobile {
       position: absolute;
       z-index: 2;
       width: 60px;
       height: 60px;
       background: whitesmoke;
-      border: 4px solid $MAIN_AQUAMARINE;
-      top: 25px;
-      right: 25px;
-      border-radius: 32px;
+      border: 3px solid $MAIN_AQUAMARINE;
+      top: 30px;
+      right: 30px;
+      border-radius: 35px;
 
       .icon {
         margin-right: 16px;
@@ -121,6 +125,9 @@ const { widthX } = useWindowWidthWatcher();
       font-size: 1.2rem;
       margin: -120px;
       z-index: 2;
+    }
+    .show-contacts-mobile {
+      display: none;
     }
   }
 }

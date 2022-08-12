@@ -1,7 +1,7 @@
 <template>
   <div class="the-previews">
     <h1>{{ previews }}</h1>
-    <Shift>
+    <Shift class="shift">
       <template #button>
         <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
       </template>
@@ -12,12 +12,12 @@
 <script setup lang="ts">
 import UIIcon from '~/components/ui/UIIcon.vue';
 import Shift from '~/components/shared/Shift.vue';
-import { computed } from 'vue';
+import { computed, Ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-const previews = computed(() => {
+const previews: Ref<string> = computed(() => {
   switch (route.name) {
     case 'index-summary':
       return 'Здесь находится основная информация обо мне, моем опыте работы и образовании';
@@ -32,31 +32,65 @@ const previews = computed(() => {
 <style lang="scss">
 @import '../assets/css/_constants.scss';
 
-.the-previews {
-  display: flex;
-  width: 70%;
-  margin: 0 auto;
-  background: white;
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+@media (max-width: 800px) {
+  .the-previews {
+    display: flex;
+    background: white;
+    padding: 12px;
+    margin: 0 auto;
+    width: 90%;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    text-align: center;
 
-  h1 {
-    width: 80%;
-    color: $MAIN_BLACK;
-    font-size: 2.5rem;
+    h1 {
+      width: 80%;
+      color: $MAIN_BLACK;
+      font-size: 1.5rem;
+    }
+
+    .shift {
+      display: none;
+    }
+
+    .go-to {
+      align-self: center;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    .go-to:hover {
+      transition: 0.5s;
+      transform: scale(1.1);
+    }
   }
+}
 
-  .go-to {
-    width: 200px;
-    align-self: center;
-    cursor: pointer;
-    margin: 20px;
-  }
+@media (min-width: 1700px) {
+  .the-previews {
+    display: flex;
+    width: 70%;
+    background: whitesmoke;
+    padding: 24px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 
-  .go-to:hover {
-    transition: 0.5s;
-    transform: scale(1.1);
+    h1 {
+      width: 80%;
+      color: $MAIN_BLACK;
+      font-size: 2.5rem;
+    }
+
+    .go-to {
+      width: 200px;
+      align-self: center;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    .go-to:hover {
+      transition: 0.5s;
+      transform: scale(1.1);
+    }
   }
 }
 </style>
