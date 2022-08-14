@@ -1,13 +1,7 @@
 <template>
   <div class="summary-page">
     <div class="content">
-      <AnchorGroup
-        v-if="offset > headerHeight"
-        class="anchors"
-        :anchors="anchors"
-        @custom:change-section="scrollIntoSection"
-        title="Резюме"
-      />
+      <AnchorGroup v-if="offset > headerHeight" class="anchors" :anchors="anchors" title="Резюме" />
       <div>
         <PageContentContainer justify="flex-start" :height="previewHeight" name="preview">
           <ThePreviews />
@@ -131,13 +125,11 @@ import UIButton from '~/components/ui/UIButton.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import UIParagraph from '~/components/ui/UIParagraph.vue';
-import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 const headerHeight: Ref<number> = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
 const previewHeight: Ref<string> = computed(() => `100vh - ${headerHeight.value}px`);
 
 const { offset } = useOffsetWatcher();
-const { widthX } = useWindowWidthWatcher();
 
 const anchors: Ref<Array<{ name: string; id: string }>> = ref([
   {
@@ -157,11 +149,6 @@ const anchors: Ref<Array<{ name: string; id: string }>> = ref([
     id: 'work-experience',
   },
 ]);
-
-const scrollIntoSection = (anchorName: string) => {
-  const sectionName = document.querySelector(`#${anchorName}`);
-  sectionName.scrollIntoView({ block: 'end', behavior: 'smooth' });
-};
 </script>
 
 <style lang="scss">

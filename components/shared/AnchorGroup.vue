@@ -6,11 +6,12 @@
     <div class="sections">
       <UIButton
         class="section"
-        :class="{ 'active': activeAnchor === anchor.id ||  }"
-        @click="changeSection(anchor)"
+        :class="{ 'active': activeAnchor === anchor.id }"
+        @click="changeSection(anchor.id)"
         v-for="anchor in anchors"
         :key="anchor.name"
       >
+        <UIObserver @custom:cross-section="crossSection" :target="anchor.id" />
         <span v-if="activeAnchor === anchor.id">&lt </span>
         <span class="text">{{ anchor.name }}</span>
         <span v-if="activeAnchor === anchor.id">&gt</span>
@@ -21,8 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, ref, Ref, watch } from 'vue';
+import { PropType, ref, Ref } from 'vue';
 import UIButton from '~/components/ui/UIButton.vue';
+import UIObserver from '~/components/ui/UIObserver.vue';
 
 const props = defineProps({
   anchors: {
@@ -41,13 +43,25 @@ const props = defineProps({
   },
 });
 
-const emits = defineEmits(['custom:changeSection']);
-
 const activeAnchor: Ref<string> = ref(props.anchors[0].id);
 
-const changeSection = anchor => {
-  emits('custom:changeSection', anchor.id);
-  activeAnchor.value = anchor.id;
+const changeSection = (anchorID: string) => {
+  activeAnchor.value = anchorID;
+  scrollIntoSection(anchorID);
+};
+
+const scrollIntoSection = (anchorID: string) => {
+  const sectionName = document.querySelector(`#${anchorID}`);
+  const params: { [key: string]: string } = {
+    block: 'end',
+    behavior: 'smooth',
+  };
+
+  sectionName.scrollIntoView(params);
+};
+
+const crossSection = (anchorID: string): void => {
+  activeAnchor.value = anchorID;
 };
 
 const toTheTop = (): void => {

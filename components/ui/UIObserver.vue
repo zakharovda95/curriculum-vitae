@@ -19,7 +19,7 @@ onMounted(() => {
   const element = document.querySelector(`#${props.target}`);
   const options: Ref<{ root: Element; threshold: number }> = ref({
     root: root.value,
-    threshold: 0.9,
+    threshold: 0.7,
   });
   const callback = (): void => {
     emits('custom:cross-section', props.target);
