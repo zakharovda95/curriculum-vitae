@@ -7,7 +7,7 @@
 <script setup lang="ts">
 const start = (): void => {
   const screen: HTMLElement = document.querySelector('#personal-information');
-  const screenHeight = screen.offsetHeight;
+  const screenHeight: number = screen.offsetHeight;
   window.scrollBy({
     top: screenHeight - 16,
     left: 0,

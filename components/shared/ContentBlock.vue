@@ -11,14 +11,15 @@
 
 <script setup lang="ts">
 import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
-import { computed } from 'vue';
+import { computed, Ref } from 'vue';
 
-const height = useCalculateDOMElementsHeight(['#top', '#navbar']);
-const totalHeight = computed(() => `95vh - ${height.value}px`);
+const height: Ref<number> = useCalculateDOMElementsHeight(['#top', '#navbar']);
+const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
 </script>
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
+
 @media (max-width: 800px) {
   .content-block {
     width: calc(95% - 10px);

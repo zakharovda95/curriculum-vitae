@@ -17,7 +17,7 @@
         <span v-if="activeAnchor === anchor.id">&gt</span>
       </UIButton>
     </div>
-    <UIButton class="to-the-top" @click="toTheTop">Наверх</UIButton>
+    <UIButton class="to-the-top" @click="scrollToTop">Наверх</UIButton>
   </div>
 </template>
 
@@ -25,6 +25,8 @@
 import { PropType, ref, Ref } from 'vue';
 import UIButton from '~/components/ui/UIButton.vue';
 import UIObserver from '~/components/ui/UIObserver.vue';
+import { scrollToTop } from '~/helpers/methods/scroll.methods';
+import { FunctionParamsType } from '~/helpers/types/function-params.types';
 
 const props = defineProps({
   anchors: {
@@ -52,7 +54,7 @@ const changeSection = async (anchorID: string) => {
 
 const scrollIntoSection = (anchorID: string) => {
   const sectionName = document.querySelector(`#${anchorID}`);
-  const params: { [key: string]: string } = {
+  const params: FunctionParamsType = {
     block: 'start',
   };
 
@@ -61,14 +63,6 @@ const scrollIntoSection = (anchorID: string) => {
 
 const crossSection = (anchorID: string): void => {
   activeAnchor.value = anchorID;
-};
-
-const toTheTop = (): void => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth',
-  });
 };
 </script>
 

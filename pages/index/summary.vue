@@ -36,8 +36,10 @@
               будущей карьеры. Я претендую на позицию трейни или junior frontend разработчика.
             </UIParagraph>
             <UIParagraph tag="h2" title="Что я смогу дать">
-              свой опыт работы в проекте (основной задачей был поиск и исправление багов) и свои
-              профессиональные и личностные навыки которые я приобрел и преобрету в будущем.
+              свой опыт работы в проекте (основной задачей был поиск и исправление багов) и стартапе
+              (основной задачей была разработка элементов интерфейса некоторых разделов,
+              багофиксинг) и свои профессиональные и личностные навыки которые я приобрел и
+              преобрету в будущем.
             </UIParagraph>
             <UIParagraph tag="h2" title="Что я ожидаю получить">
               прежде всего - опыт. Работу в крутой позитивной комманде, интересные таски (но я готов
@@ -124,30 +126,15 @@ import UIButton from '~/components/ui/UIButton.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import UIParagraph from '~/components/ui/UIParagraph.vue';
+import { SUMMARY_ANCHORS } from '~/helpers/services/links.services';
+import { AnchorsType } from '~/helpers/types/links.types';
 
 const headerHeight: Ref<number> = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
 const previewHeight: Ref<string> = computed(() => `100vh - ${headerHeight.value}px`);
 
 const { offset } = useOffsetWatcher();
 
-const anchors: Ref<Array<{ name: string; id: string }>> = ref([
-  {
-    name: 'Информация',
-    id: 'personal-information',
-  },
-  {
-    name: 'Цели',
-    id: 'objective',
-  },
-  {
-    name: 'Образование',
-    id: 'education',
-  },
-  {
-    name: 'Опыт Работы',
-    id: 'work-experience',
-  },
-]);
+const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS);
 </script>
 
 <style lang="scss">

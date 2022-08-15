@@ -1,6 +1,6 @@
 <template>
   <div class="the-navigation">
-    <UILinkGroup :links="navlinks" />
+    <UILinkGroup :links="navigationLinks" />
   </div>
 </template>
 
@@ -10,23 +10,13 @@ import UILinkGroup from '~/components/ui/UILinkGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+import { StyleType } from '~/helpers/types/styles.types';
+import { NAVIGATION_LINKS } from '~/helpers/services/links.services';
+import { NavigationLinksType } from '~/helpers/types/links.types';
 
-const navlinks = ref([
-  {
-    name: 'Резюме',
-    path: '/summary',
-  },
-  {
-    name: 'Навыки',
-    path: '/stack',
-  },
-  {
-    name: 'Код',
-    path: '/code-examples',
-  },
-]);
+const navigationLinks: Ref<NavigationLinksType> = ref(NAVIGATION_LINKS);
 
-const styles: Ref<{ [key: string]: string } | null> = ref(null);
+const styles: Ref<StyleType | null> = ref(null);
 const position: Ref<string> = ref('static');
 const marginTop: Ref<string | number> = ref(0);
 

@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { PropType } from 'vue';
+import { StyleType } from '~/helpers/types/styles.types';
 
 defineProps({
   src: {
@@ -20,7 +21,7 @@ defineProps({
     default: () => '32px',
   },
   style: {
-    type: Object as PropType<{ [key: string]: string | number }>,
+    type: Object as PropType<StyleType>,
     required: false,
     default: () => ({}),
   },

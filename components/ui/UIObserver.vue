@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref, Ref } from 'vue';
+import { ObserverParamsType } from '~/helpers/types/function-params.types';
 
 const props = defineProps({
   target: {
@@ -18,7 +19,7 @@ const root: Ref<Element | null> = ref(null);
 
 onMounted(() => {
   const element: Element = document.querySelector(`#${props.target}`);
-  const options: Ref<{ root: Element; threshold: number }> = ref({
+  const options: Ref<ObserverParamsType> = ref({
     root: root.value,
     threshold: 0.9,
   });

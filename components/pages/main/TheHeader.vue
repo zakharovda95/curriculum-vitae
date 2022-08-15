@@ -23,10 +23,11 @@ import UIIcon from '~/components/ui/UIIcon.vue';
 import { computed, Ref, ref, watch } from 'vue';
 import TheContacts from '~/components/pages/main/TheContacts.vue';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+import { StyleType } from '~/helpers/types/styles.types';
 
 const isShowed: Ref<boolean> = ref(false);
 
-const style: Ref<{ [key: string]: string }> = computed(() => ({
+const style: Ref<StyleType> = computed(() => ({
   transform: 'rotate(90deg)',
 }));
 

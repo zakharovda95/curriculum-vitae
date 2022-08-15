@@ -1,9 +1,9 @@
 <template>
   <div class="ui-link-group">
     <NuxtLink v-for="link in links" class="link" :to="link.path" :key="link.name">
-      <span v-if="route.fullPath.includes(link.path)">&lt </span>
+      <span v-if="route.name.includes(link.path.name)">&lt </span>
       <span>{{ link.name }}</span>
-      <span v-if="route.fullPath.includes(link.path)"> /&gt</span>
+      <span v-if="route.name.includes(link.path.name)"> /&gt</span>
     </NuxtLink>
   </div>
 </template>
@@ -11,13 +11,11 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
 import { useRoute } from 'vue-router';
+import { NavigationLinksType } from '~/helpers/types/links.types';
 
 defineProps({
   links: {
-    type: Array as PropType<
-      | Array<{ name: string; path: string }>
-      | Array<{ name: string; path: { name: string; hash: string } }>
-    >,
+    type: Array as PropType<NavigationLinksType>,
     required: true,
   },
   direction: {

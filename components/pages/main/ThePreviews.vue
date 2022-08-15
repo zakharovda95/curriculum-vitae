@@ -14,16 +14,17 @@ import UIIcon from '~/components/ui/UIIcon.vue';
 import Shift from '~/components/shared/Shift.vue';
 import { computed, Ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 
 const route = useRoute();
 
 const previews: Ref<string> = computed(() => {
   switch (route.name) {
-    case 'index-summary':
+    case PageNameEnum.summary:
       return 'Основная информация, образование и опыт';
-    case 'index-stack':
+    case PageNameEnum.stack:
       return 'Скиллы и стек технологий';
-    case 'index-code-examples':
+    case PageNameEnum.codeExamples:
       return 'Демонстрация кода, ссылки на проекты';
   }
 });
