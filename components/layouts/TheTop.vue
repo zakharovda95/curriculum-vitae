@@ -20,7 +20,7 @@
 
     p {
       text-align: center;
-      color: whitesmoke;
+      color: $MAIN_WHITE;
       font-size: 1.4rem;
       font-family: Nunito-SemiBold, sans-serif;
     }
@@ -39,7 +39,7 @@
     z-index: 3;
 
     p {
-      color: whitesmoke;
+      color: $MAIN_WHITE;
       font-size: 1.8rem;
       font-family: Nunito-SemiBold, sans-serif;
     }

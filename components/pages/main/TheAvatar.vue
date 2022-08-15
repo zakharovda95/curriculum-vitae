@@ -51,8 +51,7 @@ defineProps({
 @media (min-width: 1400px) {
   .the-avatar {
     display: flex;
-    min-width: 400px;
-    width: 600px;
+    min-width: 420px;
     height: calc(100% - 48px);
     align-self: center;
     border-radius: 0 0 32px 0;

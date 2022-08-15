@@ -26,7 +26,7 @@ defineProps({
 @import '../assets/css/_constants.scss';
 
 .ui-paragraph {
-  color: whitesmoke;
+  color: $MAIN_WHITE;
 
   .title {
     color: $MAIN_AQUAMARINE;

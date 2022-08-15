@@ -32,7 +32,7 @@ const marginTop: Ref<string | number> = ref(0);
 
 const { offset } = useOffsetWatcher();
 const { widthX } = useWindowWidthWatcher();
-const totalHeight = useCalculateDOMElementsHeight(['#header', '#top']);
+const totalHeight = useCalculateDOMElementsHeight(['#header']);
 
 watch(
   offset,

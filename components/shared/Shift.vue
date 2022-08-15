@@ -9,7 +9,7 @@ const start = (): void => {
   const screen: HTMLElement = document.querySelector('#personal-information');
   const screenHeight = screen.offsetHeight;
   window.scrollBy({
-    top: screenHeight - 115,
+    top: screenHeight - 16,
     left: 0,
     behavior: 'smooth',
   });

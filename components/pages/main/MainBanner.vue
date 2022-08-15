@@ -74,10 +74,11 @@ const fontSizes: Ref<{ [key: string]: string }> = computed(() => {
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    background: #34394d;
+    background: $MAIN_BANNER;
     min-width: calc(100% - 24px);
     width: calc(100% - 24px);
     padding: 12px;
+    overflow: scroll;
 
     .text-wrapper {
       display: flex;
@@ -115,10 +116,11 @@ const fontSizes: Ref<{ [key: string]: string }> = computed(() => {
     grid-template-areas:
       'text text'
       'avatar contacts';
-    background: #34394d;
+    background: $MAIN_BANNER;
     min-width: calc(100% - 24px);
     width: calc(100% - 24px);
     padding: 12px;
+    overflow: scroll;
 
     .text-wrapper {
       display: flex;
@@ -161,7 +163,7 @@ const fontSizes: Ref<{ [key: string]: string }> = computed(() => {
     display: flex;
     justify-content: space-between;
     height: 582px;
-    background: #34394d;
+    background: $MAIN_BANNER;
     border-radius: 0 0 52px 0;
     min-width: 70%;
     width: v-bind(width);
@@ -174,23 +176,23 @@ const fontSizes: Ref<{ [key: string]: string }> = computed(() => {
       margin-right: 100px;
 
       h1 {
-        color: whitesmoke;
+        color: $MAIN_WHITE;
       }
 
       .row-2 {
-        color: whitesmoke;
+        color: $MAIN_WHITE;
         font-family: Nunito-ExtraBold, sans-serif;
       }
 
       .row-3 {
-        color: whitesmoke;
+        color: $MAIN_WHITE;
         font-family: Nunito-ExtraBold, sans-serif;
       }
 
       .row-4,
       .row-5 {
         margin-top: 20px;
-        color: whitesmoke;
+        color: $MAIN_WHITE;
         font-family: Nunito-SemiBold, sans-serif;
       }
     }

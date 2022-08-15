@@ -3,7 +3,7 @@
     <h1>{{ previews }}</h1>
     <Shift class="shift">
       <template #button>
-        <UIIcon size="128px" class="go-to" src="assets/img/arrow-go.svg" />
+        <UIIcon size="96px" class="go-to" src="assets/img/arrow-go.svg" />
       </template>
     </Shift>
   </div>
@@ -20,11 +20,11 @@ const route = useRoute();
 const previews: Ref<string> = computed(() => {
   switch (route.name) {
     case 'index-summary':
-      return 'Здесь находится основная информация обо мне, моем опыте работы и образовании';
+      return 'Основная информация, образование и опыт';
     case 'index-stack':
-      return 'Здесь находятся описание моих профессиональных навыков и личностных качеств. Стек технологий с которыми я сталкивался, и комментарии к ним';
+      return 'Скиллы и стек технологий';
     case 'index-code-examples':
-      return 'Здесь находятся небольшие проекты, которые я подготовил для демонстрации моих навыков и код стайла.';
+      return 'Демонстрация кода, ссылки на проекты';
   }
 });
 </script>
@@ -35,7 +35,7 @@ const previews: Ref<string> = computed(() => {
 @media (max-width: 800px) {
   .the-previews {
     display: flex;
-    background: white;
+    background: $MAIN_WHITE;
     padding: 12px;
     margin: 0 auto;
     width: 90%;
@@ -59,7 +59,7 @@ const previews: Ref<string> = computed(() => {
   .the-previews {
     display: flex;
     width: 70%;
-    background: whitesmoke;
+    background: $MAIN_WHITE;
     padding: 24px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
@@ -81,11 +81,13 @@ const previews: Ref<string> = computed(() => {
 @media (min-width: 1400px) {
   .the-previews {
     display: flex;
-    width: 70%;
-    background: whitesmoke;
+    width: 60%;
+    background: $MAIN_WHITE;
     padding: 24px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
+    text-align: center;
+    align-items: center;
 
     h1 {
       width: 80%;

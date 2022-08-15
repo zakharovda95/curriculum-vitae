@@ -1,18 +1,11 @@
 import { onBeforeUnmount, onMounted } from 'vue';
-
-function scrollPreventer(event: Event): void {
-  event.preventDefault();
-}
-
-function removeEventListener(): void {
-  window.removeEventListener('wheel', scrollPreventer);
-}
+import { disableScrollPreventer, scrollPreventer } from '~/helpers/methods/scroll.methods';
 
 export function useScrollPreventer(): void {
   onMounted((): void => {
     window.addEventListener('wheel', scrollPreventer, { passive: false });
-  }),
-    onBeforeUnmount((): void => {
-      removeEventListener();
-    });
+  });
+  onBeforeUnmount((): void => {
+    disableScrollPreventer();
+  });
 }

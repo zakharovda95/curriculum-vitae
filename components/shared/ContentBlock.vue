@@ -29,7 +29,7 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
     padding: 12px;
     font-size: 0.8rem;
     font-family: Nunito-SemiBold, sans-serif;
-    color: whitesmoke;
+    color: $MAIN_WHITE;
     border-right: 5px solid $MAIN_AQUAMARINE;
 
     .header {
@@ -59,7 +59,7 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
     padding: 12px;
     font-size: 1.1rem;
     font-family: Nunito-SemiBold, sans-serif;
-    color: whitesmoke;
+    color: $MAIN_WHITE;
     border-right: 10px solid $MAIN_AQUAMARINE;
 
     .header {
@@ -90,7 +90,7 @@ const totalHeight = computed(() => `95vh - ${height.value}px`);
     padding: 24px;
     font-size: 1.2rem;
     font-family: Nunito-SemiBold, sans-serif;
-    color: whitesmoke;
+    color: $MAIN_WHITE;
     box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
     border-right: 15px solid $MAIN_AQUAMARINE;
 

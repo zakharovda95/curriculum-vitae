@@ -7,18 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { useScrollPreventer } from '~/composables/useScrollPreventer';
-import { useNuxtApp } from '#app';
+import { pageLifeCycleScrollBehavior } from '~/helpers/methods/scroll.methods';
 
-// useScrollPreventer();
-
-const nuxtApp = useNuxtApp();
-
-nuxtApp.hook('page:finish', () => {
-  window.scrollTo(0, 0);
-});
-
-nuxtApp.hook('page:start', () => {
-  window.scrollTo(0, 0);
-});
+pageLifeCycleScrollBehavior('page:start');
+pageLifeCycleScrollBehavior('page:finish');
 </script>

@@ -76,7 +76,7 @@ const { widthX } = useWindowWidthWatcher();
       z-index: 2;
       width: 60px;
       height: 60px;
-      background: whitesmoke;
+      background: $MAIN_WHITE;
       border: 3px solid $MAIN_AQUAMARINE;
       top: 30px;
       right: 30px;
@@ -176,7 +176,7 @@ const { widthX } = useWindowWidthWatcher();
     .contacts {
       position: absolute;
       top: 180px;
-      right: 100px;
+      right: 110px;
       z-index: 1;
     }
 

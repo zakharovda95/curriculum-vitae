@@ -7,7 +7,7 @@
           <ThePreviews />
         </PageContentContainer>
       </div>
-      <PageContentContainer name="personal-information">
+      <PageContentContainer class="section-wrapper" name="personal-information">
         <ContentBlock class="section">
           <template #header>
             <h1>Информация</h1>
@@ -24,36 +24,35 @@
           </template>
         </ContentBlock>
       </PageContentContainer>
-      <PageContentContainer name="objective">
+      <PageContentContainer class="section-wrapper" name="objective">
         <ContentBlock class="section">
           <template #header>
             <h1>Цели</h1>
           </template>
           <template #content>
             <UIParagraph tag="h2">
-              Я - начинающий, но перспективный разработчик с небольшим опытом работы в реальном
-              проекте. Я ищу свою первую работу, чтобы она стала основой моей будущей карьеры. Я
-              претендую на позицию трейни или junior frontend разработчика.
+              Я - начинающий, разработчик (занимаюсь разработкой с сентября 2021). Имею небольшой
+              опыт в коммерческом проекте. Я ищу свою первую работу, чтобы она стала основой моей
+              будущей карьеры. Я претендую на позицию трейни или junior frontend разработчика.
             </UIParagraph>
             <UIParagraph tag="h2" title="Что я смогу дать">
-              свой небольшой опыт работы в проекте (где основной задачей был поиск и исправление
-              багов), свои провессиональные и личностные качества на 100%, а так же свою душу и
-              сердце :)
+              свой опыт работы в проекте (основной задачей был поиск и исправление багов) и свои
+              профессиональные и личностные навыки которые я приобрел и преобрету в будущем.
             </UIParagraph>
             <UIParagraph tag="h2" title="Что я ожидаю получить">
-              прежде всего - опыт. Так же крутую комманду, интересные таски (но я готов браться за
-              любые, самые скучные задания, пока не докажу, что я способен на большее). А так же
-              зарплату и возможность карьерного роста по результатам моей работы.
+              прежде всего - опыт. Работу в крутой позитивной комманде, интересные таски (но я готов
+              браться за любые, самые скучные задания, пока не докажу, что я способен на большее). А
+              так же зарплату и возможность карьерного роста по результатам моей работы.
             </UIParagraph>
-            <UIParagraph tag="h3">
-              Если вы ищете джуниора с опытом работы 100+ лет и знанием всех неземных технологий -
-              это не я. Но если вам нужен человек, кто реально будет стараться, потому что это то,
-              чем он хочет заниматься всю жизнь - вы можете дать мне шанс! :)
+            <UIParagraph tag="h4" title="P.S">
+              Если вы ищете джуниора с опытом работы 100+ лет и знанием всех земных и инопланетных
+              технологий - это не я. Но если вам нужен человек, кто реально будет стараться, потому
+              что это то, чем он хочет заниматься всю жизнь - вы можете дать мне шанс! :)
             </UIParagraph>
           </template>
         </ContentBlock>
       </PageContentContainer>
-      <PageContentContainer name="education">
+      <PageContentContainer class="section-wrapper" name="education">
         <ContentBlock class="section">
           <template #header>
             <h1>Образование</h1>
@@ -79,17 +78,17 @@
           </template>
         </ContentBlock>
       </PageContentContainer>
-      <PageContentContainer name="work-experience">
+      <PageContentContainer class="section-wrapper" name="work-experience">
         <ContentBlock class="section">
           <template #header>
             <h1>Опыт Работы</h1>
           </template>
           <template #content>
             <UIParagraph tag="h3">
-              К сожалению, у меня нет официального опыта работы, и возможно ваша работа будет для
-              меня первой. <br />
+              К сожалению, у меня нет официального опыта работы, я надеюсь именно ваша работа будет
+              для меня первой. <br />
               У меня есть опыт работы в реальном проекте с коммандой, опыт с учебной практики и опыт
-              на стартап-проекте, в котором я являюсь junior frontend разработчиком
+              на стартап-проекте.
             </UIParagraph>
             <UIParagraph tag="h2" title="Учебная практика">
               <br />
@@ -98,15 +97,15 @@
             </UIParagraph>
             <UIParagraph tag="h2" title="Самостоятельная работа">
               <br />
-              Работа в свободное время (в сумме 4 месяца). Получил опыт работы в коммерческом
-              проекте. Научился свободно ориентироваться в проекте, локализовывать и устранять баги.
-              Узнал как происходит реальная разработка в комманде
+              Неофициальная работа в коммерческом проекте (в сумме 4 месяца). Научился свободно
+              ориентироваться в довольно большом проекте, локализовывать и устранять баги. Узнал как
+              происходит реальная разработка.
             </UIParagraph>
             <UIParagraph tag="h2" title="Стартап">
               <br />
-              Я являюсь разработчиком в стартап проекте - браузерной игры CastleKeepers. Это
-              некоммерческий проект с небольшой коммандой, и небольшой (пока) целевой аудиторией.
-              Подробнее в разделе <span class="to-code-examples">"Примеры&nbsp;кода"</span>
+              Я учавствую в стартап проекте - браузерной игры CastleKeepers. Это некоммерческий
+              проект с небольшой коммандой. Подробнее в разделе
+              <span class="to-code-examples">"Примеры&nbsp;кода"</span>
             </UIParagraph>
           </template>
         </ContentBlock>
@@ -160,10 +159,7 @@ const anchors: Ref<Array<{ name: string; id: string }>> = ref([
 
     .content {
       .anchors {
-        position: fixed;
-        top: 36vh;
-        right: 6vw;
-        text-decoration: none;
+        display: none;
       }
 
       .section {
@@ -191,10 +187,7 @@ const anchors: Ref<Array<{ name: string; id: string }>> = ref([
 
     .content {
       .anchors {
-        position: fixed;
-        top: 36vh;
-        right: 6vw;
-        text-decoration: none;
+        display: none;
       }
 
       .section {
@@ -228,18 +221,22 @@ const anchors: Ref<Array<{ name: string; id: string }>> = ref([
         text-decoration: none;
       }
 
-      .section {
-        .to-code-examples {
-          text-decoration: underline;
-          cursor: pointer;
-        }
+      .section-wrapper {
+        display: flex;
 
-        .course {
-          display: flex;
-
-          .certificate {
-            margin-left: 20px;
+        .section {
+          .to-code-examples {
             text-decoration: underline;
+            cursor: pointer;
+          }
+
+          .course {
+            display: flex;
+
+            .certificate {
+              margin-left: 20px;
+              text-decoration: underline;
+            }
           }
         }
       }

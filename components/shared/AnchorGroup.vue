@@ -45,16 +45,15 @@ const props = defineProps({
 
 const activeAnchor: Ref<string> = ref(props.anchors[0].id);
 
-const changeSection = (anchorID: string) => {
+const changeSection = async (anchorID: string) => {
+  await scrollIntoSection(anchorID);
   activeAnchor.value = anchorID;
-  scrollIntoSection(anchorID);
 };
 
 const scrollIntoSection = (anchorID: string) => {
   const sectionName = document.querySelector(`#${anchorID}`);
   const params: { [key: string]: string } = {
-    block: 'end',
-    behavior: 'smooth',
+    block: 'start',
   };
 
   sectionName.scrollIntoView(params);
@@ -88,13 +87,14 @@ const toTheTop = (): void => {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    background: whitesmoke;
+    background: $MAIN_WHITE;
     padding: 12px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     height: 30vh;
     width: 15vw;
     color: $MAIN_BLACK;
     border: 4px solid $MAIN_AQUAMARINE;
+    overflow: scroll;
 
     .to-the-top {
       font-size: 1.5rem;

@@ -49,7 +49,7 @@ defineProps({
 @media (min-width: 1400px) {
   .page-container {
     flex-direction: column;
-    justify-content: flex-end !important;
+    justify-content: flex-end;
     width: 100%;
     height: calc(v-bind(height));
     max-height: calc(v-bind(height));

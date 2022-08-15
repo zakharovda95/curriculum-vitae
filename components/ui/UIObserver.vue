@@ -13,20 +13,24 @@ const props = defineProps({
 });
 
 const emits = defineEmits(['custom:cross-section']);
+
 const root: Ref<Element | null> = ref(null);
 
 onMounted(() => {
-  const element = document.querySelector(`#${props.target}`);
+  const element: Element = document.querySelector(`#${props.target}`);
   const options: Ref<{ root: Element; threshold: number }> = ref({
     root: root.value,
-    threshold: 0.7,
+    threshold: 0.9,
   });
-  const callback = (): void => {
-    emits('custom:cross-section', props.target);
+
+  const callback = (entries, observer): void => {
+    if (entries[0].isIntersecting) {
+      emits('custom:cross-section', props.target);
+    }
   };
+
   const observer = new IntersectionObserver(callback, options.value);
+
   observer.observe(element);
 });
 </script>
-
-<style scoped lang="scss"></style>
