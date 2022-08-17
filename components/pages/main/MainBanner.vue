@@ -6,7 +6,11 @@
       <UIText :size="fontSizes.title" class="row-3">Дмитрий Захаров</UIText>
       <br />
       <UIText :size="fontSizes.content" class="row-4">Я - начинающий frontend разработчик</UIText>
-      <UIText :size="fontSizes.content" class="row-5" v-if="!isShowed">
+      <UIText
+        :size="fontSizes.content"
+        class="row-5"
+        v-if="!isShowed || (widthX > 800 && widthX < 1400)"
+      >
         Мой основной язык программирования - JavaScript/TypeScript с фреймворком Vue.js
       </UIText>
     </div>
