@@ -111,6 +111,7 @@ const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
       align-items: baseline;
       height: 85%;
       width: 100%;
+      overflow: scroll;
     }
   }
 }

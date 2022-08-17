@@ -87,8 +87,8 @@
           </template>
           <template #content>
             <UIParagraph tag="h3">
-              К сожалению, у меня нет официального опыта работы, я надеюсь именно ваша работа будет
-              для меня первой. <br />
+              К сожалению, у меня нет официального опыта работы (в сфере IT), я надеюсь именно ваша
+              работа будет для меня первой. <br />
               У меня есть опыт работы в реальном проекте с коммандой, опыт с учебной практики и опыт
               на стартап-проекте.
             </UIParagraph>
@@ -122,10 +122,10 @@ import PageContentContainer from '~/components/shared/PageContentContainer.vue';
 import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
 import { computed, ref, Ref } from 'vue';
 import ContentBlock from '~/components/shared/ContentBlock.vue';
-import UIButton from '~/components/ui/UIButton.vue';
+import UIButton from '~/components/UI/UIButton.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
-import UIParagraph from '~/components/ui/UIParagraph.vue';
+import UIParagraph from '~/components/UI/UIParagraph.vue';
 import { SUMMARY_ANCHORS } from '~/helpers/services/links.services';
 import { AnchorsType } from '~/helpers/types/links.types';
 

@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import UIIcon from '~/components/ui/UIIcon.vue';
+import UIIcon from '~/components/UI/UIIcon.vue';
 import Shift from '~/components/shared/Shift.vue';
 import { computed, Ref } from 'vue';
 import { useRoute } from 'vue-router';
@@ -82,13 +82,15 @@ const previews: Ref<string> = computed(() => {
 @media (min-width: 1400px) {
   .the-previews {
     display: flex;
-    width: 60%;
+    width: 70%;
     background: $MAIN_WHITE;
     padding: 24px;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
+    //box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
+    //margin: 0 auto;
     text-align: center;
     align-items: center;
+    border: 1px solid $MAIN_AQUAMARINE;
+    border-right: 15px solid $MAIN_AQUAMARINE;
 
     h1 {
       width: 80%;

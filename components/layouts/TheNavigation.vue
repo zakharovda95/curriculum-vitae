@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { Ref, ref, watch } from 'vue';
-import UILinkGroup from '~/components/ui/UILinkGroup.vue';
+import UILinkGroup from '~/components/UI/UILinkGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';

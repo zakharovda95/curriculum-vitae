@@ -35,3 +35,18 @@ export const SUMMARY_ANCHORS: AnchorsType = [
     id: AnchorNamesEnum.workExperience,
   },
 ];
+
+export const STACK_ANCHORS: AnchorsType = [
+  {
+    name: 'Основной Стек',
+    id: AnchorNamesEnum.mainStack,
+  },
+  {
+    name: 'Полный Стек',
+    id: AnchorNamesEnum.fullStack,
+  },
+  {
+    name: 'Софт-Скиллы',
+    id: AnchorNamesEnum.softSkills,
+  },
+];

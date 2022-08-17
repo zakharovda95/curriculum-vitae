@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import UIIcon from '~/components/ui/UIIcon.vue';
-import UIText from '~/components/ui/UIText.vue';
+import UIIcon from '~/components/UI/UIIcon.vue';
+import UIText from '~/components/UI/UIText.vue';
 </script>
 
 <style scoped lang="scss">

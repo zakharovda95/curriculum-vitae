@@ -18,8 +18,8 @@
 
 <script setup lang="ts">
 import MainBanner from '~/components/pages/main/MainBanner.vue';
-import UIButton from '~/components/ui/UIButton.vue';
-import UIIcon from '~/components/ui/UIIcon.vue';
+import UIButton from '~/components/UI/UIButton.vue';
+import UIIcon from '~/components/UI/UIIcon.vue';
 import { computed, Ref, ref, watch } from 'vue';
 import TheContacts from '~/components/pages/main/TheContacts.vue';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';

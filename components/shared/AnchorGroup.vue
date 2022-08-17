@@ -23,14 +23,14 @@
 
 <script setup lang="ts">
 import { PropType, ref, Ref } from 'vue';
-import UIButton from '~/components/ui/UIButton.vue';
-import UIObserver from '~/components/ui/UIObserver.vue';
-import { scrollToTop } from '~/helpers/methods/scroll.methods';
-import { FunctionParamsType } from '~/helpers/types/function-params.types';
+import UIButton from '~/components/UI/UIButton.vue';
+import UIObserver from '~/components/UI/UIObserver.vue';
+import { scrollToTop, scrollIntoSection } from '~/helpers/methods/scroll.methods';
+import { AnchorsType } from '~/helpers/types/links.types';
 
 const props = defineProps({
   anchors: {
-    type: Array as PropType<Array<{ name: string; id: string }>>,
+    type: Array as PropType<AnchorsType>,
     required: true,
   },
   title: {
@@ -50,15 +50,6 @@ const activeAnchor: Ref<string> = ref(props.anchors[0].id);
 const changeSection = async (anchorID: string) => {
   await scrollIntoSection(anchorID);
   activeAnchor.value = anchorID;
-};
-
-const scrollIntoSection = (anchorID: string) => {
-  const sectionName = document.querySelector(`#${anchorID}`);
-  const params: FunctionParamsType = {
-    block: 'start',
-  };
-
-  sectionName.scrollIntoView(params);
 };
 
 const crossSection = (anchorID: string): void => {

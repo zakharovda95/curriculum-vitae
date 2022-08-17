@@ -21,9 +21,10 @@
 <script setup lang="ts">
 import TheAvatar from '~/components/pages/main/TheAvatar.vue';
 import { computed, Ref } from 'vue';
-import UIText from '~/components/ui/UIText.vue';
+import UIText from '~/components/UI/UIText.vue';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 import TheContacts from '~/components/pages/main/TheContacts.vue';
+import { StyleType } from '~/helpers/types/styles.types';
 
 const props = defineProps({
   isShowed: {
@@ -36,7 +37,7 @@ const props = defineProps({
 const width: Ref<string> = computed(() => (props.isShowed ? '72%' : '100%'));
 const { widthX } = useWindowWidthWatcher();
 
-const fontSizes: Ref<{ [key: string]: string }> = computed(() => {
+const fontSizes: Ref<StyleType> = computed(() => {
   if (widthX.value <= 800) {
     return {
       title: '2rem',
