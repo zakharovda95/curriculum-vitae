@@ -15,17 +15,18 @@ import Shift from '~/components/shared/Shift.vue';
 import { computed, Ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
+import { PREVIEWS_RUS } from '~/helpers/content/previews.content';
 
 const route = useRoute();
 
 const previews: Ref<string> = computed(() => {
   switch (route.name) {
     case PageNameEnum.summary:
-      return 'Основная информация, образование и опыт';
+      return PREVIEWS_RUS.summary;
     case PageNameEnum.stack:
-      return 'Скиллы и стек технологий';
+      return PREVIEWS_RUS.stack;
     case PageNameEnum.codeExamples:
-      return 'Демонстрация кода, ссылки на проекты';
+      return PREVIEWS_RUS.codeExamples;
   }
 });
 </script>

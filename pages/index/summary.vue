@@ -87,8 +87,8 @@
           </template>
           <template #content>
             <UIParagraph tag="h3">
-              К сожалению, у меня нет официального опыта работы (в сфере IT), я надеюсь именно ваша
-              работа будет для меня первой. <br />
+              У меня нет официального опыта работы (в сфере IT), я надеюсь именно ваша работа будет
+              для меня первой. <br />
               У меня есть опыт работы в реальном проекте с коммандой, опыт с учебной практики и опыт
               на стартап-проекте.
             </UIParagraph>
@@ -126,7 +126,7 @@ import UIButton from '~/components/UI/UIButton.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import UIParagraph from '~/components/UI/UIParagraph.vue';
-import { SUMMARY_ANCHORS } from '~/helpers/services/links.services';
+import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
 import { AnchorsType } from '~/helpers/types/links.types';
 
 const headerHeight: Ref<number> = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
@@ -134,7 +134,7 @@ const previewHeight: Ref<string> = computed(() => `100vh - ${headerHeight.value}
 
 const { offset } = useOffsetWatcher();
 
-const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS);
+const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 </script>
 
 <style lang="scss">

@@ -16,7 +16,7 @@
 import { PropType } from 'vue';
 import UIIcon from '~/components/UI/UIIcon.vue';
 import UIText from '~/components/UI/UIText.vue';
-import { StackListItemType } from '~/helpers/types/stack-list-item.types';
+import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
 
 defineProps({
   stackListItem: {

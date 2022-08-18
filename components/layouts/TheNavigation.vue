@@ -11,10 +11,10 @@ import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 import { StyleType } from '~/helpers/types/styles.types';
-import { NAVIGATION_LINKS } from '~/helpers/services/links.services';
+import { NAVIGATION_LINKS_RUS } from '~/helpers/services/links.services';
 import { NavigationLinksType } from '~/helpers/types/links.types';
 
-const navigationLinks: Ref<NavigationLinksType> = ref(NAVIGATION_LINKS);
+const navigationLinks: Ref<NavigationLinksType> = ref(NAVIGATION_LINKS_RUS);
 
 const styles: Ref<StyleType | null> = ref(null);
 const position: Ref<string> = ref('static');
