@@ -136,7 +136,7 @@ const { widthX } = useWindowWidthWatcher();
 
     .contacts {
       position: absolute;
-      top: 180px;
+      top: 200px;
       right: 3.2vw;
       z-index: 1;
     }
@@ -165,9 +165,9 @@ const { widthX } = useWindowWidthWatcher();
     width: 100%;
     height: 582px;
     background: $MAIN_AQUAMARINE;
-    position: relative;
-    z-index: 1;
-    margin-top: 60px;
+    //position: relative;
+    //z-index: 1;
+    //margin-top: 60px;
 
     .banner {
       position: relative;
@@ -176,8 +176,8 @@ const { widthX } = useWindowWidthWatcher();
 
     .contacts {
       position: absolute;
-      top: 180px;
-      right: 110px;
+      top: 280px;
+      right: 100px;
       z-index: 1;
     }
 

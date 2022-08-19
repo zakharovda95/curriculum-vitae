@@ -26,13 +26,8 @@ definePageMeta({
     display: flex;
     flex-direction: column;
 
-    .content {
-      display: flex;
-      flex-direction: column;
-
-      .pages {
-        width: 100%;
-      }
+    .pages {
+      width: 100%;
     }
   }
 }

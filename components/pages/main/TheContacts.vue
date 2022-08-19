@@ -2,20 +2,20 @@
   <div class="the-contacts">
     <div class="header">Мои контакты:</div>
     <div class="github">
-      <UIIcon class="icon" src="assets/img/github.svg" size="56px" />
+      <UIIcon class="icon" src="assets/img/github.svg" size="48px" />
       <nuxt-link class="link" to="https://github.com/zakharovda95">GitHub</nuxt-link>
     </div>
     <div class="vk">
-      <UIIcon class="icon" src="assets/img/vk.svg" size="56px" />
+      <UIIcon class="icon" src="assets/img/vk.svg" size="48px" />
       <nuxt-link class="link" to="https://vk.com/id625689222">VK.com</nuxt-link>
     </div>
     <div class="telegram">
-      <UIIcon src="assets/img/telegram.svg" size="48px" />
+      <UIIcon src="assets/img/telegram.svg" size="40px" />
       <UIText class="text">@zakharovda95</UIText>
     </div>
     <div class="gmail">
-      <UIIcon src="assets/img/gmail.svg" size="48px" />
-      <UIText class="text">zakharovda95<br />@gmail.com</UIText>
+      <UIIcon src="assets/img/gmail.svg" size="40px" />
+      <UIText class="text">zakharovda95@gmail.com</UIText>
     </div>
   </div>
 </template>
@@ -110,7 +110,7 @@ import UIText from '~/components/UI/UIText.vue';
       .link,
       .text {
         padding: 5px;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         text-decoration: none;
         color: $MAIN_BLACK;
         margin-left: 10px;

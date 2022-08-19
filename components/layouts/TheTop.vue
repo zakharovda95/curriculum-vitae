@@ -21,7 +21,7 @@
     p {
       text-align: center;
       color: $MAIN_WHITE;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-family: Nunito-SemiBold, sans-serif;
     }
   }
@@ -35,13 +35,13 @@
     width: 100%;
     height: 60px;
     background: $MAIN_BLACK;
-    position: fixed;
-    z-index: 3;
+    //position: fixed;
+    //z-index: 3;
 
     p {
       color: $MAIN_WHITE;
-      font-size: 1.8rem;
-      font-family: Nunito-SemiBold, sans-serif;
+      font-size: 1.5rem;
+      font-family: Nunito-Regular, sans-serif;
     }
   }
 }
