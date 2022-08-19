@@ -9,13 +9,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
-import { computed, Ref } from 'vue';
-
-const height: Ref<number> = useCalculateDOMElementsHeight(['#top', '#navbar']);
-const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
@@ -27,7 +21,7 @@ const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
     flex-direction: column;
     justify-content: flex-end;
     background: $MAIN_BLACK;
-    padding: 12px;
+    padding: 16px;
     font-size: 0.8rem;
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
@@ -52,7 +46,7 @@ const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .content-block {
-    width: calc(95% - 10px);
+    width: calc(97% - 10px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -83,10 +77,10 @@ const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
 @media (min-width: 1400px) {
   .content-block {
     width: 70%;
-    height: calc(v-bind(totalHeight));
+    min-height: 84.7vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     background: $MAIN_BLACK;
     padding: 24px;
     font-size: 1.2rem;
@@ -98,7 +92,7 @@ const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
     .header {
       flex-direction: column;
       justify-content: center;
-      height: 10%;
+      height: 15%;
       width: 100%;
       border-bottom: 1px solid $MAIN_AQUAMARINE;
       color: $MAIN_AQUAMARINE;
@@ -109,8 +103,8 @@ const totalHeight: Ref<string> = computed(() => `95vh - ${height.value}px`);
       flex-direction: column;
       justify-content: space-around;
       align-items: baseline;
-      height: 85%;
       width: 100%;
+      height: 85%;
       overflow: scroll;
     }
   }

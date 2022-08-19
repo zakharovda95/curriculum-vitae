@@ -7,42 +7,10 @@
 <script setup lang="ts">
 import { Ref, ref, watch } from 'vue';
 import UILinkGroup from '~/components/UI/UILinkGroup.vue';
-import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
-import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
-import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
-import { StyleType } from '~/helpers/types/styles.types';
 import { NAVIGATION_LINKS_RUS } from '~/helpers/services/links.services';
 import { NavigationLinksType } from '~/helpers/types/links.types';
 
 const navigationLinks: Ref<NavigationLinksType> = ref(NAVIGATION_LINKS_RUS);
-
-const styles: Ref<StyleType | null> = ref(null);
-const position: Ref<string> = ref('static');
-const marginTop: Ref<string | number> = ref(0);
-
-const { offset } = useOffsetWatcher();
-const { widthX } = useWindowWidthWatcher();
-const totalHeight = useCalculateDOMElementsHeight(['#header']);
-
-watch(
-  offset,
-  () => {
-    if (widthX.value > 800) {
-      if (totalHeight.value < offset.value) {
-        position.value = 'fixed';
-        marginTop.value = '60px';
-      } else {
-        position.value = 'static';
-        marginTop.value = 0;
-      }
-    }
-    if (widthX.value <= 800) {
-      position.value = 'static';
-      marginTop.value = 0;
-    }
-  },
-  { deep: true, immediate: true },
-);
 </script>
 
 <style scoped lang="scss">

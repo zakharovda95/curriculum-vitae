@@ -26,6 +26,11 @@ import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
 import { AnchorsType } from '~/helpers/types/links.types';
 import { ref, Ref } from 'vue';
+import { definePageMeta } from '#imports';
+
+definePageMeta({
+  layout: 'section',
+});
 
 const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 </script>
@@ -33,8 +38,6 @@ const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 <style scoped lang="scss">
 @media (max-width: 800px) {
   .personal-information {
-    padding: 24px;
-
     .anchors {
       display: none;
     }
@@ -46,8 +49,6 @@ const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .personal-information {
-    padding: 24px;
-
     .anchors {
       display: none;
     }
@@ -59,8 +60,6 @@ const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 
 @media (min-width: 1400px) {
   .personal-information {
-    padding: 24px;
-
     .anchors {
       position: fixed;
       top: 36vh;

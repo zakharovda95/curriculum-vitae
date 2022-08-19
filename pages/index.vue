@@ -1,7 +1,7 @@
 <template>
   <div class="main-page">
-    <TheHeader id="header" />
-    <TheNavigation class="navbar" id="navbar" />
+    <TheHeader v-if="isElementHidden" id="header" />
+    <TheNavigation v-if="isElementHidden" class="navbar" id="navbar" />
     <div class="pages">
       <NuxtPage />
     </div>
@@ -12,10 +12,14 @@
 import TheNavigation from '~/components/layouts/TheNavigation.vue';
 import TheHeader from '~/components/pages/main/TheHeader.vue';
 import { definePageMeta } from '#imports';
+import { computed } from 'vue';
+import { hidePageElement } from '~/helpers/methods/route.methods';
 
 definePageMeta({
   middleware: 'index-summary-redirect-middleware',
 });
+
+const isElementHidden = computed(() => hidePageElement());
 </script>
 
 <style scoped lang="scss">

@@ -31,8 +31,11 @@
 import UIParagraph from '~/components/UI/UIParagraph.vue';
 import ContentBlock from '~/components/shared/ContentBlock.vue';
 import UIButton from '~/components/UI/UIButton.vue';
+import { definePageMeta } from '#imports';
 
-``;
+definePageMeta({
+  layout: 'section',
+});
 </script>
 
 <style scoped lang="scss">

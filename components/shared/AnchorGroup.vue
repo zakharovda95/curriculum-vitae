@@ -7,26 +7,25 @@
       <UIButton
         class="section"
         :class="{ 'active': activeAnchor === anchor.id }"
-        @click="changeSection(anchor.id)"
+        @click="goToSection(anchor.id)"
         v-for="anchor in anchors"
         :key="anchor.name"
       >
-        <UIObserver @custom:cross-section="crossSection" :target="anchor.id" />
         <span v-if="activeAnchor === anchor.id">&lt </span>
         <span class="text">{{ anchor.name }}</span>
         <span v-if="activeAnchor === anchor.id">&gt</span>
       </UIButton>
     </div>
-    <UIButton class="to-the-top" @click="scrollToTop">Наверх</UIButton>
+    <UIButton class="to-the-top" @click="goToChapter">На главную</UIButton>
   </div>
 </template>
 
 <script setup lang="ts">
 import { PropType, ref, Ref } from 'vue';
 import UIButton from '~/components/UI/UIButton.vue';
-import UIObserver from '~/components/UI/UIObserver.vue';
-import { scrollToTop, scrollIntoSection } from '~/helpers/methods/scroll.methods';
 import { AnchorsType } from '~/helpers/types/links.types';
+import { useRoute, useRouter } from 'vue-router';
+import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 
 const props = defineProps({
   anchors: {
@@ -45,15 +44,19 @@ const props = defineProps({
   },
 });
 
+const router = useRouter();
+
 const activeAnchor: Ref<string> = ref(props.anchors[0].id);
 
-const changeSection = async (anchorID: string) => {
-  await scrollIntoSection(anchorID);
+const goToSection = (anchorID: string): void => {
+  router.push({ name: anchorID });
   activeAnchor.value = anchorID;
 };
 
-const crossSection = (anchorID: string): void => {
-  activeAnchor.value = anchorID;
+const route = useRoute();
+
+const goToChapter = (): void => {
+  router.push({ name: PageNameEnum.summary });
 };
 </script>
 
