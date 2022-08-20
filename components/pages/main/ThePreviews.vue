@@ -53,7 +53,7 @@ const sizes: Ref<string> = computed(() => {
     background: $MAIN_WHITE;
     padding: 12px;
     margin: 0 auto;
-    width: 90%;
+    width: calc(80%);
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     justify-content: center;
     text-align: center;

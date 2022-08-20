@@ -1,11 +1,11 @@
 <template>
-  <div class="the-navigation">
+  <div class="the-navigation" id="navbar">
     <UILinkGroup :links="navigationLinks" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { Ref, ref, watch } from 'vue';
+import { Ref, ref } from 'vue';
 import UILinkGroup from '~/components/UI/UILinkGroup.vue';
 import { NAVIGATION_LINKS_RUS } from '~/helpers/services/links.services';
 import { NavigationLinksType } from '~/helpers/types/links.types';

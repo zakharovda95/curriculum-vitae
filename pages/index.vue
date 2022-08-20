@@ -1,7 +1,7 @@
 <template>
   <div class="main-page">
     <TheHeader v-if="isElementHidden" id="header" />
-    <TheNavigation v-if="isElementHidden" class="navbar" id="navbar" />
+    <TheNavigation v-if="isElementHidden" class="navbar" />
     <div class="pages">
       <NuxtPage />
     </div>

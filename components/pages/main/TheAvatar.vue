@@ -19,7 +19,7 @@ defineProps({
     display: flex;
     min-width: 200px;
     width: 50vw;
-    max-width: 270px;
+    max-width: 260px;
     min-height: 240px;
     height: 74vw;
     max-height: 300px;

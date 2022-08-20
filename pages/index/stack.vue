@@ -94,9 +94,6 @@
 <script setup lang="ts">
 import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 import PageContentContainer from '~/components/shared/PageContentContainer.vue';
-import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeight';
-import { computed, ref, Ref } from 'vue';
-import { useOffsetWatcher } from '~/composables/useOffsetWatcher';
 import { AnchorsType } from '~/helpers/types/links.types';
 import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
@@ -108,11 +105,6 @@ import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
 import { STACK_LIST_RUS } from '~/helpers/content/stack/stack-list.content';
 import StackListItem from '~/components/pages/stack/StackListItem.vue';
-
-const headerHeight = useCalculateDOMElementsHeight(['#top', '#header', '#navbar']);
-const previewHeight = computed(() => `100vh - ${headerHeight.value}px`);
-
-const { offset } = useOffsetWatcher();
 
 const anchors: Ref<AnchorsType> = ref(STACK_ANCHORS_RUS);
 const stackList: Ref<StackListItemType[]> = ref(STACK_LIST_RUS);

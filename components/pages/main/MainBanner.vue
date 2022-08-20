@@ -83,7 +83,6 @@ const fontSizes: Ref<StyleType> = computed(() => {
     min-width: calc(100% - 24px);
     width: calc(100% - 24px);
     padding: 12px;
-    overflow: scroll;
 
     .text-wrapper {
       display: flex;

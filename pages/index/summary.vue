@@ -18,9 +18,10 @@ const isElementHidden = computed(() => hidePageElement());
 
 @media (max-width: 800px) {
   .summary-page {
-    padding-top: 24px;
-    padding-left: 0;
+    padding: 0;
+
     .preview {
+      margin: 0 auto;
       display: flex;
       align-self: center;
     }
@@ -29,8 +30,8 @@ const isElementHidden = computed(() => hidePageElement());
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .summary-page {
-    padding-top: 24px;
-    padding-left: 0;
+    padding: 0;
+
     .preview {
       display: flex;
       align-self: center;
@@ -41,6 +42,7 @@ const isElementHidden = computed(() => hidePageElement());
 @media (min-width: 1400px) {
   .summary-page {
     padding-left: 24px;
+
     .preview {
       display: flex;
       align-self: center;

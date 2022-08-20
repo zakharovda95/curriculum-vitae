@@ -1,5 +1,5 @@
 <template>
-  <PageContentContainer class="section-wrapper" name="work-experience">
+  <div class="section-wrapper">
     <ContentBlock class="section">
       <template #header>
         <h1>Опыт Работы</h1>
@@ -30,7 +30,7 @@
         </UIParagraph>
       </template>
     </ContentBlock>
-  </PageContentContainer>
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -26,3 +26,11 @@ const goToSections = (): void => {
   router.push({ name: firstSectionDependingOnTheRoute.value });
 };
 </script>
+
+<style scoped lang="scss">
+.shift {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

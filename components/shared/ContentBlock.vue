@@ -9,14 +9,21 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeigth';
+import { computed } from 'vue';
+
+const totalHeight = useCalculateDOMElementsHeight(['#navbar', '#top']);
+const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
+</script>
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
 @media (max-width: 800px) {
   .content-block {
-    width: calc(95% - 10px);
+    width: calc(90% - 10px);
+    min-height: calc(v-bind(blockHeight));
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -25,7 +32,7 @@
     font-size: 0.8rem;
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
-    border-right: 5px solid $MAIN_AQUAMARINE;
+    border-right: 8px solid $MAIN_AQUAMARINE;
 
     .header {
       flex-direction: column;
@@ -37,9 +44,10 @@
 
     .content {
       display: flex;
-      flex-direction: column;
       justify-content: space-around;
-      align-items: baseline;
+      flex-direction: column;
+      width: 100%;
+      min-height: 70vh;
     }
   }
 }
@@ -47,6 +55,7 @@
 @media (min-width: 801px) and (max-width: 1399px) {
   .content-block {
     width: calc(97% - 10px);
+    min-height: calc(v-bind(blockHeight));
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -67,9 +76,10 @@
 
     .content {
       display: flex;
-      flex-direction: column;
       justify-content: space-around;
-      align-items: baseline;
+      flex-direction: column;
+      width: 100%;
+      min-height: 79vh;
     }
   }
 }
@@ -77,10 +87,9 @@
 @media (min-width: 1400px) {
   .content-block {
     width: 70%;
-    min-height: 84.7vh;
+    min-height: calc(v-bind(blockHeight));
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background: $MAIN_BLACK;
     padding: 24px;
     font-size: 1.2rem;
@@ -100,12 +109,10 @@
 
     .content {
       display: flex;
-      flex-direction: column;
       justify-content: space-around;
-      align-items: baseline;
+      flex-direction: column;
       width: 100%;
-      height: 85%;
-      overflow: scroll;
+      min-height: 79vh;
     }
   }
 }

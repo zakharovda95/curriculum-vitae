@@ -43,6 +43,7 @@ const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
     }
 
     .section {
+      display: flex;
     }
   }
 }
