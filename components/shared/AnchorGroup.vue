@@ -26,6 +26,7 @@ import UIButton from '~/components/UI/UIButton.vue';
 import { AnchorsType } from '~/helpers/types/links.types';
 import { RouteRecordName, useRoute, useRouter } from 'vue-router';
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
+import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 
 defineProps({
   anchors: {
@@ -49,7 +50,21 @@ const goToSection = (anchorID: string): void => {
 };
 
 const goToChapter = (): void => {
-  router.push({ name: PageNameEnum.summary });
+  if (
+    route.name === AnchorNamesEnum.personalInformation ||
+    route.name === AnchorNamesEnum.objective ||
+    route.name === AnchorNamesEnum.education ||
+    route.name === AnchorNamesEnum.workExperience
+  ) {
+    router.push({ name: PageNameEnum.summary });
+  }
+  if (
+    route.name === AnchorNamesEnum.mainStack ||
+    route.name === AnchorNamesEnum.fullStack ||
+    route.name === AnchorNamesEnum.softSkills
+  ) {
+    router.push({ name: PageNameEnum.stack });
+  }
 };
 </script>
 

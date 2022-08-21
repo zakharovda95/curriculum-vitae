@@ -34,6 +34,8 @@ const isElementHidden = computed(() => hidePageElement());
     padding: 0;
 
     .preview {
+      margin-top: 24px;
+      margin-bottom: 24px;
       display: flex;
       align-self: center;
     }

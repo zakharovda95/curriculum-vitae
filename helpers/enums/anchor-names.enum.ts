@@ -5,7 +5,7 @@ export enum AnchorNamesEnum {
   education = 'index-summary-education',
   workExperience = 'index-summary-work-experience',
   // stack
-  mainStack = 'main-stack',
-  fullStack = 'full-stack',
-  softSkills = 'soft-skills',
+  mainStack = 'index-stack-main-stack',
+  fullStack = 'index-stack-full-stack',
+  softSkills = 'index-stack-soft-skills',
 }

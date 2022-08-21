@@ -1,10 +1,10 @@
 <template>
   <div class="stack-list-item">
     <div class="icon">
-      <UIIcon :src="stackListItem.icon" size="56px" />
+      <UIIcon :src="stackListItem.icon" :size="imgSizes" />
     </div>
     <div class="name">
-      <UIText size="1.5rem">{{ stackListItem.name }}</UIText>
+      <UIText :size="fontSizes">{{ stackListItem.name }}</UIText>
     </div>
     <div class="description">
       <UIText size="0.9rem">{{ stackListItem.description }}</UIText>
@@ -13,16 +13,37 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
+import { computed, PropType } from 'vue';
 import UIIcon from '~/components/UI/UIIcon.vue';
 import UIText from '~/components/UI/UIText.vue';
 import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
+import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 defineProps({
   stackListItem: {
     type: Object as PropType<StackListItemType>,
     required: true,
   },
+});
+
+const { widthX } = useWindowWidthWatcher();
+
+const fontSizes = computed(() => {
+  if (widthX.value < 800) {
+    return '1rem';
+  } else if (widthX.value > 800 && widthX.value < 1400) {
+    return '1.3rem';
+  } else {
+    return '1.5rem';
+  }
+});
+
+const imgSizes = computed(() => {
+  if (widthX.value < 800) {
+    return '48px';
+  } else {
+    return '56px';
+  }
 });
 </script>
 
@@ -42,6 +63,7 @@ defineProps({
       align-items: center;
       align-self: center;
       width: 10%;
+      margin-right: 8px;
     }
 
     .name {
@@ -98,6 +120,7 @@ defineProps({
     align-items: center;
     border-bottom: 2px solid $MAIN_AQUAMARINE;
     padding: 5px;
+
     v .icon {
       display: flex;
       align-items: center;
