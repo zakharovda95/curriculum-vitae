@@ -15,8 +15,8 @@
         <span class="text">{{ anchor.name }}</span>
         <span v-if="activeAnchor === anchor.id">&gt</span>
       </UIButton>
+      <UIButton class="section" @click="goToChapter">На главную</UIButton>
     </div>
-    <UIButton class="to-the-top" @click="goToChapter">На главную</UIButton>
   </div>
 </template>
 
@@ -24,10 +24,10 @@
 import { PropType, ref, Ref } from 'vue';
 import UIButton from '~/components/UI/UIButton.vue';
 import { AnchorsType } from '~/helpers/types/links.types';
-import { useRoute, useRouter } from 'vue-router';
+import { RouteRecordName, useRoute, useRouter } from 'vue-router';
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 
-const props = defineProps({
+defineProps({
   anchors: {
     type: Array as PropType<AnchorsType>,
     required: true,
@@ -37,23 +37,16 @@ const props = defineProps({
     required: false,
     default: () => 'Sections',
   },
-  crossAnchor: {
-    type: String,
-    required: false,
-    default: () => '',
-  },
 });
 
 const router = useRouter();
+const route = useRoute();
 
-const activeAnchor: Ref<string> = ref(props.anchors[0].id);
+const activeAnchor: Ref<RouteRecordName> = ref(route.name);
 
 const goToSection = (anchorID: string): void => {
   router.push({ name: anchorID });
-  activeAnchor.value = anchorID;
 };
-
-const route = useRoute();
 
 const goToChapter = (): void => {
   router.push({ name: PageNameEnum.summary });
@@ -76,22 +69,17 @@ const goToChapter = (): void => {
     align-items: center;
     margin: 0 auto;
     background: $MAIN_WHITE;
-    padding: 12px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     height: 30vh;
-    width: 15vw;
+    width: 12vw;
     color: $MAIN_BLACK;
     border: 4px solid $MAIN_AQUAMARINE;
     overflow: scroll;
 
-    .to-the-top {
-      font-size: 1.5rem;
-      padding: 0 10px;
-    }
-
     .header {
-      height: 20%;
-      font-size: 1.8rem;
+      margin-top: 12px;
+      height: 15%;
+      font-size: 1.3rem;
       font-weight: 400;
       color: $MAIN_BLACK;
       border-bottom: 1px solid $MAIN_AQUAMARINE;
@@ -104,7 +92,7 @@ const goToChapter = (): void => {
       .section {
         display: flex;
         margin: 10px 0;
-        padding: 0 10px;
+        padding: 0 5px;
         align-items: center;
         justify-content: center;
 

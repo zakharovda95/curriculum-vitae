@@ -105,6 +105,7 @@ import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
 import { STACK_LIST_RUS } from '~/helpers/content/stack/stack-list.content';
 import StackListItem from '~/components/pages/stack/StackListItem.vue';
+import { Ref, ref } from 'vue';
 
 const anchors: Ref<AnchorsType> = ref(STACK_ANCHORS_RUS);
 const stackList: Ref<StackListItemType[]> = ref(STACK_LIST_RUS);
@@ -169,6 +170,7 @@ const stackList: Ref<StackListItemType[]> = ref(STACK_LIST_RUS);
         .stack-list {
           margin-top: 815px;
         }
+
         .section {
           .to-full-stack {
             text-decoration: underline;

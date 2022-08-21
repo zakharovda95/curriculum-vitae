@@ -1,5 +1,6 @@
 <template>
-  <div class="section-wrapper">
+  <div class="work-experience">
+    <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
     <ContentBlock class="section">
       <template #header>
         <h1>Опыт Работы</h1>
@@ -30,19 +31,78 @@
         </UIParagraph>
       </template>
     </ContentBlock>
+    <MobileNavigation v-if="widthX < 1400" :anchors="anchors"></MobileNavigation>
   </div>
 </template>
 
 <script setup lang="ts">
+import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import UIParagraph from '~/components/UI/UIParagraph.vue';
 import ContentBlock from '~/components/shared/ContentBlock.vue';
-import { definePageMeta } from '#imports';
+import { definePageMeta, useWindowWidthWatcher } from '#imports';
+import { ref, Ref } from 'vue';
+import { AnchorsType } from '~/helpers/types/links.types';
+import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
+import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 
 definePageMeta({
   layout: 'section',
 });
+
+const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
+
+const { widthX } = useWindowWidthWatcher();
 </script>
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
+
+@media (max-width: 800px) {
+  .work-experience {
+    .anchors {
+      display: none;
+    }
+
+    .section {
+      display: flex;
+      .to-code-examples {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1399px) {
+  .work-experience {
+    .anchors {
+      display: none;
+    }
+
+    .section {
+      .to-code-examples {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .work-experience {
+    .anchors {
+      position: fixed;
+      top: 36vh;
+      right: 7vw;
+      text-decoration: none;
+    }
+
+    .section {
+      .to-code-examples {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
 </style>

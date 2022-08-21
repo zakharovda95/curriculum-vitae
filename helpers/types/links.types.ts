@@ -14,3 +14,9 @@ export interface AnchorType {
 }
 
 export type AnchorsType = AnchorType[];
+
+export interface AnchorsDataType {
+  active: AnchorType | null;
+  previous: AnchorType | null;
+  next: AnchorType | null;
+}

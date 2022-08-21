@@ -1,5 +1,6 @@
 <template>
   <div class="education">
+    <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
     <ContentBlock class="section">
       <template #header>
         <h1>Образование</h1>
@@ -24,18 +25,27 @@
         </div>
       </template>
     </ContentBlock>
+    <MobileNavigation v-if="widthX < 1400" :anchors="anchors"></MobileNavigation>
   </div>
 </template>
 
 <script setup lang="ts">
+import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import UIParagraph from '~/components/UI/UIParagraph.vue';
 import ContentBlock from '~/components/shared/ContentBlock.vue';
 import UIButton from '~/components/UI/UIButton.vue';
-import { definePageMeta } from '#imports';
+import { definePageMeta, useWindowWidthWatcher } from '#imports';
+import { ref, Ref } from 'vue';
+import { AnchorsType } from '~/helpers/types/links.types';
+import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
+import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 
 definePageMeta({
   layout: 'section',
 });
+const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
+
+const { widthX } = useWindowWidthWatcher();
 </script>
 
 <style scoped lang="scss">
@@ -43,18 +53,21 @@ definePageMeta({
 
 @media (max-width: 800px) {
   .education {
-    padding: 24px;
-
     .anchors {
       display: none;
     }
 
-    .course {
+    .section {
       display: flex;
+      .course {
+        display: flex;
 
-      .certificate {
-        margin-left: 5px;
-        text-decoration: underline;
+        .certificate {
+          display: flex;
+          justify-content: space-between;
+          margin-left: 5px;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -62,8 +75,6 @@ definePageMeta({
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .education {
-    padding: 24px;
-
     .anchors {
       display: none;
     }
@@ -82,13 +93,11 @@ definePageMeta({
 }
 
 @media (min-width: 1400px) {
-  .summary-page {
-    padding: 24px;
-
+  .education {
     .anchors {
       position: fixed;
       top: 36vh;
-      right: 6vw;
+      right: 7vw;
       text-decoration: none;
     }
 

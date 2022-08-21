@@ -14,7 +14,7 @@ import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElem
 import { computed } from 'vue';
 
 const totalHeight = useCalculateDOMElementsHeight(['#navbar', '#top']);
-const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
+const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 </script>
 
 <style scoped lang="scss">
@@ -23,12 +23,11 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
 @media (max-width: 800px) {
   .content-block {
     width: calc(90% - 10px);
-    min-height: calc(v-bind(blockHeight));
+    min-height: calc(v-bind(blockHeight) + 63px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     background: $MAIN_BLACK;
-    padding: 16px;
+    padding: 16px 16px 50px 16px;
     font-size: 0.8rem;
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
@@ -36,10 +35,13 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
 
     .header {
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
+      height: 8vh;
       width: 100%;
       border-bottom: 1px solid $MAIN_AQUAMARINE;
       color: $MAIN_AQUAMARINE;
+      align-self: center;
+      text-align: center;
     }
 
     .content {
@@ -47,7 +49,7 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
       justify-content: space-around;
       flex-direction: column;
       width: 100%;
-      min-height: 70vh;
+      min-height: 72vh;
     }
   }
 }
@@ -55,12 +57,12 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
 @media (min-width: 801px) and (max-width: 1399px) {
   .content-block {
     width: calc(97% - 10px);
-    min-height: calc(v-bind(blockHeight));
+    min-height: 87vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     background: $MAIN_BLACK;
-    padding: 12px;
+    padding: 16px 16px 30px 16px;
     font-size: 1.1rem;
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
@@ -79,7 +81,7 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
       justify-content: space-around;
       flex-direction: column;
       width: 100%;
-      min-height: 79vh;
+      min-height: 76vh;
     }
   }
 }
@@ -87,7 +89,7 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
 @media (min-width: 1400px) {
   .content-block {
     width: 70%;
-    min-height: calc(v-bind(blockHeight));
+    min-height: calc(v-bind(blockHeight) - 5px);
     display: flex;
     flex-direction: column;
     background: $MAIN_BLACK;
@@ -101,7 +103,7 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
     .header {
       flex-direction: column;
       justify-content: center;
-      height: 15%;
+      height: 6.4vh;
       width: 100%;
       border-bottom: 1px solid $MAIN_AQUAMARINE;
       color: $MAIN_AQUAMARINE;
@@ -112,7 +114,8 @@ const blockHeight = computed(() => `95vh - ${totalHeight.value}px`);
       justify-content: space-around;
       flex-direction: column;
       width: 100%;
-      min-height: 79vh;
+      min-height: 78vh;
+      margin-bottom: 30px;
     }
   }
 }

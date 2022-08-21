@@ -11,11 +11,10 @@
         <UIParagraph tag="h2" title="Адрес">Йошкар-Ола, Россия</UIParagraph>
         <UIParagraph tag="h2" title="Гражданство">Российская Федерация</UIParagraph>
         <UIParagraph tag="h2" title="Семейное положение">Не женат</UIParagraph>
-        <UIParagraph tag="h2" title="Языки">
-          Русский (основной), Английский - A2 (но я повышаю свои навыки каждый день!)
-        </UIParagraph>
+        <UIParagraph tag="h2" title="Языки"> Русский (основной), Английский - A2</UIParagraph>
       </template>
     </ContentBlock>
+    <MobileNavigation v-if="widthX < 1400" :anchors="anchors"></MobileNavigation>
   </div>
 </template>
 
@@ -26,13 +25,16 @@ import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
 import { AnchorsType } from '~/helpers/types/links.types';
 import { ref, Ref } from 'vue';
-import { definePageMeta } from '#imports';
+import { definePageMeta, useWindowWidthWatcher } from '#imports';
+import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 
 definePageMeta({
   layout: 'section',
 });
 
 const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
+
+const { widthX } = useWindowWidthWatcher();
 </script>
 
 <style scoped lang="scss">
@@ -64,7 +66,7 @@ const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
     .anchors {
       position: fixed;
       top: 36vh;
-      right: 6vw;
+      right: 7vw;
       text-decoration: none;
     }
 

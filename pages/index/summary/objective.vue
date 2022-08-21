@@ -1,5 +1,6 @@
 <template>
   <div class="objective">
+    <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
     <ContentBlock class="section">
       <template #header>
         <h1>Цели</h1>
@@ -27,37 +28,45 @@
         </UIParagraph>
       </template>
     </ContentBlock>
+    <MobileNavigation v-if="widthX < 1400" :anchors="anchors"></MobileNavigation>
   </div>
 </template>
 
 <script setup lang="ts">
 import UIParagraph from '~/components/UI/UIParagraph.vue';
 import ContentBlock from '~/components/shared/ContentBlock.vue';
-import { definePageMeta } from '#imports';
+import { definePageMeta, useWindowWidthWatcher } from '#imports';
+import AnchorGroup from '~/components/shared/AnchorGroup.vue';
+import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
+import { AnchorsType } from '~/helpers/types/links.types';
+import MobileNavigation from '~/components/shared/MobileNavigation.vue';
+
+``;
+import { ref, Ref } from 'vue';
 
 definePageMeta({
   layout: 'section',
 });
+
+const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
+const { widthX } = useWindowWidthWatcher();
 </script>
 
 <style scoped lang="scss">
 @media (max-width: 800px) {
   .objective {
-    padding: 24px;
-
     .anchors {
       display: none;
     }
 
     .section {
+      display: flex;
     }
   }
 }
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .objective {
-    padding: 24px;
-
     .anchors {
       display: none;
     }
@@ -69,12 +78,10 @@ definePageMeta({
 
 @media (min-width: 1400px) {
   .objective {
-    padding: 24px;
-
     .anchors {
       position: fixed;
       top: 36vh;
-      right: 6vw;
+      right: 7vw;
       text-decoration: none;
     }
 
