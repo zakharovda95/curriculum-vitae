@@ -5,10 +5,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
+
+import { computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();

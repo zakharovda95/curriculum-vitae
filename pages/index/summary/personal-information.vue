@@ -1,32 +1,23 @@
 <template>
   <div class="personal-information">
     <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
-    <ContentBlock class="section">
-      <template #header>
-        <h1>Информация</h1>
-      </template>
-      <template #content>
-        <UIParagraph tag="h2" title="Имя">Дмитрий Захаров</UIParagraph>
-        <UIParagraph tag="h2" title="Дата рождения">13 мая 1995 (27 лет)</UIParagraph>
-        <UIParagraph tag="h2" title="Адрес">Йошкар-Ола, Россия</UIParagraph>
-        <UIParagraph tag="h2" title="Гражданство">Российская Федерация</UIParagraph>
-        <UIParagraph tag="h2" title="Семейное положение">Не женат</UIParagraph>
-        <UIParagraph tag="h2" title="Языки"> Русский (основной), Английский - A2</UIParagraph>
-      </template>
-    </ContentBlock>
-    <MobileNavigation v-if="widthX < 1400" :anchors="anchors"></MobileNavigation>
+    <ContentGenerator :content="PERSONAL_INFORMATION_RUS" />
+    <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
   </div>
 </template>
 
 <script setup lang="ts">
-import UIParagraph from '~/components/UI/UIParagraph.vue';
-import ContentBlock from '~/components/shared/ContentBlock.vue';
+import MobileNavigation from '~/components/shared/MobileNavigation.vue';
+import ContentGenerator from '~/components/shared/ContentGenerator.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
+
+import { PERSONAL_INFORMATION_RUS } from '~/helpers/content/summary/personal-information.content';
 import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
+
 import { AnchorsType } from '~/helpers/types/links.types';
+
 import { ref, Ref } from 'vue';
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
-import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 
 definePageMeta({
   layout: 'section',
@@ -43,10 +34,6 @@ const { widthX } = useWindowWidthWatcher();
     .anchors {
       display: none;
     }
-
-    .section {
-      display: flex;
-    }
   }
 }
 
@@ -54,9 +41,6 @@ const { widthX } = useWindowWidthWatcher();
   .personal-information {
     .anchors {
       display: none;
-    }
-
-    .section {
     }
   }
 }
@@ -68,9 +52,6 @@ const { widthX } = useWindowWidthWatcher();
       top: 36vh;
       right: 7vw;
       text-decoration: none;
-    }
-
-    .section {
     }
   }
 }

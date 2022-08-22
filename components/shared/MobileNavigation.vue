@@ -12,9 +12,11 @@
 
 <script setup lang="ts">
 import UIButton from '~/components/UI/UIButton.vue';
-import { computed, PropType, Ref } from 'vue';
+
 import { AnchorsDataType, AnchorsType } from '~/helpers/types/links.types';
+
 import { useRoute, useRouter } from 'vue-router';
+import { computed, PropType, Ref } from 'vue';
 
 const props = defineProps({
   anchors: {

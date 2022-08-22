@@ -4,7 +4,7 @@ export const WORK_EXPERIENCE_RUS: SectionContentType = {
   title: 'Опыт Работы',
   content: [
     {
-      title: null,
+      title: '',
       text: [
         'У меня нет официального опыта работы (в сфере IT), я надеюсь именно ваша работа будет для меня первой',
         'У меня есть опыт работы в реальном проекте с коммандой, опыт с учебной практики и опыт на стартап-проекте',
@@ -21,6 +21,7 @@ export const WORK_EXPERIENCE_RUS: SectionContentType = {
       ],
       props: {
         tag: 'h2',
+        br: true,
       },
     },
     {
@@ -28,18 +29,19 @@ export const WORK_EXPERIENCE_RUS: SectionContentType = {
       text: 'Неофициальная работа в коммерческом проекте (в сумме 4 месяца). Научился свободно ориентироваться в довольно большом проекте, локализовывать и устранять баги. Узнал как происходит реальная разработка',
       props: {
         tag: 'h2',
+        br: true,
       },
     },
     {
       title: 'Стартап',
       text: 'Я учавствую в стартап проекте - браузерной игры CastleKeepers. Это некоммерческий проект с небольшой коммандой. Подробнее в разделе',
       textAsLink: {
-        name: '"Примеры&nbsp;кода"',
+        name: '"Примеры кода"',
         link: '/work-experience',
       },
       props: {
         tag: 'h2',
-        certificate: '',
+        br: true,
       },
     },
   ],

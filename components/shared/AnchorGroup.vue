@@ -21,12 +21,14 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, ref, Ref } from 'vue';
 import UIButton from '~/components/UI/UIButton.vue';
-import { AnchorsType } from '~/helpers/types/links.types';
-import { RouteRecordName, useRoute, useRouter } from 'vue-router';
+
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
+import { AnchorsType } from '~/helpers/types/links.types';
+
+import { PropType, ref, Ref } from 'vue';
+import { RouteRecordName, useRoute, useRouter } from 'vue-router';
 
 defineProps({
   anchors: {
@@ -86,7 +88,7 @@ const goToChapter = (): void => {
     background: $MAIN_WHITE;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     height: 30vh;
-    width: 12vw;
+    width: 14vw;
     color: $MAIN_BLACK;
     border: 4px solid $MAIN_AQUAMARINE;
     overflow: scroll;

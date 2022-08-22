@@ -11,6 +11,7 @@
 
 <script setup lang="ts">
 import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeigth';
+
 import { computed } from 'vue';
 
 const totalHeight = useCalculateDOMElementsHeight(['#navbar', '#top']);
@@ -89,7 +90,7 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 @media (min-width: 1400px) {
   .content-block {
     width: 70%;
-    min-height: calc(v-bind(blockHeight) - 5px);
+    min-height: calc(v-bind(blockHeight));
     display: flex;
     flex-direction: column;
     background: $MAIN_BLACK;

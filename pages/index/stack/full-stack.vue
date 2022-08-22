@@ -18,16 +18,19 @@
 <script setup lang="ts">
 import ContentBlock from '~/components/shared/ContentBlock.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
-import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
-import { AnchorsType } from '~/helpers/types/links.types';
-import { ref, Ref } from 'vue';
-import { definePageMeta, useWindowWidthWatcher } from '#imports';
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
-import { useRouter } from 'vue-router';
 import UIList from '~/components/UI/UIList.vue';
 import StackListItem from '~/components/pages/stack/StackListItem.vue';
-import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
+
 import { STACK_LIST_RUS } from '~/helpers/content/stack/stack-list.content';
+import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
+
+import { AnchorsType } from '~/helpers/types/links.types';
+import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
+
+import { ref, Ref } from 'vue';
+import { definePageMeta, useWindowWidthWatcher } from '#imports';
+import { useRouter } from 'vue-router';
 
 definePageMeta({
   layout: 'section',

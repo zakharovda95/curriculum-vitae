@@ -20,10 +20,13 @@
 import MainBanner from '~/components/pages/main/MainBanner.vue';
 import UIButton from '~/components/UI/UIButton.vue';
 import UIIcon from '~/components/UI/UIIcon.vue';
-import { computed, Ref, ref, watch } from 'vue';
 import TheContacts from '~/components/pages/main/TheContacts.vue';
+
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+
 import { StyleType } from '~/helpers/types/styles.types';
+
+import { computed, Ref, ref } from 'vue';
 
 const isShowed: Ref<boolean> = ref(false);
 

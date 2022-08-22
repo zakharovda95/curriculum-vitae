@@ -5,10 +5,13 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
 import UILinkGroup from '~/components/UI/UILinkGroup.vue';
+
 import { NAVIGATION_LINKS_RUS } from '~/helpers/services/links.services';
+
 import { NavigationLinksType } from '~/helpers/types/links.types';
+
+import { Ref, ref } from 'vue';
 
 const navigationLinks: Ref<NavigationLinksType> = ref(NAVIGATION_LINKS_RUS);
 </script>

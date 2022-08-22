@@ -9,9 +9,10 @@
 </template>
 
 <script setup lang="ts">
+import { NavigationLinksType } from '~/helpers/types/links.types';
+
 import { PropType } from 'vue';
 import { useRoute } from 'vue-router';
-import { NavigationLinksType } from '~/helpers/types/links.types';
 
 defineProps({
   links: {

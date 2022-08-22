@@ -12,11 +12,15 @@
 <script setup lang="ts">
 import UIIcon from '~/components/UI/UIIcon.vue';
 import Shift from '~/components/shared/Shift.vue';
+
+import { PREVIEWS_RUS } from '~/helpers/content/previews.content';
+
+import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+
+import { PageNameEnum } from '~/helpers/enums/page-name.enums';
+
 import { computed, Ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { PageNameEnum } from '~/helpers/enums/page-name.enums';
-import { PREVIEWS_RUS } from '~/helpers/content/previews.content';
-import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 const route = useRoute();
 

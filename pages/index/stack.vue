@@ -7,8 +7,10 @@
 
 <script setup lang="ts">
 import ThePreviews from '~/components/pages/main/ThePreviews.vue';
-import { computed } from 'vue';
+
 import { hidePageElement } from '~/helpers/methods/route.methods';
+
+import { computed } from 'vue';
 
 const isElementHidden = computed(() => hidePageElement());
 </script>

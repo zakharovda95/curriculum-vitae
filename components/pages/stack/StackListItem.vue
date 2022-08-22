@@ -13,11 +13,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, PropType } from 'vue';
 import UIIcon from '~/components/UI/UIIcon.vue';
 import UIText from '~/components/UI/UIText.vue';
+
 import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+
+import { computed, PropType } from 'vue';
 
 defineProps({
   stackListItem: {

@@ -19,25 +19,25 @@ export const EDUCATION_RUS: SectionContentType = {
     },
     {
       title: 'В качестве программиста',
-      text: null,
+      text: '',
       props: {
         tag: 'h2',
       },
     },
     {
-      title: null,
+      title: '',
       text: 'Курсы JavaScript.ru - JavaScript/DOM/Interfaces',
       props: {
         tag: 'h2',
-        certificate: '',
+        certificate: '123',
       },
     },
     {
-      title: null,
+      title: '',
       text: 'Курсы JavaScript.ru - Vue.Js 3',
       props: {
         tag: 'h2',
-        certificate: '',
+        certificate: '123',
       },
     },
   ],

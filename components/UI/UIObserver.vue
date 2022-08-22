@@ -3,8 +3,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, Ref } from 'vue';
 import { ObserverParamsType } from '~/helpers/types/function-params.types';
+
+import { onMounted, ref, Ref } from 'vue';
 
 const props = defineProps({
   target: {

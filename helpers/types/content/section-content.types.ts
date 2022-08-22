@@ -16,5 +16,5 @@ export interface TextAsLinkType {
 }
 
 export interface ParagraphPropsType {
-  [key: string]: string | number;
+  [key: string]: string | number | boolean;
 }

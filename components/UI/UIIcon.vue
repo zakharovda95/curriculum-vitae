@@ -5,8 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
 import { StyleType } from '~/helpers/types/styles.types';
+
+import { PropType } from 'vue';
 
 defineProps({
   src: {
