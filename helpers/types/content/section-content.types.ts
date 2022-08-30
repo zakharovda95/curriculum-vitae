@@ -1,3 +1,18 @@
+import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
+
+export interface SummaryContent {
+  personalInformation: SectionContentType;
+  objective: SectionContentType;
+  education: SectionContentType;
+  workExperience: SectionContentType;
+}
+
+export interface StackContent {
+  mainStack: SectionContentType;
+  fullStack: StackListItemType[];
+  softSkills: SectionContentType;
+}
+
 export interface SectionContentType {
   title: string | null;
   content: ParagraphType[];

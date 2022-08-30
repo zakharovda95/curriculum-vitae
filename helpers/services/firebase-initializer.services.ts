@@ -1,17 +1,16 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 import { getStorage } from 'firebase/storage';
-import { APP_CONFIGS } from '~/configs/_app.configs';
 
 const FIREBASE_APP_CONFIGS = initializeApp({
-  apiKey: APP_CONFIGS.API_KEY,
-  authDomain: APP_CONFIGS.AUTH_DOMAIN,
-  databaseURL: APP_CONFIGS.DATABASE_URL,
-  projectId: APP_CONFIGS.PROJECT_ID,
-  storageBucket: APP_CONFIGS.STORAGE_BUCKET,
-  messagingSenderId: APP_CONFIGS.MESSAGING_SENDER_ID,
-  appId: APP_CONFIGS.APP_ID,
-  measurementId: APP_CONFIGS.MEASUREMENT_ID,
+  apiKey: 'AIzaSyAbjxmVJjQ_iMhyZEAS-jil8yxZUJbrV-E',
+  authDomain: 'zakharovda95-17636.firebaseapp.com',
+  databaseURL: 'https://zakharovda95-17636-default-rtdb.firebaseio.com',
+  projectId: 'zakharovda95-17636',
+  storageBucket: 'zakharovda95-17636.appspot.com',
+  messagingSenderId: '960642520317',
+  appId: '1:960642520317:web:4f70eaf3bc957690ab1a94',
+  measurementId: '',
 });
 
 export const firebaseDatabase = getDatabase(FIREBASE_APP_CONFIGS);
