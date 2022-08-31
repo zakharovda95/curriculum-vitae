@@ -1,15 +1,14 @@
 import { defineStore } from 'pinia';
 import { database } from '~/helpers/services/firebase-database.service';
 
-export const useSummaryPageStore = defineStore('summaryPageStore', {
+export const useStackPageStore = defineStore('stackPageStore', {
   state: () => ({
     isLoading: true,
     data: null,
   }),
   actions: {
     async getData() {
-      this.data = await database.getData('/rus/summary/');
-      this.isLoading = false;
+      this.data = await database.getData('/stack/');
     },
   },
 });

@@ -11,8 +11,11 @@ import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 import { hidePageElement } from '~/helpers/methods/route.methods';
 
 import { computed } from 'vue';
+import { useStackPageStore } from '~/stores/stack-page.store';
 
 const isElementHidden = computed(() => hidePageElement());
+stackPageStore = useStackPageStore();
+stackPageStore.getData();
 </script>
 
 <style lang="scss">

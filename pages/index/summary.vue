@@ -9,10 +9,14 @@
 import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
+import { useSummaryPageStore } from '~/stores/summary-page.store';
 
 import { computed } from 'vue';
 
 const isElementHidden = computed(() => hidePageElement());
+
+const summaryPageStore = useSummaryPageStore();
+summaryPageStore.getData();
 </script>
 
 <style scoped lang="scss">
