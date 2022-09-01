@@ -130,7 +130,6 @@ const { widthX } = useWindowWidthWatcher();
     background: $MAIN_AQUAMARINE;
     position: relative;
     z-index: 1;
-    margin-top: 60px;
 
     .banner {
       position: relative;

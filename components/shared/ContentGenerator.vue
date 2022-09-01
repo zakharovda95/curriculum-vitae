@@ -60,6 +60,7 @@ const goTo = (path: string): void => {
   .content-generator {
     .section {
       .content-items {
+        margin-bottom: 12px;
         .text-as-link {
           text-decoration: underline;
           cursor: pointer;

@@ -33,7 +33,7 @@ const { widthX } = useWindowWidthWatcher();
 const summaryPageStore = useSummaryPageStore();
 const pageContent: Ref<SectionContentType> = computed(() => {
   if (summaryPageStore.data && !summaryPageStore.isLoading) {
-    return summaryPageStore.data.education;
+    return summaryPageStore.data.workExperience;
   }
   return null;
 });

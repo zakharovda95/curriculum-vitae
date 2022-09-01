@@ -22,5 +22,6 @@ import { storage } from '~/helpers/services/firebase-storage.service';
 
 // const contacts = await storage.getAllImageUrls('/contacts/');
 // const stackList = await storage.getAllImageUrls('/stack-icons/');
-// await console.log(stackList);
+// const img = await storage.getImageUrl('/common/avatar.jpg');
+// await console.log(img);
 </script>

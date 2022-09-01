@@ -33,7 +33,7 @@ const { widthX } = useWindowWidthWatcher();
 const stackPageStore = useStackPageStore();
 const pageContent: Ref<SectionContentType> = computed(() => {
   if (stackPageStore.data && !stackPageStore.isLoading) {
-    return stackPageStore.data.fullStack;
+    return stackPageStore.data.softSkills;
   }
   return null;
 });

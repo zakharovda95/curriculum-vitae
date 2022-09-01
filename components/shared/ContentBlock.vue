@@ -24,7 +24,7 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 @media (max-width: 800px) {
   .content-block {
     width: calc(90% - 10px);
-    min-height: calc(v-bind(blockHeight) + 63px);
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     background: $MAIN_BLACK;
@@ -32,17 +32,14 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
     font-size: 0.8rem;
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
-    border-right: 8px solid $MAIN_AQUAMARINE;
 
     .header {
-      flex-direction: column;
-      justify-content: space-between;
-      height: 8vh;
-      width: 100%;
+      padding: 12px 0;
       border-bottom: 1px solid $MAIN_AQUAMARINE;
       color: $MAIN_AQUAMARINE;
-      align-self: center;
+      width: 100%;
       text-align: center;
+      margin-bottom: 5px;
     }
 
     .content {
@@ -67,7 +64,6 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
     font-size: 1.1rem;
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
-    border-right: 10px solid $MAIN_AQUAMARINE;
 
     .header {
       flex-direction: column;
@@ -99,7 +95,6 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
     box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
-    border-right: 15px solid $MAIN_AQUAMARINE;
 
     .header {
       flex-direction: column;
