@@ -1,7 +1,6 @@
 <template>
-  <div class="loading" v-if="summaryPageStore.isLoading">loading</div>
+  <UILoading class="loading" v-if="summaryPageStore.isLoading" />
   <div class="personal-information" v-else>
-    {{ pageContent }}
     <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
     <ContentGenerator :content="pageContent" />
     <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
@@ -12,10 +11,12 @@
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import ContentGenerator from '~/components/shared/ContentGenerator.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
+import UILoading from '~/components/UI/UILoading.vue';
 
 import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
 
 import { AnchorsType } from '~/helpers/types/links.types';
+import { SectionContentType } from '~/helpers/types/content/section-content.types';
 
 import { computed, ref, Ref } from 'vue';
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
@@ -30,10 +31,9 @@ const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 const { widthX } = useWindowWidthWatcher();
 
 const summaryPageStore = useSummaryPageStore();
-const pageContent = computed(() => {
-  if (summaryPageStore.data) {
-    console.log(summaryPageStore.data);
-    return summaryPageStore.data;
+const pageContent: Ref<SectionContentType> = computed(() => {
+  if (summaryPageStore.data && !summaryPageStore.isLoading) {
+    return summaryPageStore.data.personalInformation;
   }
   return null;
 });

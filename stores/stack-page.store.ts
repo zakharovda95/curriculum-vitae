@@ -8,7 +8,8 @@ export const useStackPageStore = defineStore('stackPageStore', {
   }),
   actions: {
     async getData() {
-      this.data = await database.getData('/stack/');
+      this.data = await database.getData('/rus/stack/');
+      this.isLoading = false;
     },
   },
 });

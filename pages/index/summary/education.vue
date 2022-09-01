@@ -1,8 +1,9 @@
 <template>
-  <div class="education">
+  <UILoading v-if="summaryPageStore.isLoading" />
+  <div class="education" v-else>
     <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
-    <ContentGenerator :content="EDUCATION_RUS" />
-    <MobileNavigation v-if="widthX < 1400" :anchors="anchors"></MobileNavigation>
+    <ContentGenerator :content="pageContent" />
+    <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
   </div>
 </template>
 
@@ -10,14 +11,16 @@
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import ContentGenerator from '~/components/shared/ContentGenerator.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
+import UILoading from '~/components/UI/UILoading.vue';
 
 import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
-import { EDUCATION_RUS } from '~/helpers/content/summary/education.content';
 
 import { AnchorsType } from '~/helpers/types/links.types';
+import { SectionContentType } from '~/helpers/types/content/section-content.types';
 
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
-import { ref, Ref } from 'vue';
+import { computed, ref, Ref } from 'vue';
+import { useSummaryPageStore } from '~/stores/summary-page.store';
 
 definePageMeta({
   layout: 'section',
@@ -25,6 +28,14 @@ definePageMeta({
 const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 
 const { widthX } = useWindowWidthWatcher();
+
+const summaryPageStore = useSummaryPageStore();
+const pageContent: Ref<SectionContentType> = computed(() => {
+  if (summaryPageStore.data && !summaryPageStore.isLoading) {
+    return summaryPageStore.data.education;
+  }
+  return null;
+});
 </script>
 
 <style scoped lang="scss">

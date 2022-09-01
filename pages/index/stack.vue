@@ -14,7 +14,7 @@ import { computed } from 'vue';
 import { useStackPageStore } from '~/stores/stack-page.store';
 
 const isElementHidden = computed(() => hidePageElement());
-stackPageStore = useStackPageStore();
+const stackPageStore = useStackPageStore();
 stackPageStore.getData();
 </script>
 

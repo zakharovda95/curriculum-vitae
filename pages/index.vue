@@ -11,9 +11,11 @@
 <script setup lang="ts">
 import TheNavigation from '~/components/layouts/TheNavigation.vue';
 import TheHeader from '~/components/pages/main/TheHeader.vue';
+
+import { hidePageElement } from '~/helpers/methods/route.methods';
+
 import { definePageMeta } from '#imports';
 import { computed } from 'vue';
-import { hidePageElement } from '~/helpers/methods/route.methods';
 
 definePageMeta({
   middleware: 'index-summary-redirect-middleware',

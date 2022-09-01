@@ -9,8 +9,13 @@ export interface SummaryContent {
 
 export interface StackContent {
   mainStack: SectionContentType;
-  fullStack: StackListItemType[];
+  fullStack: FullStackType;
   softSkills: SectionContentType;
+}
+
+export interface FullStackType {
+  title: string;
+  content: StackListItemType[];
 }
 
 export interface SectionContentType {

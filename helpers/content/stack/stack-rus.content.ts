@@ -5,6 +5,9 @@ import { SOFT_SKILLS_RUS } from '~/helpers/content/stack/soft-skills.content';
 
 export const STACK_RUS: StackContent = {
   mainStack: MAIN_STACK_RUS,
-  fullStack: STACK_LIST_RUS,
+  fullStack: {
+    title: 'Полный стек',
+    content: STACK_LIST_RUS,
+  },
   softSkills: SOFT_SKILLS_RUS,
 };

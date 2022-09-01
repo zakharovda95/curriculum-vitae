@@ -1,8 +1,9 @@
 <template>
-  <div class="soft-skills">
+  <UILoading v-if="stackPageStore.isLoading" />
+  <div class="soft-skills" v-else>
     <AnchorGroup class="anchors" :anchors="anchors" title="Стек" />
-    <ContentGenerator :content="SOFT_SKILLS_RUS" />
-    <MobileNavigation v-if="widthX < 1400" :anchors="anchors"></MobileNavigation>
+    <ContentGenerator :content="pageContent" />
+    <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import ContentGenerator from '~/components/shared/ContentGenerator.vue';
+import UILoading from '~/components/UI/UILoading.vue';
 
 import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
-import { SOFT_SKILLS_RUS } from '~/helpers/content/stack/soft-skills.content';
+import { useStackPageStore } from '~/stores/stack-page.store';
 
 import { AnchorsType } from '~/helpers/types/links.types';
+import { SectionContentType } from '~/helpers/types/content/section-content.types';
 
-import { ref, Ref } from 'vue';
+import { computed, ref, Ref } from 'vue';
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
 
 definePageMeta({
@@ -26,6 +29,14 @@ definePageMeta({
 const anchors: Ref<AnchorsType> = ref(STACK_ANCHORS_RUS);
 
 const { widthX } = useWindowWidthWatcher();
+
+const stackPageStore = useStackPageStore();
+const pageContent: Ref<SectionContentType> = computed(() => {
+  if (stackPageStore.data && !stackPageStore.isLoading) {
+    return stackPageStore.data.fullStack;
+  }
+  return null;
+});
 </script>
 
 <style scoped lang="scss">
