@@ -23,7 +23,7 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 
 @media (max-width: 800px) {
   .content-block {
-    width: calc(90% - 10px);
+    width: 90%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -54,13 +54,13 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .content-block {
-    width: calc(97% - 10px);
+    width: 95%;
     min-height: 87vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     background: $MAIN_BLACK;
-    padding: 16px 16px 30px 16px;
+    padding: 16px 16px 50px 16px;
     font-size: 1.1rem;
     font-family: Nunito-SemiBold, sans-serif;
     color: $MAIN_WHITE;
@@ -71,6 +71,7 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
       width: 100%;
       border-bottom: 1px solid $MAIN_AQUAMARINE;
       color: $MAIN_AQUAMARINE;
+      margin-bottom: 5px;
     }
 
     .content {

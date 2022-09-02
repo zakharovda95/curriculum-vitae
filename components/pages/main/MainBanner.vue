@@ -86,10 +86,11 @@ const fontSizes: Ref<StyleType> = computed(() => {
     min-width: calc(100% - 24px);
     width: calc(100% - 24px);
     padding: 12px;
-
+    overflow: scroll;
     .text-wrapper {
       display: flex;
       flex-direction: column;
+      padding: 12px;
 
       .row-2 {
         font-family: Nunito-ExtraBold, sans-serif;

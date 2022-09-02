@@ -10,15 +10,12 @@ import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useStackPageStore } from '~/stores/stack-page.store';
-import { pageLifeCycleScrollBehavior } from '~/helpers/methods/scroll.methods';
 
 import { computed } from 'vue';
 
 const isElementHidden = computed(() => hidePageElement());
 const stackPageStore = useStackPageStore();
 stackPageStore.getData();
-
-pageLifeCycleScrollBehavior('page:start');
 </script>
 
 <style lang="scss">

@@ -40,8 +40,10 @@ const pageContent: Ref<SectionContentType> = computed(() => {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/css/_constants.scss';
 @media (max-width: 800px) {
   .personal-information {
+    background: $MAIN_AQUAMARINE;
     .anchors {
       display: none;
     }
@@ -50,6 +52,7 @@ const pageContent: Ref<SectionContentType> = computed(() => {
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .personal-information {
+    background: $MAIN_AQUAMARINE;
     .anchors {
       display: none;
     }

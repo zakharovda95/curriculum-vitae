@@ -52,8 +52,10 @@ const pageContent: Ref<FullStackType> = computed(() => {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/css/_constants.scss';
 @media (max-width: 800px) {
   .full-stack {
+    background: $MAIN_AQUAMARINE;
     .anchors {
       display: none;
     }
@@ -66,6 +68,7 @@ const pageContent: Ref<FullStackType> = computed(() => {
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .full-stack {
+    background: $MAIN_AQUAMARINE;
     .anchors {
       display: none;
     }
