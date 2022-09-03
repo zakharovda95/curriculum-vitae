@@ -1,12 +1,32 @@
 <template>
-  <div class="project-list-page"></div>
+  <UILoading v-if="codeExamplesPageStore.isLoading" />
+  <div v-else class="project-list-page">
+    <UIList v-slot="item" :list="projects">
+      <ProjectListItem class="project" :project-data="item" />
+    </UIList>
+  </div>
 </template>
 
 <script setup lang="ts">
+import UIList from '~/components/UI/UIList.vue';
+import ProjectListItem from '~/components/pages/code-examples/ProjectListItem.vue';
+import UILoading from '~/components/UI/UILoading.vue';
+
+import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
+
 import { definePageMeta } from '#imports';
+import { computed } from 'vue';
 
 definePageMeta({
   layout: 'section',
+});
+
+const codeExamplesPageStore = useCodeExamplesPageStore();
+const projects = computed(() => {
+  if (codeExamplesPageStore.data && !codeExamplesPageStore.isLoading) {
+    return codeExamplesPageStore.data;
+  }
+  return null;
 });
 </script>
 
@@ -16,7 +36,7 @@ definePageMeta({
 @media (max-width: 800px) {
   .project-list-page {
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     background: $MAIN_BANNER;
   }
 }
@@ -32,8 +52,15 @@ definePageMeta({
 @media (min-width: 1400px) {
   .project-list-page {
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     background: $MAIN_BANNER;
+    display: grid;
+    grid-template-areas:
+      'item item'
+      'item item';
+    .project {
+      grid-area: item;
+    }
   }
 }
 </style>

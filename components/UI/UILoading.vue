@@ -17,7 +17,7 @@
   color: $MAIN_WHITE;
   font-family: Nunito-ExtraBold, sans-serif;
   font-size: 2rem;
-  background: $MAIN_BLACK;
+  background: $MAIN_BANNER;
   overflow: hidden;
 }
 </style>

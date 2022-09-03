@@ -11,10 +11,14 @@
 import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
+import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
 
 import { computed } from 'vue';
 
 const isElementHidden = computed(() => hidePageElement());
+
+const codeExamplesPageStore = useCodeExamplesPageStore();
+codeExamplesPageStore.getData();
 </script>
 
 <style lang="scss">
@@ -48,8 +52,6 @@ const isElementHidden = computed(() => hidePageElement());
 
 @media (min-width: 1400px) {
   .code-examples-page {
-    padding-left: 24px;
-
     .preview {
       display: flex;
       align-self: center;
