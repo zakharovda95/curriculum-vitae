@@ -20,6 +20,8 @@ const firstSectionDependingOnTheRoute = computed(() => {
       return AnchorNamesEnum.personalInformation;
     case PageNameEnum.stack:
       return AnchorNamesEnum.mainStack;
+    case PageNameEnum.codeExamples:
+      return AnchorNamesEnum.projectList;
   }
 });
 

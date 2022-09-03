@@ -8,4 +8,6 @@ export enum AnchorNamesEnum {
   mainStack = 'index-stack-main-stack',
   fullStack = 'index-stack-full-stack',
   softSkills = 'index-stack-soft-skills',
+  // code-examples
+  projectList = 'index-code-examples-project-list',
 }

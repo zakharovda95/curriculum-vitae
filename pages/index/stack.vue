@@ -18,7 +18,7 @@ const stackPageStore = useStackPageStore();
 stackPageStore.getData();
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
 @media (max-width: 800px) {
