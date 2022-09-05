@@ -13,6 +13,8 @@ export const FIRST_PROJECT_CONTENT_RUS = {
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FtOdsst_cZdE.jpg?alt=media&token=dd62b035-421b-4021-a995-f2f940303d49',
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FrKfB85cGdYk.jpg?alt=media&token=014a5369-6ead-4895-88d2-353792ac1f5d',
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FJWK58vAaCtg.jpg?alt=media&token=e35bb137-d4e3-4ec2-9e30-9f0d3cfb8ec4',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FVLETTuJbgZg.jpg?alt=media&token=6e6ab270-5f3e-4e90-a3a6-af30c561a392',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FLZJVf1zLNWg.jpg?alt=media&token=91ed92c6-5a05-4e97-8e06-3fbe24de24ec',
   ],
   description: [
     'Простой проект для демонстрации навыков работы с библиотекой Vue JS 3 и описанием компонентов на Option API. Выполнение данного проекта помогло мне закрепить и дополнить знания, полученные в ходе обучения на курсах по Vue JS 3. За основу проекта взят курсовой проект с курсов, но не его код',

@@ -1,14 +1,18 @@
 <template>
   <UILoading v-if="codeExamplesPageStore.isLoading" />
   <div v-else class="project-list-page">
-    <UIList v-slot="item" :list="projects">
-      <ProjectListItem class="project" :project-data="item" />
-    </UIList>
+    <div class="wrapper">
+      <ProjectListItem
+        v-for="project in projects"
+        :key="project.id"
+        class="project"
+        :project-data="project"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import UIList from '~/components/UI/UIList.vue';
 import ProjectListItem from '~/components/pages/code-examples/ProjectListItem.vue';
 import UILoading from '~/components/UI/UILoading.vue';
 
@@ -54,12 +58,17 @@ const projects = computed(() => {
     width: 100%;
     min-height: 90vh;
     background: $MAIN_BANNER;
-    display: grid;
-    grid-template-areas:
-      'item item'
-      'item item';
-    .project {
-      grid-area: item;
+    .wrapper {
+      width: 70%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 12px;
+      .project {
+        width: 500px;
+        height: 400px;
+      }
     }
   }
 }

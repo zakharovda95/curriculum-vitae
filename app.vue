@@ -24,6 +24,7 @@ import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples
 // const contacts = await storage.getAllImageUrls('/contacts/');
 // const stackList = await storage.getAllImageUrls('/stack-icons/');
 // const projectImages = await storage.getAllImageUrls('/project-images/1/');
+// const projectImages = await storage.getAllImageUrls('/project-images/2/');
 // const img = await storage.getImageUrl('/common/avatar.jpg');
 // await console.log(projectImages);
 </script>

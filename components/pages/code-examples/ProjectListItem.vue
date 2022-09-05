@@ -1,12 +1,19 @@
 <template>
-  <div class="project-list-item">
+  <div class="project-list-item" @click="goToProjectPage">
     <UIText class="title">{{ projectData.title }}</UIText>
-    <div class="container" />
+    <div class="container">
+      <div class="text">{{ projectData.preview.description }}</div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import UIText from '~/components/UI/UIText.vue';
+
+import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
+
+import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   projectData: {
@@ -14,6 +21,15 @@ const props = defineProps({
     required: true,
   },
 });
+
+const background = computed(() => {
+  return `linear-gradient( 0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${props.projectData.preview.image})`;
+});
+
+const router = useRouter();
+const goToProjectPage = (): void => {
+  router.push({ name: AnchorNamesEnum.projectList, params: { id: props.projectData.id } });
+};
 </script>
 
 <style scoped lang="scss">
@@ -37,22 +53,34 @@ const props = defineProps({
 
 @media (min-width: 1400px) {
   .project-list-item {
-    width: 500px;
-    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     grid-area: item;
+    cursor: pointer;
     .title {
       font-family: Nunito-ExtraBold, sans-serif;
       font-size: 2rem;
     }
     .container {
+      display: flex;
+      justify-content: center;
       margin-top: 8px;
       width: 100%;
       height: 100%;
       border-radius: 12px;
-      background: white;
+      background-size: cover;
+      background-position: center;
+      background-image: v-bind(background);
+      border: 3px solid $MAIN_AQUAMARINE;
+      .text {
+        display: flex;
+        align-self: center;
+        width: 70%;
+        color: $MAIN_WHITE;
+        text-align: center;
+        font-size: 1.3rem;
+      }
     }
   }
 }
