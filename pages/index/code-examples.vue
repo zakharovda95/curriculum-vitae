@@ -56,6 +56,7 @@ codeExamplesPageStore.getData();
       display: flex;
       align-self: center;
       margin-top: 24px;
+      margin-left: 24px;
     }
   }
 }

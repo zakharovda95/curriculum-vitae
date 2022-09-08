@@ -5,7 +5,7 @@ export const SECOND_PROJECT_CONTENT_RUS = {
     image:
       'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FJWK58vAaCtg.jpg?alt=media&token=81068761-bade-4434-a7fb-6b9d95265749',
     description:
-      'Онлайн магазин на TypeScript и Vue 3 Composition API. Стейт менеджмент - Pinia. Роутинг - Vue-Router. Контент менеджмент и авторизация - StrapiCMS. Хостинг -  Render',
+      'Онлайн магазин на TypeScript и Vue 3 Composition API. Стейт менеджмент - Pinia. Монорепозиторий LernaJS. Контент менеджмент и авторизация - StrapiCMS. Хостинг -  Render',
   },
   images: [
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FJWK58vAaCtg.jpg?alt=media&token=81068761-bade-4434-a7fb-6b9d95265749',
@@ -42,4 +42,8 @@ export const SECOND_PROJECT_CONTENT_RUS = {
     'LernaJS - монорепозиторий',
     'Lodash - библиотека работы с коллекциями данных',
   ],
+  links: {
+    github: '',
+    site: '',
+  },
 };

@@ -22,13 +22,11 @@ const props = defineProps({
   },
 });
 
-const background = computed(() => {
-  return `linear-gradient( 0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${props.projectData.preview.image})`;
-});
+const background = computed(() => `url(${props.projectData.preview.image})`);
 
 const router = useRouter();
 const goToProjectPage = (): void => {
-  router.push({ name: AnchorNamesEnum.projectList, params: { id: props.projectData.id } });
+  router.push({ name: AnchorNamesEnum.projectPage, params: { id: props.projectData.id } });
 };
 </script>
 
@@ -37,27 +35,12 @@ const goToProjectPage = (): void => {
 
 @media (max-width: 800px) {
   .project-list-item {
-    width: 100%;
-    min-height: 90vh;
-    background: $MAIN_BANNER;
-  }
-}
-
-@media (min-width: 801px) and (max-width: 1399px) {
-  .project-list-item {
-    width: 100%;
-    height: 90vh;
-    background: $MAIN_BANNER;
-  }
-}
-
-@media (min-width: 1400px) {
-  .project-list-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     grid-area: item;
     cursor: pointer;
+    margin-bottom: 24px;
     .title {
       font-family: Nunito-ExtraBold, sans-serif;
       font-size: 2rem;
@@ -71,7 +54,8 @@ const goToProjectPage = (): void => {
       border-radius: 12px;
       background-size: cover;
       background-position: center;
-      background-image: v-bind(background);
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        v-bind(background);
       border: 3px solid $MAIN_AQUAMARINE;
       .text {
         display: flex;
@@ -81,6 +65,90 @@ const goToProjectPage = (): void => {
         text-align: center;
         font-size: 1.3rem;
       }
+    }
+    .container:hover {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+        v-bind(background);
+    }
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1399px) {
+  .project-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: item;
+    cursor: pointer;
+    margin-bottom: 24px;
+    .title {
+      font-family: Nunito-ExtraBold, sans-serif;
+      font-size: 2rem;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        v-bind(background);
+      border: 3px solid $MAIN_AQUAMARINE;
+      .text {
+        display: flex;
+        align-self: center;
+        width: 70%;
+        color: $MAIN_WHITE;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+    }
+    .container:hover {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+        v-bind(background);
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .project-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: item;
+    cursor: pointer;
+    margin-bottom: 24px;
+    .title {
+      font-family: Nunito-ExtraBold, sans-serif;
+      font-size: 2rem;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        v-bind(background);
+      border: 3px solid $MAIN_AQUAMARINE;
+      .text {
+        display: flex;
+        align-self: center;
+        width: 70%;
+        color: $MAIN_WHITE;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+    }
+    .container:hover {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+        v-bind(background);
     }
   }
 }

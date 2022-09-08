@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.1",
+    "@splidejs/vue-splide": "^0.6.10",
     "firebase": "^9.9.3",
     "yarn": "^1.22.19"
   }

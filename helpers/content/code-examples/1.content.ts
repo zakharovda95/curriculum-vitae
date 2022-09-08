@@ -1,5 +1,5 @@
 export const FIRST_PROJECT_CONTENT_RUS = {
-  id: 1,
+  id: 0,
   title: 'Встречи',
   preview: {
     image:
@@ -40,4 +40,8 @@ export const FIRST_PROJECT_CONTENT_RUS = {
     'Lodash - библиотека работы с коллекциями данных',
     'Material Design Lite - css библиотека (использовал сетку, некоторые стили, некоторые ui элементы)',
   ],
+  links: {
+    github: '',
+    site: '',
+  },
 };

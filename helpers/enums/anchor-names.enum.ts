@@ -10,4 +10,5 @@ export enum AnchorNamesEnum {
   softSkills = 'index-stack-soft-skills',
   // code-examples
   projectList = 'index-code-examples-project-list',
+  projectPage = 'index-code-examples-project-list-id',
 }

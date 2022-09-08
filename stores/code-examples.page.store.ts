@@ -11,5 +11,10 @@ export const useCodeExamplesPageStore = defineStore('codeExamplesPageStore', {
       this.data = await database.getData('/rus/code-examples/');
       this.isLoading = false;
     },
+    async getProjectData(id: string) {
+      this.isLoading = true;
+      this.data = await database.getData(`/rus/code-examples/${id}`);
+      this.isLoading = false;
+    },
   },
 });

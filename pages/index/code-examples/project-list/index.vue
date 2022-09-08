@@ -42,6 +42,18 @@ const projects = computed(() => {
     width: 100%;
     min-height: 90vh;
     background: $MAIN_BANNER;
+    .wrapper {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 12px;
+      .project {
+        width: 500px;
+        height: 400px;
+      }
+    }
   }
 }
 
@@ -50,6 +62,18 @@ const projects = computed(() => {
     width: 100%;
     height: 90vh;
     background: $MAIN_BANNER;
+    .wrapper {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 12px;
+      .project {
+        width: 500px;
+        height: 400px;
+      }
+    }
   }
 }
 
