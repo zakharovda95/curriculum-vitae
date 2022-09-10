@@ -1,6 +1,5 @@
 <template>
-  <UILoading v-if="summaryPageStore.isLoading" />
-  <div class="objective" v-else>
+  <div class="objective">
     <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
     <ContentGenerator :content="pageContent" />
     <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
@@ -11,7 +10,6 @@
 import ContentGenerator from '~/components/shared/ContentGenerator.vue';
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
-import UILoading from '~/components/UI/UILoading.vue';
 
 import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
 

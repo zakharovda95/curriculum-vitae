@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <UILoading v-if="!isLoaded" />
+  <div v-else class="container">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -7,6 +8,15 @@
 </template>
 
 <script setup lang="ts">
+import UILoading from '~/components/UI/UILoading.vue';
+
+import { onMounted, ref, Ref } from 'vue';
+
+const isLoaded: Ref<boolean> = ref(false);
+
+onMounted(() => {
+  isLoaded.value = true;
+});
 import { pageLifeCycleScrollBehavior } from '~/helpers/methods/scroll.methods';
 import { database } from '~/helpers/services/firebase-database.service';
 import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';

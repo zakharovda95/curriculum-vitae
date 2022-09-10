@@ -5,6 +5,7 @@ export const useCodeExamplesPageStore = defineStore('codeExamplesPageStore', {
   state: () => ({
     isLoading: true,
     data: null,
+    projectData: null,
   }),
   actions: {
     async getData() {
@@ -13,7 +14,7 @@ export const useCodeExamplesPageStore = defineStore('codeExamplesPageStore', {
     },
     async getProjectData(id: string) {
       this.isLoading = true;
-      this.data = await database.getData(`/rus/code-examples/${id}`);
+      this.projectData = await database.getData(`/rus/code-examples/${id}`);
       this.isLoading = false;
     },
   },

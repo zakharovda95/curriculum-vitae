@@ -1,5 +1,6 @@
 <template>
-  <div class="stack-page">
+  <UILoading v-if="stackPageStore.isLoading" />
+  <div class="stack-page" v-else>
     <ThePreviews v-if="isElementHidden" class="preview" />
     <NuxtPage />
   </div>
@@ -7,6 +8,7 @@
 
 <script setup lang="ts">
 import ThePreviews from '~/components/pages/main/ThePreviews.vue';
+import UILoading from '~/components/UI/UILoading.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useStackPageStore } from '~/stores/stack-page.store';

@@ -1,6 +1,5 @@
 <template>
-  <UILoading v-if="stackPageStore.isLoading" />
-  <div class="full-stack" v-else>
+  <div class="full-stack">
     <AnchorGroup class="anchors" :anchors="anchors" title="Стек" />
     <ContentBlock class="section">
       <template #header>
@@ -22,7 +21,6 @@ import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import UIList from '~/components/UI/UIList.vue';
 import StackListItem from '~/components/pages/stack/StackListItem.vue';
-import UILoading from '~/components/UI/UILoading.vue';
 
 import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
 import { useStackPageStore } from '~/stores/stack-page.store';

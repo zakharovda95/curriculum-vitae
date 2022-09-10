@@ -1,11 +1,15 @@
 <template>
   <UILoading v-if="projectPageStore.isLoading" />
-  <div v-else class="project-page">
+  <div v-if="!projectPageStore.isLoading" class="project-page">
     <div class="header">
       <UIText size="2.2rem" class="title">{{ projectData.title }}</UIText>
     </div>
     <div class="carousel-container">
       <TheCarousel class="carousel" :slides="projectData.images" />
+    </div>
+    <div class="links">
+      <NuxtLink target="_blank" class="link" :to="projectData.links.github">GIT HUB</NuxtLink>
+      <NuxtLink target="_blank" class="link" :to="projectData.links.site">DEMO VIEW</NuxtLink>
     </div>
     <div class="description">
       <SectionContainer :content="projectData.description" title="Описание" />
@@ -36,7 +40,7 @@ const route = useRoute();
 
 await projectPageStore.getProjectData(String(route.params.id));
 
-const projectData = computed(() => projectPageStore.data);
+const projectData = computed(() => projectPageStore.projectData);
 </script>
 
 <style scoped lang="scss">
@@ -60,9 +64,23 @@ const projectData = computed(() => projectPageStore.data);
     }
 
     .carousel-container {
+      margin-bottom: 24px;
       .carousel {
         margin: 0 auto;
         width: 95vw;
+      }
+    }
+    .links {
+      margin: 0 auto;
+      width: 90vw;
+      display: flex;
+      justify-content: space-around;
+      .link {
+        color: whitesmoke;
+        text-decoration: underline;
+        font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 1.2rem;
+        display: flex;
       }
     }
   }
@@ -87,9 +105,23 @@ const projectData = computed(() => projectPageStore.data);
     }
 
     .carousel-container {
+      margin-bottom: 24px;
       .carousel {
         margin: 0 auto;
         width: 90vw;
+      }
+    }
+    .links {
+      margin: 0 auto;
+      width: 60vw;
+      display: flex;
+      justify-content: space-around;
+      .link {
+        color: whitesmoke;
+        text-decoration: underline;
+        font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 1.5rem;
+        display: flex;
       }
     }
   }
@@ -117,6 +149,19 @@ const projectData = computed(() => projectPageStore.data);
       .carousel {
         margin: 0 auto;
         width: 80vw;
+      }
+    }
+    .links {
+      margin: 0 auto;
+      width: 30vw;
+      display: flex;
+      justify-content: space-around;
+      .link {
+        color: whitesmoke;
+        text-decoration: underline;
+        font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 1.5rem;
+        display: flex;
       }
     }
   }

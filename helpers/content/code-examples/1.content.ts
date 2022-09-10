@@ -3,18 +3,16 @@ export const FIRST_PROJECT_CONTENT_RUS = {
   title: 'Встречи',
   preview: {
     image:
-      'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FrKfB85cGdYk.jpg?alt=media&token=014a5369-6ead-4895-88d2-353792ac1f5d',
+      'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F1.jpg?alt=media&token=0bd4696f-f58c-418b-81dd-683ce5370ddb',
     description:
       'Сервис организации мероприятий на Vue 3 Option API. Стейт менеджмент - Vuex 4. Роутинг - Vue-Router. База данных, хранилище и авторизация - Firebase. Хостинг -  Github Pages',
   },
   images: [
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2Fzdy9X-5kNKM.jpg?alt=media&token=58e45d40-b7ec-4263-8e72-03fd9969a730',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FqZY6VIUKv_I.jpg?alt=media&token=565d1b8a-e0b7-4e6b-9b1a-efadd96e7879',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FtOdsst_cZdE.jpg?alt=media&token=dd62b035-421b-4021-a995-f2f940303d49',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FrKfB85cGdYk.jpg?alt=media&token=014a5369-6ead-4895-88d2-353792ac1f5d',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FJWK58vAaCtg.jpg?alt=media&token=e35bb137-d4e3-4ec2-9e30-9f0d3cfb8ec4',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FVLETTuJbgZg.jpg?alt=media&token=6e6ab270-5f3e-4e90-a3a6-af30c561a392',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2FLZJVf1zLNWg.jpg?alt=media&token=91ed92c6-5a05-4e97-8e06-3fbe24de24ec',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F1.jpg?alt=media&token=0bd4696f-f58c-418b-81dd-683ce5370ddb',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F2.jpg?alt=media&token=a41708e2-4fea-490b-b911-cacb2117be57',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F3.jpg?alt=media&token=83239d44-113f-46c2-b9de-4f5ceee81705',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F4.jpg?alt=media&token=b03ecbb7-f361-4889-bd38-039dd7c5e6c1',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F5.jpg?alt=media&token=13aa13ef-5f52-4440-b804-2f06759d9d0f',
   ],
   description: [
     'Простой проект для демонстрации навыков работы с библиотекой Vue JS 3 и описанием компонентов на Option API. Выполнение данного проекта помогло мне закрепить и дополнить знания, полученные в ходе обучения на курсах по Vue JS 3. За основу проекта взят курсовой проект с курсов, но не его код',
@@ -41,7 +39,7 @@ export const FIRST_PROJECT_CONTENT_RUS = {
     'Material Design Lite - css библиотека (использовал сетку, некоторые стили, некоторые ui элементы)',
   ],
   links: {
-    github: '',
-    site: '',
+    github: 'https://github.com/zakharovda95/vue_js-option_api-meetups',
+    site: 'https://zakharovda95.github.io/meetups-demo-view/#/meetups',
   },
 };

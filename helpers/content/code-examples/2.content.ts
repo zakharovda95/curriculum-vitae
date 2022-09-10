@@ -3,18 +3,17 @@ export const SECOND_PROJECT_CONTENT_RUS = {
   title: 'Japanese Sweets Store',
   preview: {
     image:
-      'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FJWK58vAaCtg.jpg?alt=media&token=81068761-bade-4434-a7fb-6b9d95265749',
+      'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F1.jpg?alt=media&token=89c60489-7f80-4e4c-a5ff-82af3b0f42f2',
     description:
       'Онлайн магазин на TypeScript и Vue 3 Composition API. Стейт менеджмент - Pinia. Монорепозиторий LernaJS. Контент менеджмент и авторизация - StrapiCMS. Хостинг -  Render',
   },
   images: [
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FJWK58vAaCtg.jpg?alt=media&token=81068761-bade-4434-a7fb-6b9d95265749',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F4X27fFcJR9o.jpg?alt=media&token=d97903a3-1fb3-4d67-aca9-7c956ea50a48',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FlJd34udX2rQ.jpg?alt=media&token=11d8f4ab-9610-404c-838c-2010b55a1bda',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F50JE5_Lq3VA.jpg?alt=media&token=e9c501b1-2abb-422e-bf6c-fc1a256f5348',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FfLb4j4dzX0M.jpg?alt=media&token=84590d09-b944-4143-b786-636752c022ef',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FrpOk9i1GevU.jpg?alt=media&token=547d6a46-fd14-409b-8b96-75f8302188d2',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2FaTwkM6iCuuA.jpg?alt=media&token=b6118fec-3c96-48e4-992d-93dabe97b5bc',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F1.jpg?alt=media&token=89c60489-7f80-4e4c-a5ff-82af3b0f42f2',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F2.jpg?alt=media&token=24afc64d-2b0a-4811-bf42-4ad2e4d32d01',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F3.jpg?alt=media&token=046b9d69-b15c-45f1-b554-fa9293510f00',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F4.jpg?alt=media&token=b93a92a0-af4c-4548-9fbd-00daa122e501',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F5.jpg?alt=media&token=128ad0e8-92c6-48ab-8b64-6d8af15c47c5',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F6.jpg?alt=media&token=a4d60d78-e83e-482e-afae-f1d40be5bb20',
   ],
   description: [
     'Не сложный проект на TypeScript для демонстрации навыков работы с библиотекой Vue JS 3 и описанием компонентов на Composition API. Выполнение данного проекта помогло мне изучить TypeScript и  понять принцип работы Headless CMS. Все заглушки товаров для проекта я взял с сайта www.japancandystore.com',
@@ -43,7 +42,7 @@ export const SECOND_PROJECT_CONTENT_RUS = {
     'Lodash - библиотека работы с коллекциями данных',
   ],
   links: {
-    github: '',
-    site: '',
+    github: 'https://github.com/zakharovda95/vue_ts-composition_api-japanese_sweets_store',
+    site: 'https://github.com/zakharovda95/vue_ts-composition_api-japanese_sweets_store',
   },
 };

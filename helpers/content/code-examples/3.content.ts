@@ -10,9 +10,7 @@ export const THIRD_PROJECT_CONTENT_RUS = {
   images: [
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F1.jpg?alt=media&token=6cf4a395-94dd-4be0-97d4-2929cc7cb223',
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F2.jpg?alt=media&token=511448da-6924-46f2-a211-750e4fb09e42',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F3.jpg?alt=media&token=00e031a2-96a8-45a7-a0df-92ae5a995c96',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F4.jpg?alt=media&token=a51eb56f-39a7-4226-bbb9-05871e1e2482',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F5.jpg?alt=media&token=54bf14e8-4126-4e24-a1dc-0a6f35657724',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F3.jpg?alt=media&token=fea82627-4e07-4a12-a128-733998c3cf83',
   ],
   description: [
     'Сайт-резюме на TypeScript  и Nuxt JS 3',
@@ -28,7 +26,7 @@ export const THIRD_PROJECT_CONTENT_RUS = {
     'Pinia - стейт менеджмент',
   ],
   links: {
-    github: '',
-    site: '',
+    github: 'https://github.com/zakharovda95/nuxt3_ts-composition_api-curriculum_vitae',
+    site: 'https://github.com/zakharovda95/nuxt3_ts-composition_api-curriculum_vitae',
   },
 };

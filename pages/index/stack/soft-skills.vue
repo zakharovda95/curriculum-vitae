@@ -1,6 +1,5 @@
 <template>
-  <UILoading v-if="stackPageStore.isLoading" />
-  <div class="soft-skills" v-else>
+  <div class="soft-skills">
     <AnchorGroup class="anchors" :anchors="anchors" title="Стек" />
     <ContentGenerator :content="pageContent" />
     <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
@@ -11,7 +10,6 @@
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import ContentGenerator from '~/components/shared/ContentGenerator.vue';
-import UILoading from '~/components/UI/UILoading.vue';
 
 import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
 import { useStackPageStore } from '~/stores/stack-page.store';
