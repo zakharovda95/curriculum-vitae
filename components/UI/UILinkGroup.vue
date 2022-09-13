@@ -43,7 +43,7 @@ const route = useRoute();
     .link {
       font-weight: 500;
       font-size: 1rem;
-      color: $MAIN_BLACK;
+      color: $BLACK;
       font-family: Nunito-SemiBold, sans-serif;
       padding-right: 8px;
       padding-left: 8px;
@@ -68,7 +68,7 @@ const route = useRoute();
     .link {
       font-weight: 500;
       font-size: 1.3rem;
-      color: $MAIN_BLACK;
+      color: $BLACK;
       font-family: Nunito-SemiBold, sans-serif;
       padding-right: 8px;
       padding-left: 8px;
@@ -93,7 +93,7 @@ const route = useRoute();
     .link {
       font-weight: 500;
       font-size: 1.5rem;
-      color: $MAIN_BLACK;
+      color: $BLACK;
       font-family: Nunito-SemiBold, sans-serif;
       padding-right: 8px;
       padding-left: 8px;

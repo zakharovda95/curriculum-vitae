@@ -29,7 +29,8 @@ export const EDUCATION_RUS: SectionContentType = {
       text: 'Курсы JavaScript.ru - JavaScript/DOM/Interfaces',
       props: {
         tag: 'h2',
-        certificate: '123',
+        certificate:
+          'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/certificates%2Fcertificate_vue.jpg?alt=media&token=3d6b80b3-ff27-4884-8c1e-638a495b3314',
       },
     },
     {
@@ -37,7 +38,8 @@ export const EDUCATION_RUS: SectionContentType = {
       text: 'Курсы JavaScript.ru - Vue.Js 3',
       props: {
         tag: 'h2',
-        certificate: '123',
+        certificate:
+          'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/certificates%2Fcertificate.jpg?alt=media&token=3704a31e-66c9-4bdb-bba7-f9281e4716b3',
       },
     },
   ],

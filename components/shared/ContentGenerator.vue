@@ -20,7 +20,11 @@
               {{ paragraph.textAsLink.name }}
             </span>
           </UIParagraph>
-          <UIButton class="button certificate" v-if="paragraph.props.certificate">
+          <UIButton
+            class="button certificate"
+            v-if="paragraph.props.certificate"
+            @click="openImg(paragraph.props.certificate)"
+          >
             сертификат
           </UIButton>
         </div>
@@ -36,6 +40,7 @@ import ContentBlock from '@/components/shared/ContentBlock.vue';
 
 import { PropType } from 'vue';
 import { SectionContentType } from '~/helpers/types/content/section-content.types';
+import { openImage } from '~/helpers/methods/image.methods';
 
 import { useRouter } from 'vue-router';
 
@@ -50,6 +55,10 @@ const router = useRouter();
 
 const goTo = (path: string): void => {
   router.push({ name: path });
+};
+
+const openImg = (src: string): void => {
+  openImage(src);
 };
 </script>
 

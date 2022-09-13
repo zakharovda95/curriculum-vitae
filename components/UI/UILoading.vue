@@ -14,10 +14,10 @@
   justify-content: center;
   align-items: center;
   align-self: center;
-  color: $MAIN_WHITE;
+  color: $WHITE;
   font-family: Nunito-ExtraBold, sans-serif;
   font-size: 2rem;
-  background: $MAIN_BANNER;
+  background: $DARK_BLUE;
   overflow: hidden;
 }
 </style>

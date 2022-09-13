@@ -17,6 +17,8 @@ const isLoaded: Ref<boolean> = ref(false);
 onMounted(() => {
   isLoaded.value = true;
 });
+
+/** Управление контентом Firebase **/
 import { pageLifeCycleScrollBehavior } from '~/helpers/methods/scroll.methods';
 import { database } from '~/helpers/services/firebase-database.service';
 import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';
@@ -36,6 +38,14 @@ import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples
 // const projectImages = await storage.getAllImageUrls('/project-images/1/');
 // const projectImages = await storage.getAllImageUrls('/project-images/2/');
 // const projectImages = await storage.getAllImageUrls('/project-images/3/');
+// const projectImages = await storage.getAllImageUrls('/certificates/');
 // const img = await storage.getImageUrl('/common/avatar.jpg');
 // await console.log(projectImages);
 </script>
+
+<style>
+.container {
+  height: 100%;
+  width: 100%;
+}
+</style>

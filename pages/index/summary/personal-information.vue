@@ -29,6 +29,7 @@ const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
 const { widthX } = useWindowWidthWatcher();
 
 const summaryPageStore = useSummaryPageStore();
+
 const pageContent: Ref<SectionContentType> = computed(() => {
   if (summaryPageStore.data && !summaryPageStore.isLoading) {
     return summaryPageStore.data.personalInformation;
@@ -39,9 +40,10 @@ const pageContent: Ref<SectionContentType> = computed(() => {
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
+
 @media (max-width: 800px) {
   .personal-information {
-    background: $MAIN_AQUAMARINE;
+    background: $GRAY;
     .anchors {
       display: none;
     }
@@ -50,7 +52,7 @@ const pageContent: Ref<SectionContentType> = computed(() => {
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .personal-information {
-    background: $MAIN_AQUAMARINE;
+    background: $GRAY;
     .anchors {
       display: none;
     }

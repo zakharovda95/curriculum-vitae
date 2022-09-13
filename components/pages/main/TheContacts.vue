@@ -35,7 +35,7 @@ import UIText from '~/components/UI/UIText.vue';
     flex-direction: column;
 
     .header {
-      color: $MAIN_WHITE;
+      color: $WHITE;
       font-size: 1.2rem;
     }
 
@@ -50,7 +50,7 @@ import UIText from '~/components/UI/UIText.vue';
       .text {
         font-size: 1.2rem;
         text-decoration: none;
-        color: $MAIN_WHITE;
+        color: $WHITE;
         margin-left: 10px;
         margin-top: 10px;
       }
@@ -68,7 +68,7 @@ import UIText from '~/components/UI/UIText.vue';
     flex-direction: column;
 
     .header {
-      color: $MAIN_WHITE;
+      color: $WHITE;
       font-size: 1.4rem;
     }
 
@@ -83,7 +83,7 @@ import UIText from '~/components/UI/UIText.vue';
       .text {
         font-size: 1.5rem;
         text-decoration: none;
-        color: $MAIN_WHITE;
+        color: $WHITE;
         margin-left: 10px;
         margin-top: 10px;
       }
@@ -112,7 +112,7 @@ import UIText from '~/components/UI/UIText.vue';
         padding: 5px;
         font-size: 1.2rem;
         text-decoration: none;
-        color: $MAIN_BLACK;
+        color: $BLACK;
         margin-left: 10px;
         margin-top: 10px;
       }

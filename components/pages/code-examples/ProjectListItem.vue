@@ -56,12 +56,12 @@ const goToProjectPage = (): void => {
       background-position: center;
       background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         v-bind(background);
-      border: 3px solid $MAIN_AQUAMARINE;
+      border: 3px solid $GRAY;
       .text {
         display: flex;
         align-self: center;
         width: 70%;
-        color: $MAIN_WHITE;
+        color: $WHITE;
         text-align: center;
         font-size: 1.3rem;
       }
@@ -96,12 +96,12 @@ const goToProjectPage = (): void => {
       background-position: center;
       background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         v-bind(background);
-      border: 3px solid $MAIN_AQUAMARINE;
+      border: 3px solid $GRAY;
       .text {
         display: flex;
         align-self: center;
         width: 70%;
-        color: $MAIN_WHITE;
+        color: $WHITE;
         text-align: center;
         font-size: 1.3rem;
       }
@@ -136,12 +136,12 @@ const goToProjectPage = (): void => {
       background-position: center;
       background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
         v-bind(background);
-      border: 3px solid $MAIN_AQUAMARINE;
+      border: 3px solid $GRAY;
       .text {
         display: flex;
         align-self: center;
         width: 70%;
-        color: $MAIN_WHITE;
+        color: $WHITE;
         text-align: center;
         font-size: 1.3rem;
       }

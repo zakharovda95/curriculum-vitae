@@ -82,7 +82,7 @@ const fontSizes: Ref<StyleType> = computed(() => {
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    background: $MAIN_BANNER;
+    background: $DARK_BLUE;
     min-width: calc(100% - 24px);
     width: calc(100% - 24px);
     padding: 12px;
@@ -124,7 +124,7 @@ const fontSizes: Ref<StyleType> = computed(() => {
     grid-template-areas:
       'text text'
       'avatar contacts';
-    background: $MAIN_BANNER;
+    background: $DARK_BLUE;
     min-width: calc(100% - 24px);
     width: calc(100% - 24px);
     padding: 12px;
@@ -171,7 +171,7 @@ const fontSizes: Ref<StyleType> = computed(() => {
     display: flex;
     justify-content: space-between;
     height: 582px;
-    background: $MAIN_BANNER;
+    background: $DARK_BLUE;
     border-radius: 0 0 52px 0;
     min-width: 70%;
     width: v-bind(width);
@@ -184,23 +184,23 @@ const fontSizes: Ref<StyleType> = computed(() => {
       margin-right: 100px;
 
       h1 {
-        color: $MAIN_WHITE;
+        color: $WHITE;
       }
 
       .row-2 {
-        color: $MAIN_WHITE;
+        color: $WHITE;
         font-family: Nunito-ExtraBold, sans-serif;
       }
 
       .row-3 {
-        color: $MAIN_WHITE;
+        color: $WHITE;
         font-family: Nunito-ExtraBold, sans-serif;
       }
 
       .row-4,
       .row-5 {
         margin-top: 20px;
-        color: $MAIN_WHITE;
+        color: $WHITE;
         font-family: Nunito-SemiBold, sans-serif;
       }
     }

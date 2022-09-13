@@ -26,10 +26,10 @@ defineProps({
 @import '../assets/css/_constants.scss';
 
 .ui-paragraph {
-  color: $MAIN_WHITE;
+  color: $WHITE;
 
   .title {
-    color: $MAIN_AQUAMARINE;
+    color: $GRAY;
   }
 }
 </style>

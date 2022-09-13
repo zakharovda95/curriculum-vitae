@@ -54,7 +54,7 @@ const sizes: Ref<string> = computed(() => {
 @media (max-width: 800px) {
   .the-previews {
     display: flex;
-    background: $MAIN_WHITE;
+    background: $WHITE;
     padding: 12px;
     margin: 0 auto;
     width: calc(80%);
@@ -64,7 +64,7 @@ const sizes: Ref<string> = computed(() => {
 
     h1 {
       width: 80%;
-      color: $MAIN_BLACK;
+      color: $BLACK;
       font-size: 1.5rem;
     }
 
@@ -86,7 +86,7 @@ const sizes: Ref<string> = computed(() => {
   .the-previews {
     display: flex;
     width: 70%;
-    background: $MAIN_WHITE;
+    background: $WHITE;
     padding: 24px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
@@ -95,7 +95,7 @@ const sizes: Ref<string> = computed(() => {
 
     h1 {
       width: 80%;
-      color: $MAIN_BLACK;
+      color: $BLACK;
       font-size: 2rem;
     }
 
@@ -117,16 +117,16 @@ const sizes: Ref<string> = computed(() => {
   .the-previews {
     display: flex;
     width: 70%;
-    background: $MAIN_WHITE;
+    background: $WHITE;
     padding: 24px;
     text-align: center;
     align-items: center;
-    border: 1px solid $MAIN_AQUAMARINE;
-    border-right: 15px solid $MAIN_AQUAMARINE;
+    border: 1px solid $GRAY;
+    border-right: 15px solid $GRAY;
 
     h1 {
       width: 80%;
-      color: $MAIN_BLACK;
+      color: $BLACK;
       font-size: 2.5rem;
     }
 

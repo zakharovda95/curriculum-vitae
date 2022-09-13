@@ -85,12 +85,12 @@ const goToChapter = (): void => {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    background: $MAIN_WHITE;
+    background: $WHITE;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     height: 30vh;
     width: 14vw;
-    color: $MAIN_BLACK;
-    border: 4px solid $MAIN_AQUAMARINE;
+    color: $BLACK;
+    border: 4px solid $GRAY;
     overflow: scroll;
 
     .header {
@@ -98,8 +98,8 @@ const goToChapter = (): void => {
       height: 15%;
       font-size: 1.3rem;
       font-weight: 400;
-      color: $MAIN_BLACK;
-      border-bottom: 1px solid $MAIN_AQUAMARINE;
+      color: $BLACK;
+      border-bottom: 1px solid $GRAY;
     }
 
     .sections {

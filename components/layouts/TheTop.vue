@@ -14,11 +14,11 @@
     align-items: center;
     width: 100%;
     height: 60px;
-    background: $MAIN_BLACK;
+    background: $BLACK;
 
     p {
       text-align: center;
-      color: $MAIN_WHITE;
+      color: $WHITE;
       font-size: 1.3rem;
       font-family: Nunito-SemiBold, sans-serif;
     }
@@ -32,10 +32,10 @@
     align-items: center;
     width: 100%;
     height: 60px;
-    background: $MAIN_BLACK;
+    background: $BLACK;
 
     p {
-      color: $MAIN_WHITE;
+      color: $WHITE;
       font-size: 1.5rem;
       font-family: Nunito-Regular, sans-serif;
     }

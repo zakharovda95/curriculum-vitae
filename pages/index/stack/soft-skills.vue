@@ -41,7 +41,7 @@ const pageContent: Ref<SectionContentType> = computed(() => {
 @import '../assets/css/_constants.scss';
 @media (max-width: 800px) {
   .soft-skills {
-    background: $MAIN_AQUAMARINE;
+    background: $GRAY;
     .anchors {
       display: none;
     }
@@ -54,7 +54,7 @@ const pageContent: Ref<SectionContentType> = computed(() => {
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .soft-skills {
-    background: $MAIN_AQUAMARINE;
+    background: $GRAY;
     .anchors {
       display: none;
     }

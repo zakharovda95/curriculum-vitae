@@ -49,7 +49,7 @@ const projectData = computed(() => projectPageStore.projectData);
 @media (max-width: 800px) {
   .project-page {
     width: 100%;
-    background: $MAIN_BANNER;
+    background: $DARK_BLUE;
 
     .header {
       width: 100%;
@@ -89,7 +89,7 @@ const projectData = computed(() => projectPageStore.projectData);
 @media (min-width: 801px) and (max-width: 1399px) {
   .project-page {
     width: 100%;
-    background: $MAIN_BANNER;
+    background: $DARK_BLUE;
 
     .header {
       width: 100%;
@@ -130,7 +130,7 @@ const projectData = computed(() => projectPageStore.projectData);
 @media (min-width: 1400px) {
   .project-page {
     width: 100%;
-    background: $MAIN_BANNER;
+    background: $DARK_BLUE;
 
     .header {
       padding-top: 24px;

@@ -78,7 +78,7 @@ const goToPrevious = (): void => {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: $MAIN_AQUAMARINE;
+  background: $GRAY;
 
   .title {
     font-weight: 600;

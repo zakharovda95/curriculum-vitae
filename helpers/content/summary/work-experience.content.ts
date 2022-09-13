@@ -37,7 +37,7 @@ export const WORK_EXPERIENCE_RUS: SectionContentType = {
       text: 'Я учавствую в стартап проекте - браузерной игры CastleKeepers. Это некоммерческий проект с небольшой коммандой. Подробнее в разделе',
       textAsLink: {
         name: '"Примеры кода"',
-        link: '/work-experience',
+        link: 'index-work-experience-main-stack',
       },
       props: {
         tag: 'h2',

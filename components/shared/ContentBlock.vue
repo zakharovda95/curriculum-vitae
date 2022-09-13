@@ -23,20 +23,20 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 
 @media (max-width: 800px) {
   .content-block {
-    width: 90%;
-    min-height: 100%;
     display: flex;
     flex-direction: column;
-    background: $MAIN_BLACK;
-    padding: 16px 16px 50px 16px;
+    width: calc(100% - 32px);
+    min-height: calc(100vh - 142px);
+    background: $BLACK;
+    padding: 0 16px;
     font-size: 0.8rem;
     font-family: Nunito-SemiBold, sans-serif;
-    color: $MAIN_WHITE;
+    color: $WHITE;
 
     .header {
       padding: 12px 0;
-      border-bottom: 1px solid $MAIN_AQUAMARINE;
-      color: $MAIN_AQUAMARINE;
+      border-bottom: 1px solid $GRAY;
+      color: $GRAY;
       width: 100%;
       text-align: center;
       margin-bottom: 5px;
@@ -54,24 +54,23 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .content-block {
-    width: 95%;
-    min-height: 87vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    background: $MAIN_BLACK;
-    padding: 16px 16px 50px 16px;
+    width: 95%;
+    min-height: calc(100vh - 142px);
+    background: $BLACK;
+    padding: 0 24px;
     font-size: 1.1rem;
     font-family: Nunito-SemiBold, sans-serif;
-    color: $MAIN_WHITE;
+    color: $WHITE;
 
     .header {
+      display: flex;
       flex-direction: column;
       justify-content: space-around;
-      width: 100%;
-      border-bottom: 1px solid $MAIN_AQUAMARINE;
-      color: $MAIN_AQUAMARINE;
-      margin-bottom: 5px;
+      border-bottom: 1px solid $GRAY;
+      color: $GRAY;
+      margin: 12px 0;
     }
 
     .content {
@@ -86,24 +85,25 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
 
 @media (min-width: 1400px) {
   .content-block {
-    width: 70%;
-    min-height: calc(v-bind(blockHeight));
     display: flex;
     flex-direction: column;
-    background: $MAIN_BLACK;
-    padding: 24px;
+    width: 70%;
+    min-height: calc(100vh - 100px);
+    background: $BLACK;
+    padding: 0 24px;
     font-size: 1.2rem;
     font-family: Nunito-SemiBold, sans-serif;
-    color: $MAIN_WHITE;
+    color: $WHITE;
     box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
+    border-right: 24px solid $GRAY;
 
     .header {
+      display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 6.4vh;
-      width: 100%;
-      border-bottom: 1px solid $MAIN_AQUAMARINE;
-      color: $MAIN_AQUAMARINE;
+      border-bottom: 1px solid $GRAY;
+      color: $GRAY;
+      margin: 12px 0;
     }
 
     .content {

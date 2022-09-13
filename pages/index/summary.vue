@@ -18,6 +18,7 @@ import { computed } from 'vue';
 const isElementHidden = computed(() => hidePageElement());
 
 const summaryPageStore = useSummaryPageStore();
+
 summaryPageStore.getData();
 </script>
 
@@ -28,10 +29,10 @@ summaryPageStore.getData();
   .summary-page {
     padding: 0;
     .preview {
-      margin-top: 24px;
-      margin-bottom: 24px;
       display: flex;
       align-self: center;
+      margin-top: 24px;
+      margin-bottom: 24px;
     }
   }
 }
@@ -40,22 +41,21 @@ summaryPageStore.getData();
   .summary-page {
     padding: 0;
     .preview {
-      margin-top: 24px;
-      margin-bottom: 24px;
       display: flex;
       align-self: center;
+      margin-top: 24px;
+      margin-bottom: 24px;
     }
   }
 }
 
 @media (min-width: 1400px) {
   .summary-page {
-    padding-left: 24px;
-
     .preview {
       display: flex;
       align-self: center;
       margin-top: 24px;
+      margin-left: 24px;
     }
   }
 }

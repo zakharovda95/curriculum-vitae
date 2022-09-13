@@ -51,12 +51,11 @@ stackPageStore.getData();
 
 @media (min-width: 1400px) {
   .stack-page {
-    padding-left: 24px;
-
     .preview {
       display: flex;
       align-self: center;
       margin-top: 24px;
+      margin-left: 24px;
     }
   }
 }

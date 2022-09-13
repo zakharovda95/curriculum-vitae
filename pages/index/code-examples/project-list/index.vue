@@ -40,8 +40,8 @@ const projects = computed(() => {
 @media (max-width: 800px) {
   .project-list-page {
     width: 100%;
-    min-height: 90vh;
-    background: $MAIN_BANNER;
+    min-height: calc(100vh - 100px);
+    background: $DARK_BLUE;
     .wrapper {
       width: 90%;
       margin: 0 auto;
@@ -60,8 +60,8 @@ const projects = computed(() => {
 @media (min-width: 801px) and (max-width: 1399px) {
   .project-list-page {
     width: 100%;
-    height: 90vh;
-    background: $MAIN_BANNER;
+    min-height: calc(100vh - 100px);
+    background: $DARK_BLUE;
     .wrapper {
       width: 80%;
       margin: 0 auto;
@@ -80,8 +80,8 @@ const projects = computed(() => {
 @media (min-width: 1400px) {
   .project-list-page {
     width: 100%;
-    min-height: 90vh;
-    background: $MAIN_BANNER;
+    min-height: calc(100vh - 100px);
+    background: $DARK_BLUE;
     .wrapper {
       width: 70%;
       margin: 0 auto;

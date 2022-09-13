@@ -57,7 +57,7 @@ const imgSizes = computed(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $MAIN_AQUAMARINE;
+    border-bottom: 1px solid $GRAY;
     padding: 5px;
 
     .icon {
@@ -89,7 +89,7 @@ const imgSizes = computed(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid $MAIN_AQUAMARINE;
+    border-bottom: 1px solid $GRAY;
     padding: 5px;
 
     .icon {
@@ -120,7 +120,7 @@ const imgSizes = computed(() => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid $MAIN_AQUAMARINE;
+    border-bottom: 2px solid $GRAY;
     padding: 5px;
 
     v .icon {
