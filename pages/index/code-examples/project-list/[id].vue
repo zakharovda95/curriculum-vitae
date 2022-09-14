@@ -22,14 +22,16 @@
 
 <script setup lang="ts">
 import UILoading from '~/components/UI/UILoading.vue';
-
-import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
-import { definePageMeta } from '#imports';
-import { useRoute } from 'vue-router';
-import { computed } from 'vue';
 import TheCarousel from '~/components/pages/code-examples/TheCarousel.vue';
 import UIText from '~/components/UI/UIText.vue';
 import SectionContainer from '~/components/pages/code-examples/SectionContainer.vue';
+
+import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
+import { CodeExamplesProjectType } from '~/helpers/types/content.types';
+
+import { definePageMeta } from '#imports';
+import { useRoute } from 'vue-router';
+import { computed, Ref } from 'vue';
 
 definePageMeta({
   layout: 'section',
@@ -40,7 +42,7 @@ const route = useRoute();
 
 await projectPageStore.getProjectData(String(route.params.id));
 
-const projectData = computed(() => projectPageStore.projectData);
+const projectData: Ref<CodeExamplesProjectType> = computed(() => projectPageStore.projectData);
 </script>
 
 <style scoped lang="scss">
@@ -52,9 +54,9 @@ const projectData = computed(() => projectPageStore.projectData);
     background: $DARK_BLUE;
 
     .header {
-      width: 100%;
       display: flex;
       justify-content: center;
+      width: 100%;
 
       .title {
         font-family: Nunito-ExtraBold, sans-serif;
@@ -66,21 +68,21 @@ const projectData = computed(() => projectPageStore.projectData);
     .carousel-container {
       margin-bottom: 24px;
       .carousel {
-        margin: 0 auto;
         width: 95vw;
+        margin: 0 auto;
       }
     }
     .links {
-      margin: 0 auto;
-      width: 90vw;
       display: flex;
       justify-content: space-around;
+      width: 90vw;
+      margin: 0 auto;
       .link {
+        display: flex;
         color: whitesmoke;
         text-decoration: underline;
         font-family: Nunito-ExtraBold, sans-serif;
         font-size: 1.2rem;
-        display: flex;
       }
     }
   }
@@ -92,9 +94,9 @@ const projectData = computed(() => projectPageStore.projectData);
     background: $DARK_BLUE;
 
     .header {
-      width: 100%;
       display: flex;
       justify-content: center;
+      width: 100%;
 
       .title {
         margin-top: 24px;
@@ -107,21 +109,21 @@ const projectData = computed(() => projectPageStore.projectData);
     .carousel-container {
       margin-bottom: 24px;
       .carousel {
-        margin: 0 auto;
         width: 90vw;
+        margin: 0 auto;
       }
     }
     .links {
-      margin: 0 auto;
-      width: 60vw;
       display: flex;
       justify-content: space-around;
+      width: 60vw;
+      margin: 0 auto;
       .link {
+        display: flex;
         color: whitesmoke;
         text-decoration: underline;
         font-family: Nunito-ExtraBold, sans-serif;
         font-size: 1.5rem;
-        display: flex;
       }
     }
   }
@@ -133,11 +135,11 @@ const projectData = computed(() => projectPageStore.projectData);
     background: $DARK_BLUE;
 
     .header {
-      padding-top: 24px;
-      margin-bottom: 24px;
-      width: 100%;
       display: flex;
       justify-content: center;
+      width: 100%;
+      padding-top: 24px;
+      margin-bottom: 24px;
 
       .title {
         font-family: Nunito-ExtraBold, sans-serif;
@@ -147,21 +149,21 @@ const projectData = computed(() => projectPageStore.projectData);
     .carousel-container {
       margin-bottom: 24px;
       .carousel {
-        margin: 0 auto;
         width: 80vw;
+        margin: 0 auto;
       }
     }
     .links {
-      margin: 0 auto;
-      width: 30vw;
       display: flex;
       justify-content: space-around;
+      width: 30vw;
+      margin: 0 auto;
       .link {
+        display: flex;
         color: whitesmoke;
         text-decoration: underline;
         font-family: Nunito-ExtraBold, sans-serif;
         font-size: 1.5rem;
-        display: flex;
       }
     }
   }

@@ -13,11 +13,12 @@ import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
 
-import { computed } from 'vue';
+import { computed, Ref } from 'vue';
 
-const isElementHidden = computed(() => hidePageElement());
+const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const codeExamplesPageStore = useCodeExamplesPageStore();
+
 codeExamplesPageStore.getData();
 </script>
 

@@ -1,4 +1,4 @@
-import { SectionContentType } from '~/helpers/types/content/section-content.types';
+import { SectionContentType } from '~/helpers/types/content.types';
 
 export const MAIN_STACK_RUS: SectionContentType = {
   title: 'Основной стек',

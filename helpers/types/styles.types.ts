@@ -1,3 +1,3 @@
-export type StyleType = {
+export interface StyleType {
   [key: string]: string;
-};
+}

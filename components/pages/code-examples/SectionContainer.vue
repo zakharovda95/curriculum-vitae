@@ -64,6 +64,7 @@ defineProps({
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    padding: 24px 0;
     .section-title {
       text-align: center;
       margin-top: 24px;

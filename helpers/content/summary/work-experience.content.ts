@@ -1,4 +1,4 @@
-import { SectionContentType } from '~/helpers/types/content/section-content.types';
+import { SectionContentType } from '~/helpers/types/content.types';
 
 export const WORK_EXPERIENCE_RUS: SectionContentType = {
   title: 'Опыт Работы',

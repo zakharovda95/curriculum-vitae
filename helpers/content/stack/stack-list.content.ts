@@ -1,4 +1,4 @@
-import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
+import { StackListItemType } from '~/helpers/types/content.types';
 
 export const STACK_LIST_RUS: StackListItemType[] = [
   {

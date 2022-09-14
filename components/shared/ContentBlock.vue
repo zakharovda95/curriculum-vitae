@@ -10,12 +10,14 @@
 </template>
 
 <script setup lang="ts">
-import { useCalculateDOMElementsHeight } from '~/composables/useCalculateDOMElementsHeigth';
+import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+import { computed, Ref } from 'vue';
 
-import { computed } from 'vue';
+const { widthX } = useWindowWidthWatcher();
 
-const totalHeight = useCalculateDOMElementsHeight(['#navbar', '#top']);
-const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
+const mobileMarginBottom: Ref<string> = computed(() => {
+  return widthX.value >= 1400 ? '0' : '46px';
+});
 </script>
 
 <style scoped lang="scss">
@@ -48,6 +50,7 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
       flex-direction: column;
       width: 100%;
       min-height: 72vh;
+      margin-bottom: v-bind(mobileMarginBottom);
     }
   }
 }
@@ -79,6 +82,7 @@ const blockHeight = computed(() => `90vh - ${totalHeight.value}px`);
       flex-direction: column;
       width: 100%;
       min-height: 76vh;
+      margin-bottom: v-bind(mobileMarginBottom);
     }
   }
 }

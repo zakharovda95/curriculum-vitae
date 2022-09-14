@@ -15,26 +15,24 @@ import TheHeader from '~/components/pages/main/TheHeader.vue';
 import { hidePageElement } from '~/helpers/methods/route.methods';
 
 import { definePageMeta } from '#imports';
-import { computed } from 'vue';
+import { computed, Ref } from 'vue';
 
 definePageMeta({
   middleware: 'index-summary-redirect-middleware',
 });
 
-const isElementHidden = computed(() => hidePageElement());
+const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 </script>
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 
-@media (min-width: 1400px) {
-  .main-page {
-    display: flex;
-    flex-direction: column;
+.main-page {
+  display: flex;
+  flex-direction: column;
 
-    .pages {
-      width: 100%;
-    }
+  .pages {
+    width: 100%;
   }
 }
 </style>

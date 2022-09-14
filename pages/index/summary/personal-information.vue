@@ -14,11 +14,11 @@ import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
 
 import { AnchorsType } from '~/helpers/types/links.types';
-import { SectionContentType } from '~/helpers/types/content/section-content.types';
+import { SectionContentType } from '~/helpers/types/content.types';
+import { useSummaryPageStore } from '~/stores/summary-page.store';
 
 import { computed, ref, Ref } from 'vue';
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
-import { useSummaryPageStore } from '~/stores/summary-page.store';
 
 definePageMeta({
   layout: 'section',
@@ -30,7 +30,7 @@ const { widthX } = useWindowWidthWatcher();
 
 const summaryPageStore = useSummaryPageStore();
 
-const pageContent: Ref<SectionContentType> = computed(() => {
+const pageContent: Ref<SectionContentType> | Ref<null> = computed(() => {
   if (summaryPageStore.data && !summaryPageStore.isLoading) {
     return summaryPageStore.data.personalInformation;
   }

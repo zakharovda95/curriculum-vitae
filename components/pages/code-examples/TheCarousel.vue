@@ -22,8 +22,11 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
+@import '../assets/css/_constants.scss';
+
 @media (max-width: 800px) {
   .the-carousel {
+    border: 6px solid $GRAY;
     .image {
       width: 100%;
       height: 40vh;
@@ -33,6 +36,7 @@ defineProps({
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .the-carousel {
+    border: 8px solid $GRAY;
     .image {
       width: 100%;
       height: 60vh;
@@ -42,6 +46,7 @@ defineProps({
 
 @media (min-width: 1400px) {
   .the-carousel {
+    border: 12px solid $GRAY;
     .image {
       width: 100%;
       height: 80vh;

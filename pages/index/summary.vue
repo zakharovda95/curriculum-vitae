@@ -13,9 +13,9 @@ import UILoading from '~/components/UI/UILoading.vue';
 import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useSummaryPageStore } from '~/stores/summary-page.store';
 
-import { computed } from 'vue';
+import { computed, Ref } from 'vue';
 
-const isElementHidden = computed(() => hidePageElement());
+const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const summaryPageStore = useSummaryPageStore();
 
@@ -27,7 +27,6 @@ summaryPageStore.getData();
 
 @media (max-width: 800px) {
   .summary-page {
-    padding: 0;
     .preview {
       display: flex;
       align-self: center;
@@ -39,7 +38,6 @@ summaryPageStore.getData();
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .summary-page {
-    padding: 0;
     .preview {
       display: flex;
       align-self: center;

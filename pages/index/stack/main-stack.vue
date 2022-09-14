@@ -15,7 +15,7 @@ import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
 import { useStackPageStore } from '~/stores/stack-page.store';
 
 import { AnchorsType } from '~/helpers/types/links.types';
-import { SectionContentType } from '~/helpers/types/content/section-content.types';
+import { SectionContentType } from '~/helpers/types/content.types';
 
 import { computed, ref, Ref } from 'vue';
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
@@ -29,7 +29,8 @@ const anchors: Ref<AnchorsType> = ref(STACK_ANCHORS_RUS);
 const { widthX } = useWindowWidthWatcher();
 
 const stackPageStore = useStackPageStore();
-const pageContent: Ref<SectionContentType> = computed(() => {
+
+const pageContent: Ref<SectionContentType> | Ref<null> = computed(() => {
   if (stackPageStore.data && !stackPageStore.isLoading) {
     return stackPageStore.data.mainStack;
   }

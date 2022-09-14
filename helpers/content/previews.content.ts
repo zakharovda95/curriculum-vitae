@@ -1,4 +1,4 @@
-import { PreviewsType } from '~/helpers/types/content/previews.types';
+import { PreviewsType } from '~/helpers/types/content.types';
 
 export const PREVIEWS_RUS: PreviewsType = {
   summary: 'Основная информация, образование и опыт',

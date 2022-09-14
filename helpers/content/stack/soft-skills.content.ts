@@ -1,4 +1,4 @@
-import { SectionContentType } from '~/helpers/types/content/section-content.types';
+import { SectionContentType } from '~/helpers/types/content.types';
 
 export const SOFT_SKILLS_RUS: SectionContentType = {
   title: 'Софт-Скиллы',

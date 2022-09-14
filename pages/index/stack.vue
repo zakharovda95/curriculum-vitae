@@ -13,10 +13,12 @@ import UILoading from '~/components/UI/UILoading.vue';
 import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useStackPageStore } from '~/stores/stack-page.store';
 
-import { computed } from 'vue';
+import { computed, Ref } from 'vue';
 
-const isElementHidden = computed(() => hidePageElement());
+const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
+
 const stackPageStore = useStackPageStore();
+
 stackPageStore.getData();
 </script>
 
@@ -25,26 +27,22 @@ stackPageStore.getData();
 
 @media (max-width: 800px) {
   .stack-page {
-    padding: 0;
-
     .preview {
-      margin-top: 24px;
-      margin-bottom: 24px;
       display: flex;
       align-self: center;
+      margin-top: 24px;
+      margin-bottom: 24px;
     }
   }
 }
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .stack-page {
-    padding: 0;
-
     .preview {
-      margin-top: 24px;
-      margin-bottom: 24px;
       display: flex;
       align-self: center;
+      margin-top: 24px;
+      margin-bottom: 24px;
     }
   }
 }

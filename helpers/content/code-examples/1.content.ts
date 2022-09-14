@@ -1,4 +1,6 @@
-export const FIRST_PROJECT_CONTENT_RUS = {
+import { CodeExamplesProjectType } from '~/helpers/types/content.types';
+
+export const FIRST_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
   id: 0,
   title: 'Встречи',
   preview: {
