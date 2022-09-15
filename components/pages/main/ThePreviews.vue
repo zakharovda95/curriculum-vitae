@@ -13,25 +13,32 @@
 import UIIcon from '~/components/UI/UIIcon.vue';
 import Shift from '~/components/shared/Shift.vue';
 
-import { PREVIEWS_RUS } from '~/helpers/content/previews.content';
-
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
+import { useMainStore } from '~/stores/main.store';
+import { preview } from '~/helpers/services/previews.service';
 
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 
 import { computed, Ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { PreviewsType } from '~/helpers/types/content.types';
 
 const route = useRoute();
+
+const mainStore = useMainStore();
+
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+const previewByLang: Ref<PreviewsType> = computed(() => preview.getPreview(lang.value));
 
 const previews: Ref<string> = computed(() => {
   switch (route.name) {
     case PageNameEnum.summary:
-      return PREVIEWS_RUS.summary;
+      return previewByLang.value.summary;
     case PageNameEnum.stack:
-      return PREVIEWS_RUS.stack;
+      return previewByLang.value.stack;
     case PageNameEnum.codeExamples:
-      return PREVIEWS_RUS.codeExamples;
+      return previewByLang.value.codeExamples;
   }
 });
 

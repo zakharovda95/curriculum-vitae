@@ -1,6 +1,6 @@
 import { getDownloadURL, listAll, ref } from 'firebase/storage';
 
-import { firebaseStorage } from '~/helpers/services/firebase-initializer.services';
+import { firebaseStorage } from '~/helpers/services/firebase-initializer.service';
 
 class FirebaseStorage {
   public async getImageUrl(path: string) {

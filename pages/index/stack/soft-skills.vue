@@ -11,25 +11,28 @@ import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import ContentGenerator from '~/components/shared/ContentGenerator.vue';
 
-import { STACK_ANCHORS_RUS } from '~/helpers/services/links.services';
+import { links } from '~/helpers/services/links.service';
 import { useStackPageStore } from '~/stores/stack-page.store';
+import { useMainStore } from '~/stores/main.store';
 
 import { AnchorsType } from '~/helpers/types/links.types';
 import { SectionContentType } from '~/helpers/types/content.types';
 
-import { computed, ref, Ref } from 'vue';
+import { computed, Ref } from 'vue';
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
 
 definePageMeta({
   layout: 'section',
 });
 
-const anchors: Ref<AnchorsType> = ref(STACK_ANCHORS_RUS);
-
 const { widthX } = useWindowWidthWatcher();
 
 const stackPageStore = useStackPageStore();
+const mainStore = useMainStore();
 
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+const anchors: Ref<AnchorsType> = computed(() => links.getStackAnchors(lang.value));
 const pageContent: Ref<SectionContentType> | Ref<null> = computed(() => {
   if (stackPageStore.data && !stackPageStore.isLoading) {
     return stackPageStore.data.softSkills;

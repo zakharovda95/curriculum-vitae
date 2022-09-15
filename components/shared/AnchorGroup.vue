@@ -15,7 +15,7 @@
           <span v-if="activeAnchor === item.id">&gt</span>
         </UIButton>
       </UIList>
-      <UIButton class="section" @click="goToChapter">На главную</UIButton>
+      <UIButton class="section" @click="goToChapter">{{ buttonName }}</UIButton>
     </div>
   </div>
 </template>
@@ -24,11 +24,13 @@
 import UIButton from '~/components/UI/UIButton.vue';
 import UIList from '~/components/UI/UIList.vue';
 
+import { useMainStore } from '~/stores/main.store';
+
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 import { AnchorsType, AnchorType } from '~/helpers/types/links.types';
 
-import { PropType, ref, Ref } from 'vue';
+import { computed, PropType, ref, Ref } from 'vue';
 import { RouteRecordName, useRoute, useRouter } from 'vue-router';
 
 defineProps({
@@ -45,6 +47,12 @@ defineProps({
 
 const router = useRouter();
 const route = useRoute();
+
+const mainStore = useMainStore();
+
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+const buttonName: Ref<string> = computed(() => (lang.value === 'rus' ? 'Главная' : 'Home Page'));
 
 const activeAnchor: Ref<RouteRecordName> = ref(route.name);
 

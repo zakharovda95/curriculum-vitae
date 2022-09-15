@@ -11,24 +11,28 @@ import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import ContentGenerator from '~/components/shared/ContentGenerator.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 
-import { SUMMARY_ANCHORS_RUS } from '~/helpers/services/links.services';
+import { links } from '~/helpers/services/links.service';
 
 import { AnchorsType } from '~/helpers/types/links.types';
 import { SectionContentType } from '~/helpers/types/content.types';
 import { useSummaryPageStore } from '~/stores/summary-page.store';
+import { useMainStore } from '~/stores/main.store';
 
-import { computed, ref, Ref } from 'vue';
+import { computed, Ref } from 'vue';
 import { definePageMeta, useWindowWidthWatcher } from '#imports';
 
 definePageMeta({
   layout: 'section',
 });
 
-const anchors: Ref<AnchorsType> = ref(SUMMARY_ANCHORS_RUS);
-
 const { widthX } = useWindowWidthWatcher();
 
 const summaryPageStore = useSummaryPageStore();
+const mainStore = useMainStore();
+
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+const anchors: Ref<AnchorsType> = computed(() => links.getSummaryAnchors(lang.value));
 
 const pageContent: Ref<SectionContentType> | Ref<null> = computed(() => {
   if (summaryPageStore.data && !summaryPageStore.isLoading) {

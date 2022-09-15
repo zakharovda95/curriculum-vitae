@@ -7,13 +7,20 @@
 <script setup lang="ts">
 import UILinkGroup from '~/components/UI/UILinkGroup.vue';
 
-import { NAVIGATION_LINKS_RUS } from '~/helpers/services/links.services';
+import { links } from '~/helpers/services/links.service';
 
 import { NavigationLinksType } from '~/helpers/types/links.types';
 
-import { Ref, ref } from 'vue';
+import { computed, Ref } from 'vue';
+import { useMainStore } from '~/stores/main.store';
 
-const navigationLinks: Ref<NavigationLinksType> = ref(NAVIGATION_LINKS_RUS);
+const mainStore = useMainStore();
+
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+const navigationLinks: Ref<NavigationLinksType> = computed(() =>
+  links.getNavigationLinks(lang.value),
+);
 </script>
 
 <style scoped lang="scss">

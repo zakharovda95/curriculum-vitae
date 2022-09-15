@@ -1,5 +1,5 @@
-import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorsType, NavigationLinksType } from '~/helpers/types/links.types';
+import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 
 export const NAVIGATION_LINKS_RUS: NavigationLinksType = [
