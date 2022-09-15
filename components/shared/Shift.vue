@@ -8,13 +8,13 @@
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 
-import { computed } from 'vue';
+import { computed, Ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
 
-const firstSectionDependingOnTheRoute = computed(() => {
+const firstSectionDependingOnTheRoute: Ref<AnchorNamesEnum> = computed(() => {
   switch (route.name) {
     case PageNameEnum.summary:
       return AnchorNamesEnum.personalInformation;

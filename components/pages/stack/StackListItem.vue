@@ -16,10 +16,10 @@
 import UIIcon from '~/components/UI/UIIcon.vue';
 import UIText from '~/components/UI/UIText.vue';
 
-import { StackListItemType } from '~/helpers/types/content/stack-list-item.types';
+import { StackListItemType } from '~/helpers/types/content.types';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
-import { computed, PropType } from 'vue';
+import { computed, PropType, Ref } from 'vue';
 
 defineProps({
   stackListItem: {
@@ -30,7 +30,7 @@ defineProps({
 
 const { widthX } = useWindowWidthWatcher();
 
-const fontSizes = computed(() => {
+const fontSizes: Ref<string> = computed(() => {
   if (widthX.value < 800) {
     return '1rem';
   } else if (widthX.value > 800 && widthX.value < 1400) {
@@ -40,7 +40,7 @@ const fontSizes = computed(() => {
   }
 });
 
-const imgSizes = computed(() => {
+const imgSizes: Ref<string> = computed(() => {
   if (widthX.value < 800) {
     return '48px';
   } else {

@@ -1,9 +1,7 @@
 <template>
   <div class="ui-list">
-    <div class="list">
-      <div v-for="item in list" :key="item">
-        <slot v-bind="item" />
-      </div>
+    <div v-for="item in list" :key="item">
+      <slot v-bind="item" />
     </div>
   </div>
 </template>
@@ -16,21 +14,24 @@ defineProps({
     type: Array,
     required: true,
   },
-  justify: {
-    type: String as PropType<'flex-start' | 'center' | 'flex-end'>,
-    required: false,
-    default: () => 'center',
-  },
   direction: {
     type: String as PropType<'column' | 'row'>,
     required: false,
     default: () => 'column',
+  },
+  justify: {
+    type: String as PropType<
+      'flex-start' | 'center' | 'flex-end' | 'space-around' | 'space-between'
+    >,
+    required: false,
+    default: () => 'center',
   },
 });
 </script>
 
 <style scoped lang="scss">
 .ui-list {
+  width: 100%;
   display: flex;
   justify-content: v-bind(justify);
   flex-direction: v-bind(direction);

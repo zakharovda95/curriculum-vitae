@@ -11,18 +11,19 @@
 import UIText from '~/components/UI/UIText.vue';
 
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
+import { CodeExamplesProjectType } from '~/helpers/types/content.types';
 
-import { computed } from 'vue';
+import { computed, PropType, Ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const props = defineProps({
   projectData: {
-    type: Object,
+    type: Object as PropType<CodeExamplesProjectType>,
     required: true,
   },
 });
 
-const background = computed(() => `url(${props.projectData.preview.image})`);
+const background: Ref<string> = computed(() => `url(${props.projectData.preview.image})`);
 
 const router = useRouter();
 const goToProjectPage = (): void => {

@@ -58,9 +58,9 @@ const { widthX } = useWindowWidthWatcher();
     display: flex;
     width: 100%;
     height: calc(100vh - 101px);
-    background: $GRAY;
     position: relative;
     z-index: 1;
+    background: $GRAY;
 
     .banner {
       position: relative;
@@ -97,11 +97,11 @@ const { widthX } = useWindowWidthWatcher();
 @media (min-width: 801px) and (max-width: 1399px) {
   .the-header {
     display: flex;
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: calc(100vh - 101px);
     background: $GRAY;
-    position: relative;
-    z-index: 1;
 
     .banner {
       position: relative;
@@ -125,11 +125,11 @@ const { widthX } = useWindowWidthWatcher();
 @media (min-width: 1400px) and (max-width: 1599px) {
   .the-header {
     display: flex;
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 582px;
     background: $GRAY;
-    position: relative;
-    z-index: 1;
 
     .banner {
       position: relative;
@@ -167,9 +167,6 @@ const { widthX } = useWindowWidthWatcher();
     width: 100%;
     height: 582px;
     background: $GRAY;
-    //position: relative;
-    //z-index: 1;
-    //margin-top: 60px;
 
     .banner {
       position: relative;
@@ -184,15 +181,15 @@ const { widthX } = useWindowWidthWatcher();
     }
 
     .show-contacts {
-      position: relative;
-      width: 290px;
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 2;
+      width: 290px;
       transform: rotate(270deg);
       align-self: center;
       font-size: 1.2rem;
       margin: -120px;
-      z-index: 2;
     }
 
     .show-contacts-mobile {

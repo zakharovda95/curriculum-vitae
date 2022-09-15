@@ -54,13 +54,13 @@ const sizes: Ref<string> = computed(() => {
 @media (max-width: 800px) {
   .the-previews {
     display: flex;
+    justify-content: center;
+    text-align: center;
+    width: calc(80%);
     background: $WHITE;
     padding: 12px;
     margin: 0 auto;
-    width: calc(80%);
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    justify-content: center;
-    text-align: center;
 
     h1 {
       width: 80%;
@@ -69,8 +69,8 @@ const sizes: Ref<string> = computed(() => {
     }
 
     .go-to {
-      width: 60px;
       align-self: center;
+      width: 60px;
       cursor: pointer;
       margin: 20px;
     }

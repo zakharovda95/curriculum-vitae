@@ -24,9 +24,9 @@ defineProps({
 <style scoped lang="scss">
 @media (max-width: 800px) {
   .section-container {
-    width: 95vw;
     display: flex;
     flex-direction: column;
+    width: 95vw;
     margin: 0 auto;
     .section-title {
       text-align: center;
@@ -42,9 +42,9 @@ defineProps({
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .section-container {
-    width: 80vw;
     display: flex;
     flex-direction: column;
+    width: 80vw;
     margin: 0 auto;
     .section-title {
       text-align: center;
@@ -60,9 +60,9 @@ defineProps({
 
 @media (min-width: 1400px) {
   .section-container {
-    width: 70vw;
     display: flex;
     flex-direction: column;
+    width: 70vw;
     margin: 0 auto;
     padding: 24px 0;
     .section-title {

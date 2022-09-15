@@ -71,10 +71,10 @@ const goToPrevious = (): void => {
 @import '../assets/css/_constants.scss';
 
 .mobile-navigation {
-  position: fixed;
-  bottom: 0;
   display: flex;
   justify-content: space-around;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;

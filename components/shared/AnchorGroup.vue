@@ -4,17 +4,17 @@
       {{ title }}
     </div>
     <div class="sections">
-      <UIButton
-        class="section"
-        :class="{ 'active': activeAnchor === anchor.id }"
-        @click="goToSection(anchor.id)"
-        v-for="anchor in anchors"
-        :key="anchor.name"
-      >
-        <span v-if="activeAnchor === anchor.id">&lt </span>
-        <span class="text">{{ anchor.name }}</span>
-        <span v-if="activeAnchor === anchor.id">&gt</span>
-      </UIButton>
+      <UIList v-slot="item: AnchorType" :list="anchors">
+        <UIButton
+          class="section"
+          :class="{ 'active': activeAnchor === item.id }"
+          @click="goToSection(item.id)"
+        >
+          <span v-if="activeAnchor === item.id">&lt</span>
+          <span class="text">{{ item.name }}</span>
+          <span v-if="activeAnchor === item.id">&gt</span>
+        </UIButton>
+      </UIList>
       <UIButton class="section" @click="goToChapter">На главную</UIButton>
     </div>
   </div>
@@ -22,10 +22,11 @@
 
 <script setup lang="ts">
 import UIButton from '~/components/UI/UIButton.vue';
+import UIList from '~/components/UI/UIList.vue';
 
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
-import { AnchorsType } from '~/helpers/types/links.types';
+import { AnchorsType, AnchorType } from '~/helpers/types/links.types';
 
 import { PropType, ref, Ref } from 'vue';
 import { RouteRecordName, useRoute, useRouter } from 'vue-router';
@@ -84,18 +85,18 @@ const goToChapter = (): void => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 30vh;
+    width: 14vw;
     margin: 0 auto;
     background: $WHITE;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    height: 30vh;
-    width: 14vw;
     color: $BLACK;
     border: 4px solid $GRAY;
     overflow: scroll;
 
     .header {
-      margin-top: 12px;
       height: 15%;
+      margin-top: 12px;
       font-size: 1.3rem;
       font-weight: 400;
       color: $BLACK;
@@ -108,10 +109,10 @@ const goToChapter = (): void => {
 
       .section {
         display: flex;
-        margin: 10px 0;
-        padding: 0 5px;
         align-items: center;
         justify-content: center;
+        margin: 10px 0;
+        padding: 0 5px;
 
         .text {
           margin: 0 5px;

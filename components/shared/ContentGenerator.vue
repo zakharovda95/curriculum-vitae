@@ -39,7 +39,7 @@ import UIButton from '~/components/UI/UIButton.vue';
 import ContentBlock from '@/components/shared/ContentBlock.vue';
 
 import { PropType } from 'vue';
-import { SectionContentType } from '~/helpers/types/content/section-content.types';
+import { SectionContentType } from '~/helpers/types/content.types';
 import { openImage } from '~/helpers/methods/image.methods';
 
 import { useRouter } from 'vue-router';
