@@ -52,7 +52,7 @@ const mainStore = useMainStore();
 
 const lang: Ref<string> = computed(() => mainStore.lang);
 
-const buttonName: Ref<string> = computed(() => (lang.value === 'rus' ? 'Главная' : 'Home Page'));
+const buttonName: Ref<string> = computed(() => (lang.value === 'rus' ? 'Главная' : 'Home'));
 
 const activeAnchor: Ref<RouteRecordName> = ref(route.name);
 

@@ -1,7 +1,7 @@
 <template>
   <div id="section-layout">
     <TheTop id="top" />
-    <TheNavigation class="navbar" id="navbar" />
+    <TheNavigation class="navbar" id="navbar" page="other" />
     <slot />
   </div>
 </template>

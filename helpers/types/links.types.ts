@@ -3,7 +3,7 @@ import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 
 export interface NavigationLinkType {
   name: string;
-  path: { name: PageNameEnum };
+  path: { name: PageNameEnum | AnchorNamesEnum };
 }
 
 export type NavigationLinksType = NavigationLinkType[];

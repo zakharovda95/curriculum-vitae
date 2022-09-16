@@ -7,10 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import { pageLifeCycleScrollBehavior } from '~/helpers/methods/scroll.methods';
-
-pageLifeCycleScrollBehavior('page:start');
-
 /** Управление контентом Firebase **/
 import { database } from '~/helpers/services/firebase-database.service';
 import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';
@@ -28,8 +24,8 @@ import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples
 // const projectImages = await storage.getAllImageUrls('/project-images/1/');
 // const projectImages = await storage.getAllImageUrls('/project-images/2/');
 // const projectImages = await storage.getAllImageUrls('/project-images/3/');
-// const projectImages = await storage.getAllImageUrls('/certificates/');
-// const img = await storage.getImageUrl('/common/avatar.jpg');
+// const projectImages = await storage.getAllImageUrls('/common/');
+// const img = await storage.getImageUrl('/common/home.svg');
 // await console.log(projectImages);
 </script>
 

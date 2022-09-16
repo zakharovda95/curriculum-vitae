@@ -20,15 +20,45 @@ export const NAVIGATION_LINKS_RUS: NavigationLinksType = [
 export const NAVIGATION_LINKS_EN: NavigationLinksType = [
   {
     name: 'Summary',
-    path: { name: PageNameEnum.summary },
+    path: { name: AnchorNamesEnum.personalInformation },
   },
   {
     name: 'Stack',
-    path: { name: PageNameEnum.stack },
+    path: { name: AnchorNamesEnum.mainStack },
   },
   {
     name: 'Code',
     path: { name: PageNameEnum.codeExamples },
+  },
+];
+
+export const NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_RUS: NavigationLinksType = [
+  {
+    name: 'Резюме',
+    path: { name: AnchorNamesEnum.personalInformation },
+  },
+  {
+    name: 'Стек',
+    path: { name: AnchorNamesEnum.mainStack },
+  },
+  {
+    name: 'Код',
+    path: { name: AnchorNamesEnum.projectList },
+  },
+];
+
+export const NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_EN: NavigationLinksType = [
+  {
+    name: 'Summary',
+    path: { name: AnchorNamesEnum.personalInformation },
+  },
+  {
+    name: 'Stack',
+    path: { name: AnchorNamesEnum.mainStack },
+  },
+  {
+    name: 'Code',
+    path: { name: AnchorNamesEnum.projectList },
   },
 ];
 

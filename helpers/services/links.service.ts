@@ -5,13 +5,29 @@ import {
   SUMMARY_ANCHORS_EN,
   STACK_ANCHORS_RUS,
   STACK_ANCHORS_EN,
+  NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_RUS,
+  NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_EN,
 } from '~/helpers/content/links.content';
 
 import { AnchorsType, NavigationLinksType } from '~/helpers/types/links.types';
 
 class Links {
-  public getNavigationLinks(lang: string): NavigationLinksType {
+  public getNavigationLinks(lang: string, page: string): NavigationLinksType {
+    if (page === 'main') {
+      return this.getNavigationLinksForMainPage(lang);
+    } else {
+      return this.getNavigationLinksNotForMainPage(lang);
+    }
+  }
+
+  private getNavigationLinksForMainPage(lang: string) {
     return lang === 'rus' ? NAVIGATION_LINKS_RUS : NAVIGATION_LINKS_EN;
+  }
+
+  private getNavigationLinksNotForMainPage(lang: string) {
+    return lang === 'rus'
+      ? NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_RUS
+      : NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_EN;
   }
 
   public getSummaryAnchors(lang: string): AnchorsType {

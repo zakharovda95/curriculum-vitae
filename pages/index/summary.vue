@@ -1,8 +1,10 @@
 <template>
-  <UILoading v-if="mainStore.isLoading" />
-  <div v-else class="summary-page">
-    <ThePreviews v-if="isElementHidden" class="preview" />
-    <NuxtPage />
+  <div>
+    <UILoading v-if="mainStore.isLoading" />
+    <div v-else class="summary-page">
+      <ThePreviews v-if="isElementHidden" class="preview" />
+      <NuxtPage />
+    </div>
   </div>
 </template>
 
@@ -14,7 +16,7 @@ import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useSummaryPageStore } from '~/stores/summary-page.store';
 import { useMainStore } from '~/stores/main.store';
 
-import { computed, Ref } from 'vue';
+import { computed, onMounted, Ref } from 'vue';
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 

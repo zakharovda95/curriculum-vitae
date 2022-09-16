@@ -1,25 +1,44 @@
 <template>
   <div class="the-navigation" id="navbar">
-    <UILinkGroup :links="navigationLinks" />
+    <div class="link-group">
+      <UIList v-slot="item" :list="navigationLinks" direction="row" justify="space-around">
+        <NuxtLink class="link" :to="item.path">
+          <span v-if="route.name.includes(item.path.name)">&lt </span>
+          <span>{{ item.name }}</span>
+          <span v-if="route.name.includes(item.path.name)"> /&gt</span>
+        </NuxtLink>
+      </UIList>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import UILinkGroup from '~/components/UI/UILinkGroup.vue';
+import UIList from '~/components/UI/UIList.vue';
 
 import { links } from '~/helpers/services/links.service';
 
 import { NavigationLinksType } from '~/helpers/types/links.types';
 
-import { computed, Ref } from 'vue';
+import { useRoute } from 'vue-router';
+import { computed, PropType, Ref } from 'vue';
 import { useMainStore } from '~/stores/main.store';
+
+const props = defineProps({
+  page: {
+    type: String as PropType<'main' | 'other'>,
+    required: false,
+    default: () => 'main',
+  },
+});
 
 const mainStore = useMainStore();
 
 const lang: Ref<string> = computed(() => mainStore.lang);
 
+const route = useRoute();
+
 const navigationLinks: Ref<NavigationLinksType> = computed(() =>
-  links.getNavigationLinks(lang.value),
+  links.getNavigationLinks(lang.value, props.page),
 );
 </script>
 
@@ -37,6 +56,28 @@ const navigationLinks: Ref<NavigationLinksType> = computed(() =>
     z-index: 3;
     position: static;
     margin-top: 0;
+
+    .link-group {
+      display: flex;
+      width: 100%;
+
+      .link {
+        display: flex;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1rem;
+        color: $BLACK;
+        font-family: Nunito-SemiBold, sans-serif;
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+
+      .router-link-active {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -50,6 +91,28 @@ const navigationLinks: Ref<NavigationLinksType> = computed(() =>
     z-index: 3;
     position: static;
     margin-top: 0;
+
+    .link-group {
+      display: flex;
+      width: 100%;
+
+      .link {
+        display: flex;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.3rem;
+        color: $BLACK;
+        font-family: Nunito-SemiBold, sans-serif;
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+
+      .router-link-active {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -63,6 +126,27 @@ const navigationLinks: Ref<NavigationLinksType> = computed(() =>
     z-index: 3;
     position: v-bind(position);
     margin-top: v-bind(marginTop);
+    .link-group {
+      display: flex;
+      width: 100%;
+
+      .link {
+        display: flex;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: $BLACK;
+        font-family: Nunito-SemiBold, sans-serif;
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+
+      .router-link-active {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
   }
 }
 </style>

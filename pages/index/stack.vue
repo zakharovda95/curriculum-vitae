@@ -1,8 +1,10 @@
 <template>
-  <UILoading v-if="mainStore.isLoading" />
-  <div v-else class="stack-page">
-    <ThePreviews v-if="isElementHidden" class="preview" />
-    <NuxtPage />
+  <div>
+    <UILoading v-if="mainStore.isLoading" />
+    <div v-else class="stack-page">
+      <ThePreviews v-if="isElementHidden" class="preview" />
+      <NuxtPage />
+    </div>
   </div>
 </template>
 
