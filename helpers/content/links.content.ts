@@ -72,11 +72,11 @@ export const SUMMARY_ANCHORS_EN: AnchorsType = [
 
 export const STACK_ANCHORS_RUS: AnchorsType = [
   {
-    name: 'Основной Стек',
+    name: 'Основной',
     id: AnchorNamesEnum.mainStack,
   },
   {
-    name: 'Полный Стек',
+    name: 'Полный',
     id: AnchorNamesEnum.fullStack,
   },
   {

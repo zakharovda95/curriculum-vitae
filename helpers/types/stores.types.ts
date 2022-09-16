@@ -4,18 +4,20 @@ import {
   SummaryContent,
 } from '~/helpers/types/content.types';
 
-export interface SummaryPageStoreType {
+export interface MainStoreType {
   isLoading: boolean;
+  lang: string;
+}
+
+export interface SummaryPageStoreType {
   data: SummaryContent | null;
 }
 
 export interface StackPageStoreType {
-  isLoading: boolean;
   data: StackContent | null;
 }
 
 export interface CodeExamplesPageStoreType {
-  isLoading: boolean;
   data: CodeExamplesProjectType[] | null;
   projectData: CodeExamplesProjectType | null;
 }

@@ -101,6 +101,7 @@ const goToChapter = (): void => {
     color: $BLACK;
     border: 4px solid $GRAY;
     overflow: scroll;
+    border-radius: 24px;
 
     .header {
       height: 15%;

@@ -34,7 +34,7 @@ const lang: Ref<string> = computed(() => mainStore.lang);
 
 const anchors: Ref<AnchorsType> = computed(() => links.getStackAnchors(lang.value));
 const pageContent: Ref<SectionContentType> | Ref<null> = computed(() => {
-  if (stackPageStore.data && !stackPageStore.isLoading) {
+  if (stackPageStore.data) {
     return stackPageStore.data.softSkills;
   }
   return null;

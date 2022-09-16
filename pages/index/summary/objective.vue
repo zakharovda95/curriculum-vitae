@@ -35,7 +35,7 @@ const lang: Ref<string> = computed(() => mainStore.lang);
 const anchors: Ref<AnchorsType> = computed(() => links.getSummaryAnchors(lang.value));
 
 const pageContent: Ref<SectionContentType> | Ref<null> = computed(() => {
-  if (summaryPageStore.data && !summaryPageStore.isLoading) {
+  if (summaryPageStore.data) {
     return summaryPageStore.data.objective;
   }
   return null;

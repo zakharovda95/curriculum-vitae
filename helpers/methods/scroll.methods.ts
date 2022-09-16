@@ -12,7 +12,7 @@ export function pageLifeCycleScrollBehavior(lifeCycle: HookKeys<RuntimeNuxtHooks
 export function navigationLinkScrollBehavior(): void {
   window.scrollTo({
     left: 0,
-    top: window.outerHeight,
+    top: 0,
     behavior: 'smooth',
   });
 }

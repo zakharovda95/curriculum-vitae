@@ -58,7 +58,7 @@ const sizes: Ref<string> = computed(() => {
 <style lang="scss">
 @import '../assets/css/_constants.scss';
 
-@media (max-width: 800px) {
+@media (max-width: 799px) {
   .the-previews {
     display: flex;
     justify-content: center;
@@ -76,6 +76,7 @@ const sizes: Ref<string> = computed(() => {
     }
 
     .go-to {
+      display: flex;
       align-self: center;
       width: 60px;
       cursor: pointer;
@@ -89,18 +90,20 @@ const sizes: Ref<string> = computed(() => {
   }
 }
 
-@media (min-width: 801px) and (max-width: 1399px) {
+@media (min-width: 800px) and (max-width: 1399px) {
   .the-previews {
     display: flex;
+    justify-content: center;
+    text-align: center;
     width: 70%;
     background: $WHITE;
     padding: 24px;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
-    justify-content: center;
-    text-align: center;
 
     h1 {
+      display: flex;
+      align-self: center;
       width: 80%;
       color: $BLACK;
       font-size: 2rem;

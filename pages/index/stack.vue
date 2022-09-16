@@ -1,6 +1,6 @@
 <template>
-  <UILoading v-if="stackPageStore.isLoading" />
-  <div class="stack-page" v-else>
+  <UILoading v-if="mainStore.isLoading" />
+  <div v-else class="stack-page">
     <ThePreviews v-if="isElementHidden" class="preview" />
     <NuxtPage />
   </div>
@@ -12,12 +12,14 @@ import UILoading from '~/components/UI/UILoading.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useStackPageStore } from '~/stores/stack-page.store';
+import { useMainStore } from '~/stores/main.store';
 
 import { computed, Ref } from 'vue';
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const stackPageStore = useStackPageStore();
+const mainStore = useMainStore();
 
 stackPageStore.getData();
 </script>
@@ -50,10 +52,7 @@ stackPageStore.getData();
 @media (min-width: 1400px) {
   .stack-page {
     .preview {
-      display: flex;
-      align-self: center;
-      margin-top: 24px;
-      margin-left: 24px;
+      margin: 36px 24px;
     }
   }
 }

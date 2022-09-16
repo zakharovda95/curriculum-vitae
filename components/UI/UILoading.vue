@@ -8,12 +8,14 @@
 @import '../assets/css/_constants.scss';
 
 .ui-loading {
-  width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: center;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: calc(100vh - 60px);
   color: $WHITE;
   font-family: Nunito-ExtraBold, sans-serif;
   font-size: 2rem;

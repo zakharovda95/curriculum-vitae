@@ -1,6 +1,5 @@
 <template>
-  <UILoading v-if="codeExamplesPageStore.isLoading" />
-  <div v-else class="project-list-page">
+  <div class="project-list-page">
     <div class="wrapper">
       <KeepAlive>
         <ProjectListItem
@@ -16,7 +15,6 @@
 
 <script setup lang="ts">
 import ProjectListItem from '~/components/pages/code-examples/ProjectListItem.vue';
-import UILoading from '~/components/UI/UILoading.vue';
 
 import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
 import { CodeExamplesProjectType } from '~/helpers/types/content.types';
@@ -31,7 +29,7 @@ definePageMeta({
 const codeExamplesPageStore = useCodeExamplesPageStore();
 
 const projects: Ref<CodeExamplesProjectType[]> | Ref<null> = computed(() => {
-  if (codeExamplesPageStore.data && !codeExamplesPageStore.isLoading) {
+  if (codeExamplesPageStore.data) {
     return codeExamplesPageStore.data;
   }
   return null;

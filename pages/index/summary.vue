@@ -1,5 +1,5 @@
 <template>
-  <UILoading v-if="summaryPageStore.isLoading" />
+  <UILoading v-if="mainStore.isLoading" />
   <div v-else class="summary-page">
     <ThePreviews v-if="isElementHidden" class="preview" />
     <NuxtPage />
@@ -12,12 +12,14 @@ import UILoading from '~/components/UI/UILoading.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useSummaryPageStore } from '~/stores/summary-page.store';
+import { useMainStore } from '~/stores/main.store';
 
 import { computed, Ref } from 'vue';
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const summaryPageStore = useSummaryPageStore();
+const mainStore = useMainStore();
 
 summaryPageStore.getData();
 </script>
@@ -50,10 +52,7 @@ summaryPageStore.getData();
 @media (min-width: 1400px) {
   .summary-page {
     .preview {
-      display: flex;
-      align-self: center;
-      margin-top: 24px;
-      margin-left: 24px;
+      margin: 36px 24px;
     }
   }
 }

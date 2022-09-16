@@ -1,6 +1,5 @@
 <template>
-  <UILoading v-if="projectPageStore.isLoading" />
-  <div v-if="!projectPageStore.isLoading" class="project-page">
+  <div class="project-page">
     <div class="header">
       <UIText size="2.2rem" class="title">{{ projectData.title }}</UIText>
     </div>
@@ -21,7 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import UILoading from '~/components/UI/UILoading.vue';
 import TheCarousel from '~/components/pages/code-examples/TheCarousel.vue';
 import UIText from '~/components/UI/UIText.vue';
 import SectionContainer from '~/components/pages/code-examples/SectionContainer.vue';

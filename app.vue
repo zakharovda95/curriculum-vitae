@@ -1,6 +1,5 @@
 <template>
-  <UILoading v-if="!isLoaded" />
-  <div v-else class="container">
+  <div class="container">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -8,26 +7,17 @@
 </template>
 
 <script setup lang="ts">
-import UILoading from '~/components/UI/UILoading.vue';
+import { pageLifeCycleScrollBehavior } from '~/helpers/methods/scroll.methods';
 
-import { onMounted, ref, Ref } from 'vue';
-
-const isLoaded: Ref<boolean> = ref(false);
-
-onMounted(() => {
-  isLoaded.value = true;
-});
+pageLifeCycleScrollBehavior('page:start');
 
 /** Управление контентом Firebase **/
-import { pageLifeCycleScrollBehavior } from '~/helpers/methods/scroll.methods';
 import { database } from '~/helpers/services/firebase-database.service';
 import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';
 import { SUMMARY_RUS } from '~/helpers/content/summary/summary-rus.content';
 import { STACK_RUS } from '~/helpers/content/stack/stack-rus.content';
 import { storage } from '~/helpers/services/firebase-storage.service';
 import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples-rus.content';
-// pageLifeCycleScrollBehavior('page:start');
-// pageLifeCycleScrollBehavior('page:finish');
 
 // database.setData('/rus/stack', STACK_RUS);
 // database.setData('/rus/summary', SUMMARY_RUS);
