@@ -44,7 +44,7 @@ const goToProjectPage = (): void => {
     margin-bottom: 24px;
     .title {
       font-family: Nunito-ExtraBold, sans-serif;
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .container {
       display: flex;
@@ -84,7 +84,7 @@ const goToProjectPage = (): void => {
     margin-bottom: 24px;
     .title {
       font-family: Nunito-ExtraBold, sans-serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
     .container {
       display: flex;

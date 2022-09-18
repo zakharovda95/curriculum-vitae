@@ -37,6 +37,7 @@ defineProps({
   }
   .row {
     margin-top: 12px;
+    font-size: 1.3rem;
   }
 }
 
@@ -55,6 +56,7 @@ defineProps({
   }
   .row {
     margin-top: 12px;
+    font-size: 1.5rem;
   }
 }
 
@@ -74,6 +76,7 @@ defineProps({
   }
   .row {
     margin-top: 12px;
+    font-size: 1.8rem;
   }
 }
 </style>

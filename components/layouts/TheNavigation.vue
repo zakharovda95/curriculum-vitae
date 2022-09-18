@@ -2,10 +2,10 @@
   <div class="the-navigation" id="navbar">
     <div class="link-group">
       <UIList v-slot="item" :list="navigationLinks" direction="row" justify="space-around">
-        <NuxtLink class="link" :to="item.path">
-          <span v-if="route.name.includes(item.path.name)">&lt </span>
+        <NuxtLink class="link" :to="item.path" :class="{ 'active': isLinkActive(item.path.name) }">
+          <span v-if="isLinkActive(item.path.name)">&lt </span>
           <span>{{ item.name }}</span>
-          <span v-if="route.name.includes(item.path.name)"> /&gt</span>
+          <span v-if="isLinkActive(item.path.name)"> /&gt</span>
         </NuxtLink>
       </UIList>
     </div>
@@ -17,11 +17,13 @@ import UIList from '~/components/UI/UIList.vue';
 
 import { links } from '~/helpers/services/links.service';
 
+import { useMainStore } from '~/stores/main.store';
+import { PageNameEnum } from '~/helpers/enums/page-name.enums';
+import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 import { NavigationLinksType } from '~/helpers/types/links.types';
 
 import { useRoute } from 'vue-router';
 import { computed, PropType, Ref } from 'vue';
-import { useMainStore } from '~/stores/main.store';
 
 const props = defineProps({
   page: {
@@ -40,6 +42,21 @@ const route = useRoute();
 const navigationLinks: Ref<NavigationLinksType> = computed(() =>
   links.getNavigationLinks(lang.value, props.page),
 );
+
+const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
+  return (
+    route.name === linkName ||
+    (linkName === AnchorNamesEnum.personalInformation &&
+      route.name === AnchorNamesEnum.objective) ||
+    (linkName === AnchorNamesEnum.personalInformation &&
+      route.name === AnchorNamesEnum.education) ||
+    (linkName === AnchorNamesEnum.personalInformation &&
+      route.name === AnchorNamesEnum.workExperience) ||
+    (linkName === AnchorNamesEnum.mainStack && route.name === AnchorNamesEnum.fullStack) ||
+    (linkName === AnchorNamesEnum.mainStack && route.name === AnchorNamesEnum.softSkills) ||
+    (linkName === AnchorNamesEnum.projectList && route.name === AnchorNamesEnum.projectPage)
+  );
+};
 </script>
 
 <style scoped lang="scss">
@@ -73,7 +90,7 @@ const navigationLinks: Ref<NavigationLinksType> = computed(() =>
         padding-left: 8px;
       }
 
-      .router-link-active {
+      .active {
         font-weight: 600;
         text-decoration: underline;
       }
@@ -108,7 +125,7 @@ const navigationLinks: Ref<NavigationLinksType> = computed(() =>
         padding-left: 8px;
       }
 
-      .router-link-active {
+      .active {
         font-weight: 600;
         text-decoration: underline;
       }
@@ -142,7 +159,7 @@ const navigationLinks: Ref<NavigationLinksType> = computed(() =>
         padding-left: 8px;
       }
 
-      .router-link-active {
+      .active {
         font-weight: 600;
         text-decoration: underline;
       }

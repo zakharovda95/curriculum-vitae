@@ -1,5 +1,5 @@
 <template>
-  <div class="the-previews">
+  <div class="the-previews" id="preview">
     <h1>{{ previews }}</h1>
     <Shift class="shift">
       <template #button>
@@ -70,6 +70,8 @@ const sizes: Ref<string> = computed(() => {
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 
     h1 {
+      display: flex;
+      align-self: center;
       width: 80%;
       color: $BLACK;
       font-size: 1.5rem;

@@ -58,6 +58,8 @@ const projectData: Ref<CodeExamplesProjectType> = computed(() => projectPageStor
 
       .title {
         font-family: Nunito-ExtraBold, sans-serif;
+        font-size: 1.8rem;
+        margin-top: 12px;
       }
 
       margin-bottom: 12px;
@@ -75,6 +77,7 @@ const projectData: Ref<CodeExamplesProjectType> = computed(() => projectPageStor
       justify-content: space-around;
       width: 90vw;
       margin: 0 auto;
+
       .link {
         display: flex;
         color: whitesmoke;
