@@ -17,16 +17,17 @@ import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples
 
 // database.setData('/rus/stack', STACK_RUS);
 // database.setData('/rus/summary', SUMMARY_RUS);
-// database.setData('/rus/code-examples', CODE_EXAMPLES_RUS);
+database.setData('/rus/code-examples', CODE_EXAMPLES_RUS);
 
 // const contacts = await storage.getAllImageUrls('/contacts/');
 // const stackList = await storage.getAllImageUrls('/stack-icons/');
 // const projectImages = await storage.getAllImageUrls('/project-images/1/');
 // const projectImages = await storage.getAllImageUrls('/project-images/2/');
 // const projectImages = await storage.getAllImageUrls('/project-images/3/');
+const projectImages = await storage.getAllImageUrls('/project-images/4/');
 // const projectImages = await storage.getAllImageUrls('/common/');
 // const img = await storage.getImageUrl('/common/home.svg');
-// await console.log(projectImages);
+await console.log(projectImages);
 </script>
 
 <style>

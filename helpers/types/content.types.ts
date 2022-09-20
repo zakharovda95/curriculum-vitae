@@ -58,9 +58,10 @@ export interface CodeExamplesProjectType {
   };
   images: string[];
   description: string[];
-  stack: string[];
+  stack: string[] | null;
   links: {
     github: string;
     site: string;
   };
+  statistic: string[] | null;
 }

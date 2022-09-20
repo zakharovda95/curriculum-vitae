@@ -7,14 +7,31 @@
       <TheCarousel class="carousel" :slides="projectData.images" />
     </div>
     <div class="links">
-      <NuxtLink target="_blank" class="link" :to="projectData.links.github">GIT HUB</NuxtLink>
-      <NuxtLink target="_blank" class="link" :to="projectData.links.site">DEMO VIEW</NuxtLink>
+      <NuxtLink
+        v-if="projectData.links.github"
+        target="_blank"
+        class="link"
+        :to="projectData.links.github"
+      >
+        GIT HUB
+      </NuxtLink>
+      <NuxtLink
+        v-if="projectData.links.site"
+        target="_blank"
+        class="link"
+        :to="projectData.links.site"
+      >
+        DEMO VIEW
+      </NuxtLink>
     </div>
-    <div class="description">
+    <div class="description" v-if="projectData.description">
       <SectionContainer :content="projectData.description" title="Описание" />
     </div>
-    <div class="stack">
+    <div class="stack" v-if="projectData.stack">
       <SectionContainer :content="projectData.stack" title="Стек" />
+    </div>
+    <div class="statistic" v-if="projectData.statistic">
+      <SectionContainer :content="projectData.statistic" title="Статистика" />
     </div>
   </div>
 </template>

@@ -5,16 +5,15 @@ export const FIRST_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
   title: 'Встречи',
   preview: {
     image:
-      'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F1.jpg?alt=media&token=0bd4696f-f58c-418b-81dd-683ce5370ddb',
+      'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F1.jpg?alt=media&token=38c14802-f724-4ee1-bc62-d5ba3fa20b1a',
     description:
       'Сервис организации мероприятий на Vue 3 Option API. Стейт менеджмент - Vuex 4. Роутинг - Vue-Router. База данных, хранилище и авторизация - Firebase. Хостинг -  Github Pages',
   },
   images: [
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F1.jpg?alt=media&token=0bd4696f-f58c-418b-81dd-683ce5370ddb',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F2.jpg?alt=media&token=a41708e2-4fea-490b-b911-cacb2117be57',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F3.jpg?alt=media&token=83239d44-113f-46c2-b9de-4f5ceee81705',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F4.jpg?alt=media&token=b03ecbb7-f361-4889-bd38-039dd7c5e6c1',
-    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F5.jpg?alt=media&token=13aa13ef-5f52-4440-b804-2f06759d9d0f',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F1.jpg?alt=media&token=38c14802-f724-4ee1-bc62-d5ba3fa20b1a',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F2.jpg?alt=media&token=208d6f13-b929-41ff-ba22-3d9a1bcc01fd',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F3.jpg?alt=media&token=0a2259a3-cad9-47a0-9a76-efe44b6e7dd5',
+    'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F1%2F4.jpg?alt=media&token=2fd445de-24c4-4e9b-a7b0-6dc21a543502',
   ],
   description: [
     'Простой проект для демонстрации навыков работы с библиотекой Vue JS 3 и описанием компонентов на Option API. Выполнение данного проекта помогло мне закрепить и дополнить знания, полученные в ходе обучения на курсах по Vue JS 3. За основу проекта взят курсовой проект с курсов, но не его код',
@@ -23,7 +22,7 @@ export const FIRST_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
     'Как организатор пользователь может создавать описание программу и изображение мероприятия в специальной форме в разделе "Создать". Все организуемые мероприятия добавляются в раздел "Организую", а на превью добавляется бэйдж "Организатор". Так же имеется возможность редактировать и удалять организуемые мероприятия',
     'Сервис покрыт авторизацией на сервисе Firebase. Неавторизованные пользователи не могут создавать или учавствовать в мероприятиях, а так же на все защищенные роуты стоят гварды для того чтобы пользователь не смог получить доступ к тем страницам, для которых нужна авторизация. Формы входа и регистрации покрыты валидацией VeeValidate',
     'Сайт адаптирован для разных устройств, и удобен в использовании как на мобильных устройствах так и на десктопных',
-    'Все зарегистрированные пользователи и мероприятия записываются в документы в базу данных Firebase. Все изображения в хранилище Firebase. При редактировании и удалении мероприятия данные в документе изменяются или удаляются. В хранилище так же предусмотрено удаление неиспользуемых изображений. Редактирование и удаление самих пользователей из интерфейса не предусмотрено',
+    'Все зарегистрированные пользователи и мероприятия записываются в базу данных Firebase. Все изображения в хранилище Firebase. При редактировании и удалении мероприятия данные в БД изменяются или удаляются. В хранилище так же предусмотрено удаление неиспользуемых изображений. Редактирование и удаление самих пользователей из интерфейса не предусмотрено',
     'Сам проект разбит на логические разделы. Основная логика вынесена в модули стора и модули в папке services. Я старался сделать описание компонентов максимально простым и чистым и делать адекватную декомпозицию, чтобы компоненты не были слишком загроможденные и были удобочитаемые. Уделял внимание неймингу компонентов, функций методов и переменных',
     'Этот проект стал моим первым опытом в самостоятельно разработке от инициации и до деплоя',
   ],
@@ -44,4 +43,5 @@ export const FIRST_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
     github: 'https://github.com/zakharovda95/vue_js-option_api-meetups',
     site: 'https://zakharovda95.github.io/meetups-demo-view/#/meetups',
   },
+  statistic: ['.vue: 58 файлов, 4599 строк', '.js: 30 файлов, 1187 строк'],
 };
