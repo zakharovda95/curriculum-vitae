@@ -1,10 +1,12 @@
 <template>
-  <UILoading v-if="mainStore.isLoading" />
-  <div class="main-page">
-    <TheHeader v-if="isElementHidden" id="header" />
-    <TheNavigation v-if="isElementHidden" class="navbar" />
-    <div class="pages">
-      <NuxtPage />
+  <div>
+    <UILoading v-if="mainStore.isLoading" />
+    <div class="main-page">
+      <TheHeader v-if="isElementHidden" id="header" />
+      <TheNavigation v-if="isElementHidden" class="navbar" />
+      <div class="pages">
+        <NuxtPage />
+      </div>
     </div>
   </div>
 </template>

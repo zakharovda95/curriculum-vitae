@@ -141,8 +141,8 @@ const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
     height: 40px;
     background: $GRAY;
     z-index: 3;
-    position: v-bind(position);
-    margin-top: v-bind(marginTop);
+    //position: v-bind(position);
+    //margin-top: v-bind(marginTop);
     .link-group {
       display: flex;
       width: 100%;
