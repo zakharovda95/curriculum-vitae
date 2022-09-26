@@ -3,7 +3,7 @@
     <h1>{{ previews }}</h1>
     <Shift class="shift">
       <template #button>
-        <UIIcon :size="sizes" class="go-to" src="assets/img/arrow-go.svg" />
+        <UIIcon :size="sizes" class="go-to" src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/common%2Farrow-go.svg?alt=media&token=7e3bf561-cbd1-44b0-83f4-136203256d33" />
       </template>
     </Shift>
   </div>

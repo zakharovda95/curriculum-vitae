@@ -11,27 +11,6 @@ export const MAIN_STACK_RUS: SectionContentType = {
       },
     },
     {
-      title: 'Верстка',
-      text: 'HTML 5 и CSS 3',
-      props: {
-        tag: 'h2',
-      },
-    },
-    {
-      title: 'Препроцессоры',
-      text: 'SASS/SCSS',
-      props: {
-        tag: 'h2',
-      },
-    },
-    {
-      title: 'UI библиотеки',
-      text: 'Работал с MDLite, немного MaterializeCSS, но в рамках Vue претпочитаю компонентные библиотеки вроде NaiveUi или Vuetify',
-      props: {
-        tag: 'h2',
-      },
-    },
-    {
       title: 'Языки программирования',
       text: 'JavaScript ES 6+ в связке с TypeScript',
       props: {
@@ -41,6 +20,20 @@ export const MAIN_STACK_RUS: SectionContentType = {
     {
       title: 'Фреймворки',
       text: 'VueJS 2/VueJS 3 (Option/Composition API), Nuxt 2/Nuxt 3',
+      props: {
+        tag: 'h2',
+      },
+    },
+    {
+      title: 'Верстка',
+      text: 'HTML 5 и CSS 3, препроцессоры SASS/SCSS',
+      props: {
+        tag: 'h2',
+      },
+    },
+    {
+      title: 'UI библиотеки',
+      text: 'Работал с MDLite, немного MaterializeCSS, но в рамках Vue претпочитаю компонентные библиотеки вроде NaiveUi или Vuetify',
       props: {
         tag: 'h2',
       },

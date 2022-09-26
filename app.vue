@@ -10,7 +10,7 @@
 /** Управление контентом Firebase **/
 import { database } from '~/helpers/services/firebase-database.service';
 import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';
-import { SUMMARY_RUS } from '~/helpers/content/summary/summary-rus.content';
+import { SUMMARY_RUS, SUMMARY_EN } from '~/helpers/content/summary/summary-rus.content';
 import { STACK_RUS } from '~/helpers/content/stack/stack-rus.content';
 import { storage } from '~/helpers/services/firebase-storage.service';
 import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples-rus.content';
@@ -19,7 +19,10 @@ import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples
 // database.setData('/rus/summary', SUMMARY_RUS);
 // database.setData('/rus/code-examples', CODE_EXAMPLES_RUS);
 
+// database.setData('/en/summary', SUMMARY_EN);
+
 // const contacts = await storage.getAllImageUrls('/contacts/');
+// const common = await storage.getAllImageUrls('/common/');
 // const stackList = await storage.getAllImageUrls('/stack-icons/');
 // const projectImages = await storage.getAllImageUrls('/project-images/1/');
 // const projectImages = await storage.getAllImageUrls('/project-images/2/');
@@ -27,7 +30,7 @@ import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples
 // const projectImages = await storage.getAllImageUrls('/project-images/4/');
 // const projectImages = await storage.getAllImageUrls('/common/');
 // const img = await storage.getImageUrl('/common/home.svg');
-// await console.log(projectImages);
+// await console.log(common);
 </script>
 
 <style>

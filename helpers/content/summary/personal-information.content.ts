@@ -47,3 +47,51 @@ export const PERSONAL_INFORMATION_RUS: SectionContentType = {
     },
   ],
 };
+
+export const PERSONAL_INFORMATION_EN: SectionContentType = {
+  title: 'Information',
+  content: [
+    {
+      title: 'Name',
+      text: 'Dmitry Zakharov',
+      props: {
+        tag: 'h2',
+      },
+    },
+    {
+      title: 'Date of birth',
+      text: '13th May 1995',
+      props: {
+        tag: 'h2',
+      },
+    },
+    {
+      title: 'Address',
+      text: 'Yoshkar-Ola, Russia',
+      props: {
+        tag: 'h2',
+      },
+    },
+    {
+      title: 'Nationality',
+      text: 'Российская Федерация',
+      props: {
+        tag: 'h2',
+      },
+    },
+    {
+      title: 'Material status',
+      text: 'Single',
+      props: {
+        tag: 'h2',
+      },
+    },
+    {
+      title: 'Languages',
+      text: 'Russian (native), English - A2 (in the learning process)',
+      props: {
+        tag: 'h2',
+      },
+    },
+  ],
+};

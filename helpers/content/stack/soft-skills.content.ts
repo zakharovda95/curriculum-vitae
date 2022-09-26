@@ -18,7 +18,7 @@ export const SOFT_SKILLS_RUS: SectionContentType = {
       },
     },
     {
-      title: 'Адаптивность',
+      title: 'Мультизадачность',
       text: 'свободно переключаюсь между проектами и задачами',
       props: {
         tag: 'h2',
