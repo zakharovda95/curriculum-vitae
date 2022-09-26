@@ -11,7 +11,7 @@
 import { database } from '~/helpers/services/firebase-database.service';
 import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';
 import { SUMMARY_RUS, SUMMARY_EN } from '~/helpers/content/summary/summary-rus.content';
-import { STACK_RUS } from '~/helpers/content/stack/stack-rus.content';
+import {STACK_EN, STACK_RUS} from '~/helpers/content/stack/stack-rus.content';
 import { storage } from '~/helpers/services/firebase-storage.service';
 import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples-rus.content';
 
@@ -20,6 +20,7 @@ import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples
 // database.setData('/rus/code-examples', CODE_EXAMPLES_RUS);
 
 // database.setData('/en/summary', SUMMARY_EN);
+// database.setData('/en/stack', STACK_EN);
 
 // const contacts = await storage.getAllImageUrls('/contacts/');
 // const common = await storage.getAllImageUrls('/common/');

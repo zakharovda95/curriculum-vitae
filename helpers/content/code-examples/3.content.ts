@@ -35,7 +35,7 @@ export const THIRD_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
   ],
   links: {
     github: 'https://github.com/zakharovda95/nuxt3_ts-composition_api-curriculum_vitae',
-    site: 'https://github.com/zakharovda95/nuxt3_ts-composition_api-curriculum_vitae',
+    site: null,
   },
   statistic: ['.vue: 39 файлов, 3420 строк', '.js: 39 файлов, 1155 строк'],
 };

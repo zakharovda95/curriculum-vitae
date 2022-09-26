@@ -1,7 +1,7 @@
 <template>
   <div>
     <UILoading v-if="mainStore.isLoading" />
-    <div class="main-page">
+    <div v-else class="main-page">
       <TheHeader v-if="isElementHidden" id="header" />
       <TheNavigation v-if="isElementHidden" class="navbar" />
       <div class="pages">

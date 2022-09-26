@@ -14,6 +14,7 @@ export const useSummaryPageStore = defineStore('summaryPageStore', {
       const store = useMainStore();
       store.isLoading = true;
       this.data = await database.getData('/rus/summary/');
+      await console.log(this.data)
       store.isLoading = false;
     },
   },

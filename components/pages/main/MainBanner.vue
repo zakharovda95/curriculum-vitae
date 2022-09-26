@@ -85,7 +85,7 @@ const fontSizes: Ref<StyleType> = computed(() => {
     background: $DARK_BLUE;
     width: calc(100% - 24px);
     height: calc(100vh - 124px);
-    overflow: hidden;
+    overflow: scroll;
     padding: 12px;
     .text-wrapper {
       display: flex;
@@ -173,6 +173,7 @@ const fontSizes: Ref<StyleType> = computed(() => {
     border-radius: 0 0 52px 0;
     min-width: 70%;
     width: v-bind(width);
+    overflow: scroll;
 
     .text-wrapper {
       display: flex;

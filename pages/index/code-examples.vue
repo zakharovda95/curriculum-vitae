@@ -1,7 +1,7 @@
 <template>
   <div>
     <UILoading v-if="mainStore.isLoading" />
-    <div class="code-examples-page">
+    <div v-else class="code-examples-page">
       <ThePreviews v-if="isElementHidden" class="preview" />
       <NuxtPage />
     </div>
