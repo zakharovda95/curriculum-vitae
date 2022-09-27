@@ -15,8 +15,6 @@ const router = useRouter();
 const route = useRoute();
 
 const goToHome = (): void => {
-  console.log('router: ' + router)
-  console.log('route: ' + route)
   if (
     route.name === AnchorNamesEnum.personalInformation ||
     route.name === AnchorNamesEnum.objective ||

@@ -7,7 +7,7 @@ export const SECOND_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
     image:
       'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F1.jpg?alt=media&token=89c60489-7f80-4e4c-a5ff-82af3b0f42f2',
     description:
-      'Онлайн магазин на TypeScript и Vue 3 Composition API. Стейт менеджмент - Pinia. Монорепозиторий LernaJS. Контент менеджмент и авторизация - StrapiCMS. Хостинг -  Render',
+      'Онлайн магазин на TypeScript и Vue 3 Composition API. Стейт менеджмент - Pinia. Монорепозиторий LernaJS. Контент менеджмент и авторизация - StrapiCMS. Хостинг -  Render/Heroku',
   },
   images: [
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F1.jpg?alt=media&token=89c60489-7f80-4e4c-a5ff-82af3b0f42f2',

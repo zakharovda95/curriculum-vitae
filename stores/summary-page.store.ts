@@ -11,6 +11,7 @@ export const useSummaryPageStore = defineStore('summaryPageStore', {
 
   actions: {
     async getData() {
+      await console.log(this.data)
       const store = useMainStore();
       store.isLoading = true;
       this.data = await database.getData('/rus/summary/');

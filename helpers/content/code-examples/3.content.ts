@@ -7,7 +7,7 @@ export const THIRD_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
     image:
       'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F1.jpg?alt=media&token=6cf4a395-94dd-4be0-97d4-2929cc7cb223',
     description:
-      'Сайт-резюме на TypeScript и Nuxt 3. Стейт менеджмент - Pinia. БД хранилище -  Firebase. Хостинг - Render',
+      'Сайт-резюме на TypeScript и Nuxt 3. Стейт менеджмент - Pinia. БД хранилище -  Firebase. Хостинг - Heroku',
   },
   images: [
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F3%2F1.jpg?alt=media&token=6cf4a395-94dd-4be0-97d4-2929cc7cb223',
