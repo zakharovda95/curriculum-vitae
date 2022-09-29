@@ -84,11 +84,13 @@ const projectData: Ref<CodeExamplesProjectType> = computed(() => projectPageStor
 
     .carousel-container {
       margin-bottom: 24px;
+
       .carousel {
         width: 95vw;
         margin: 0 auto;
       }
     }
+
     .links {
       display: flex;
       justify-content: space-around;
@@ -126,16 +128,19 @@ const projectData: Ref<CodeExamplesProjectType> = computed(() => projectPageStor
 
     .carousel-container {
       margin-bottom: 24px;
+
       .carousel {
         width: 90vw;
         margin: 0 auto;
       }
     }
+
     .links {
       display: flex;
       justify-content: space-around;
       width: 60vw;
       margin: 0 auto;
+
       .link {
         display: flex;
         color: whitesmoke;
@@ -166,16 +171,19 @@ const projectData: Ref<CodeExamplesProjectType> = computed(() => projectPageStor
 
     .carousel-container {
       margin-bottom: 24px;
+
       .carousel {
         width: 80vw;
         margin: 0 auto;
       }
     }
+
     .links {
       display: flex;
       justify-content: space-around;
       width: 30vw;
       margin: 0 auto;
+
       .link {
         display: flex;
         color: whitesmoke;

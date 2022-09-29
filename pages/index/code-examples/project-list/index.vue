@@ -1,14 +1,12 @@
 <template>
   <div class="project-list-page">
     <div class="wrapper">
-      <KeepAlive>
-        <ProjectListItem
-          v-for="project in projects"
-          :key="project.id"
-          class="project"
-          :project-data="project"
-        />
-      </KeepAlive>
+      <ProjectListItem
+        v-for="project in projects"
+        :key="project.id"
+        class="project"
+        :project-data="project"
+      />
     </div>
   </div>
 </template>
@@ -44,6 +42,7 @@ const projects: Ref<CodeExamplesProjectType[]> | Ref<null> = computed(() => {
     width: 100%;
     min-height: calc(100vh - 100px);
     background: $DARK_BLUE;
+
     .wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -51,6 +50,7 @@ const projects: Ref<CodeExamplesProjectType[]> | Ref<null> = computed(() => {
       width: 90%;
       margin: 0 auto;
       padding: 12px;
+
       .project {
         width: 500px;
         height: 400px;
@@ -64,6 +64,7 @@ const projects: Ref<CodeExamplesProjectType[]> | Ref<null> = computed(() => {
     width: 100%;
     min-height: calc(100vh - 100px);
     background: $DARK_BLUE;
+
     .wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -71,6 +72,7 @@ const projects: Ref<CodeExamplesProjectType[]> | Ref<null> = computed(() => {
       width: 80%;
       margin: 0 auto;
       padding: 12px;
+
       .project {
         width: 500px;
         height: 400px;
@@ -84,6 +86,7 @@ const projects: Ref<CodeExamplesProjectType[]> | Ref<null> = computed(() => {
     width: 100%;
     min-height: calc(100vh - 100px);
     background: $DARK_BLUE;
+
     .wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -91,6 +94,7 @@ const projects: Ref<CodeExamplesProjectType[]> | Ref<null> = computed(() => {
       width: 70%;
       margin: 0 auto;
       padding: 12px;
+
       .project {
         width: 500px;
         height: 400px;

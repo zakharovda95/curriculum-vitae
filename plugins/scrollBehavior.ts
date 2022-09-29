@@ -13,7 +13,6 @@ export default defineNuxtPlugin(nuxtApp => {
       window.scrollTo({
         left: 0,
         top: window.innerHeight + 1000,
-        behavior: 'smooth',
       });
     }
     if (

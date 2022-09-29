@@ -18,7 +18,7 @@
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^9.3.0",
-    "nuxt": "3.0.0-rc.11",
+    "nuxt": "^3.0.0-rc.10",
     "prettier": "^2.4.1",
     "sass": "^1.54.0",
     "sass-loader": "10",
@@ -27,7 +27,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.2",
     "@splidejs/vue-splide": "^0.6.10",
-    "firebase": "^9.10.0",
+    "firebase": "^9.9.4",
     "yarn": "^1.22.19"
   }
 }

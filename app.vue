@@ -8,12 +8,12 @@
 
 <script setup lang="ts">
 /** Управление контентом Firebase **/
-import { database } from '~/helpers/services/firebase-database.service';
-import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';
-import { SUMMARY_RUS, SUMMARY_EN } from '~/helpers/content/summary/summary-rus.content';
-import {STACK_EN, STACK_RUS} from '~/helpers/content/stack/stack-rus.content';
-import { storage } from '~/helpers/services/firebase-storage.service';
-import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples-rus.content';
+// import { database } from '~/helpers/services/firebase-database.service';
+// import { StackContent, SummaryContent } from '~/helpers/types/content/section-content.types';
+// import { SUMMARY_RUS, SUMMARY_EN } from '~/helpers/content/summary/summary-rus.content';
+// import {STACK_EN, STACK_RUS} from '~/helpers/content/stack/stack-rus.content';
+// import { storage } from '~/helpers/services/firebase-storage.service';
+// import { CODE_EXAMPLES_RUS } from '~/helpers/content/code-examples/code-examples-rus.content';
 
 // database.setData('/rus/stack', STACK_RUS);
 // database.setData('/rus/summary', SUMMARY_RUS);

@@ -1,40 +1,40 @@
 <template>
-  <div class="the-top" id="top" @click="goToHome">
+  <div class="the-top" id="top">
     <p class="title">@zakharovda95</p>
     <p class="text">Click to Home</p>
   </div>
 </template>
 
 <script setup lang="ts">
-import { PageNameEnum } from '~/helpers/enums/page-name.enums';
-import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
-
-import { useRoute, useRouter } from 'vue-router';
-
-const router = useRouter();
-const route = useRoute();
-
-const goToHome = (): void => {
-  if (
-    route.name === AnchorNamesEnum.personalInformation ||
-    route.name === AnchorNamesEnum.objective ||
-    route.name === AnchorNamesEnum.education ||
-    route.name === AnchorNamesEnum.workExperience
-  ) {
-    router.push({ name: PageNameEnum.summary });
-  }
-  if (
-    route.name === AnchorNamesEnum.mainStack ||
-    route.name === AnchorNamesEnum.fullStack ||
-    route.name === AnchorNamesEnum.softSkills
-  ) {
-    router.push({ name: PageNameEnum.stack });
-  }
-
-  if (route.name === AnchorNamesEnum.projectPage || route.name === AnchorNamesEnum.projectList) {
-    router.push({ name: PageNameEnum.codeExamples });
-  }
-};
+// import { PageNameEnum } from '~/helpers/enums/page-name.enums';
+// import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
+//
+// import { useRoute, useRouter } from 'vue-router';
+//
+// const router = useRouter();
+// const route = useRoute();
+//
+// const goToHome = (): void => {
+//   if (
+//     route.name === AnchorNamesEnum.personalInformation ||
+//     route.name === AnchorNamesEnum.objective ||
+//     route.name === AnchorNamesEnum.education ||
+//     route.name === AnchorNamesEnum.workExperience
+//   ) {
+//     router.push({ name: PageNameEnum.summary });
+//   }
+//   if (
+//     route.name === AnchorNamesEnum.mainStack ||
+//     route.name === AnchorNamesEnum.fullStack ||
+//     route.name === AnchorNamesEnum.softSkills
+//   ) {
+//     router.push({ name: PageNameEnum.stack });
+//   }
+//
+//   if (route.name === AnchorNamesEnum.projectPage || route.name === AnchorNamesEnum.projectList) {
+//     router.push({ name: PageNameEnum.codeExamples });
+//   }
+// };
 </script>
 
 <style scoped lang="scss">
