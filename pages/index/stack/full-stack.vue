@@ -22,7 +22,8 @@ import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import UIList from '~/components/UI/UIList.vue';
 import StackListItem from '~/components/pages/stack/StackListItem.vue';
 
-import { links } from '~/helpers/services/links.service';
+import { links } from '~/helpers/classes/links.class';
+
 import { useStackPageStore } from '~/stores/stack-page.store';
 import { useMainStore } from '~/stores/main.store';
 

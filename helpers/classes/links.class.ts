@@ -12,14 +12,6 @@ import {
 import { AnchorsType, NavigationLinksType } from '~/helpers/types/links.types';
 
 class Links {
-  public getNavigationLinks(lang: string, page: string): NavigationLinksType {
-    if (page === 'main') {
-      return this.getNavigationLinksForMainPage(lang);
-    } else {
-      return this.getNavigationLinksNotForMainPage(lang);
-    }
-  }
-
   private getNavigationLinksForMainPage(lang: string) {
     return lang === 'rus' ? NAVIGATION_LINKS_RUS : NAVIGATION_LINKS_EN;
   }
@@ -28,6 +20,14 @@ class Links {
     return lang === 'rus'
       ? NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_RUS
       : NAVIGATION_LINKS_NOT_FOR_MAIN_PAGE_EN;
+  }
+
+  public getNavigationLinks(lang: string, page: string): NavigationLinksType {
+    if (page === 'main') {
+      return this.getNavigationLinksForMainPage(lang);
+    } else {
+      return this.getNavigationLinksNotForMainPage(lang);
+    }
   }
 
   public getSummaryAnchors(lang: string): AnchorsType {

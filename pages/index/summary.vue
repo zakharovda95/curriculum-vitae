@@ -13,10 +13,11 @@ import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 import UILoading from '~/components/UI/UILoading.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
+
 import { useSummaryPageStore } from '~/stores/summary-page.store';
 import { useMainStore } from '~/stores/main.store';
 
-import { computed, onMounted, Ref } from 'vue';
+import { computed, Ref } from 'vue';
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 

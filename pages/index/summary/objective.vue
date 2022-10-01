@@ -11,10 +11,11 @@ import ContentGenerator from '~/components/shared/ContentGenerator.vue';
 import MobileNavigation from '~/components/shared/MobileNavigation.vue';
 import AnchorGroup from '~/components/shared/AnchorGroup.vue';
 
-import { links } from '~/helpers/services/links.service';
+import { links } from '~/helpers/classes/links.class';
 
 import { AnchorsType } from '~/helpers/types/links.types';
 import { SectionContentType } from '~/helpers/types/content.types';
+
 import { useSummaryPageStore } from '~/stores/summary-page.store';
 import { useMainStore } from '~/stores/main.store';
 

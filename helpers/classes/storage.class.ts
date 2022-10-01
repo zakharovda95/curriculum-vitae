@@ -1,6 +1,6 @@
 import { getDownloadURL, listAll, ref } from 'firebase/storage';
 
-import { firebaseStorage } from '~/helpers/services/firebase-initializer.service';
+import { firebaseStorage } from '~/services/firebase-initializer.service';
 
 class FirebaseStorage {
   public async getImageUrl(path: string) {
@@ -11,13 +11,12 @@ class FirebaseStorage {
     return await getDownloadURL(ref(firebaseStorage, file));
   }
 
-  public async getAllImageUrls(path: string) {
+  public async showAllImageUrls(path: string) {
     return await listAll(ref(firebaseStorage, path)).then(res =>
       res.items.map(async item => {
         const link = await this.createImageUrl(item);
         const element = { name: item.name, url: link };
         console.log(element);
-        return element;
       }),
     );
   }

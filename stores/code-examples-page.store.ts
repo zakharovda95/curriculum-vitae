@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia';
-import { database } from '~/helpers/services/firebase-database.service';
+
+import { database } from '~/helpers/classes/database.class';
+
 import { CodeExamplesPageStoreType } from '~/helpers/types/stores.types';
+
 import { useMainStore } from '~/stores/main.store';
 
 export const useCodeExamplesPageStore = defineStore('codeExamplesPageStore', {
@@ -9,6 +12,7 @@ export const useCodeExamplesPageStore = defineStore('codeExamplesPageStore', {
       data: null,
       projectData: null,
     } as CodeExamplesPageStoreType),
+
   actions: {
     async getData() {
       const store = useMainStore();

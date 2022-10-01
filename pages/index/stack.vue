@@ -13,6 +13,7 @@ import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 import UILoading from '~/components/UI/UILoading.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
+
 import { useStackPageStore } from '~/stores/stack-page.store';
 import { useMainStore } from '~/stores/main.store';
 

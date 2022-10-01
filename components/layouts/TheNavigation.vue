@@ -14,8 +14,7 @@
 
 <script setup lang="ts">
 import UIList from '~/components/UI/UIList.vue';
-
-import { links } from '~/helpers/services/links.service';
+import { links } from '~/helpers/classes/links.class';
 
 import { useMainStore } from '~/stores/main.store';
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
@@ -23,6 +22,7 @@ import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 import { NavigationLinksType } from '~/helpers/types/links.types';
 
 import { useRoute } from 'vue-router';
+
 import { computed, PropType, Ref } from 'vue';
 
 const props = defineProps({
@@ -32,11 +32,9 @@ const props = defineProps({
     default: () => 'main',
   },
 });
-
 const mainStore = useMainStore();
 
 const lang: Ref<string> = computed(() => mainStore.lang);
-
 const route = useRoute();
 
 const navigationLinks: Ref<NavigationLinksType> = computed(() =>
@@ -73,11 +71,9 @@ const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
     z-index: 3;
     position: static;
     margin-top: 0;
-
     .link-group {
       display: flex;
       width: 100%;
-
       .link {
         display: flex;
         text-decoration: none;
@@ -89,7 +85,6 @@ const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
         padding-right: 8px;
         padding-left: 8px;
       }
-
       .active {
         font-weight: 600;
         text-decoration: underline;
@@ -108,11 +103,9 @@ const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
     z-index: 3;
     position: static;
     margin-top: 0;
-
     .link-group {
       display: flex;
       width: 100%;
-
       .link {
         display: flex;
         text-decoration: none;
@@ -124,7 +117,6 @@ const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
         padding-right: 8px;
         padding-left: 8px;
       }
-
       .active {
         font-weight: 600;
         text-decoration: underline;
@@ -146,7 +138,6 @@ const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
     .link-group {
       display: flex;
       width: 100%;
-
       .link {
         display: flex;
         text-decoration: none;
@@ -158,7 +149,6 @@ const isLinkActive = (linkName: PageNameEnum | AnchorNamesEnum): boolean => {
         padding-right: 8px;
         padding-left: 8px;
       }
-
       .active {
         font-weight: 600;
         text-decoration: underline;

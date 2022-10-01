@@ -13,7 +13,8 @@ import ThePreviews from '~/components/pages/main/ThePreviews.vue';
 import UILoading from '~/components/UI/UILoading.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
-import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
+
+import { useCodeExamplesPageStore } from '~/stores/code-examples-page.store';
 import { useMainStore } from '~/stores/main.store';
 
 import { computed, Ref } from 'vue';

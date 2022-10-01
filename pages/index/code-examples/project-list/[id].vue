@@ -41,7 +41,7 @@ import TheCarousel from '~/components/pages/code-examples/TheCarousel.vue';
 import UIText from '~/components/UI/UIText.vue';
 import SectionContainer from '~/components/pages/code-examples/SectionContainer.vue';
 
-import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
+import { useCodeExamplesPageStore } from '~/stores/code-examples-page.store';
 import { CodeExamplesProjectType } from '~/helpers/types/content.types';
 
 import { definePageMeta } from '#imports';

@@ -1,6 +1,6 @@
 import { get, ref, set } from 'firebase/database';
 
-import { firebaseDatabase } from '~/helpers/services/firebase-initializer.service';
+import { firebaseDatabase } from '~/services/firebase-initializer.service';
 
 class FirebaseDatabase {
   public async getData(path: string) {

@@ -121,7 +121,7 @@ export const STACK_LIST_EN: StackListItemType[] = [
   {
     icon: 'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/stack-icons%2Fhtml.svg?alt=media&token=839fca50-1fb4-494c-ae0f-cfe42b0aca5f',
     name: 'HTML 5',
-    description: 'Main tags, Semantic layout',
+    description: 'Main tags, Semantic layouts',
   },
   {
     icon: 'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/stack-icons%2Fcss.svg?alt=media&token=2f595d5b-799b-49a3-a2b3-dc242c80b291',

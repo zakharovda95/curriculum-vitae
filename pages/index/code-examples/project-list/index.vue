@@ -14,7 +14,8 @@
 <script setup lang="ts">
 import ProjectListItem from '~/components/pages/code-examples/ProjectListItem.vue';
 
-import { useCodeExamplesPageStore } from '~/stores/code-examples.page.store';
+import { useCodeExamplesPageStore } from '~/stores/code-examples-page.store';
+
 import { CodeExamplesProjectType } from '~/helpers/types/content.types';
 
 import { definePageMeta } from '#imports';

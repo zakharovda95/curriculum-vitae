@@ -8,7 +8,6 @@
 
 <script setup lang="ts">
 import { PropType } from 'vue';
-
 defineProps({
   list: {
     type: Array,

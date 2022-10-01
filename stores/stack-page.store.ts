@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia';
-import { database } from '~/helpers/services/firebase-database.service';
+
+import { database } from '~/helpers/classes/database.class';
+
 import { StackPageStoreType } from '~/helpers/types/stores.types';
+
 import { useMainStore } from '~/stores/main.store';
 
 export const useStackPageStore = defineStore('stackPageStore', {

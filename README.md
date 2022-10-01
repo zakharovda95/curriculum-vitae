@@ -1,9 +1,42 @@
- Приветсвую вас! Это мой третий демонстрационный проект. Целью этого проекта является удобная и наглядная презентация моих проектов и навыков при устройстве на работу.
+# Nuxt 3 Minimal Starter
 
-. При разработке я старался придерживаться современных подходов и принципов к созданию приложения и новые возможности языка js и ts. Обращал большое внимание на нейминг, адекватную декомпозицию (папки components, layouts, pages). Все вспомогательные функции вынесены в модули (папка  helpers).
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
-.Бэк: БД и хранилище реализованы при помощи сервиса Firebase
+## Setup
 
-. Основные используемые библиотеки и интерфейсы: nuxt js - основная библиотека; pinia - глобальное хранилище; firebase - база данных, хранилище;
+Make sure to install the dependencies:
 
-.Благодарю за то что проявили интерес ко мне как к разработчику и моим проектам! Буду рад любой конструктивно критике, вопросам и комментариям!
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install --shamefully-hoist
+```
+
+## Development Server
+
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.

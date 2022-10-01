@@ -1,5 +1,7 @@
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 
+import { defineNuxtPlugin } from '#app';
+
 export default defineNuxtPlugin(nuxtApp => {
   nuxtApp.$router.options.scrollBehavior = async (to, from, savedPosition) => {
     const element = document.querySelector('html');
@@ -26,6 +28,7 @@ export default defineNuxtPlugin(nuxtApp => {
       window.scrollTo({
         left: 0,
         top: 0,
+        behavior: 'smooth',
       });
     }
   };

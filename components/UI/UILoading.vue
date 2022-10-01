@@ -6,14 +6,13 @@
 
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
-
 .ui-loading {
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: center;
   position: fixed;
-  z-index: 5;
+  z-index: 50;
   width: 100%;
   height: calc(100vh - 60px);
   color: $WHITE;
