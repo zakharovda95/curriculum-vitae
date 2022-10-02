@@ -15,7 +15,7 @@ defineProps({
     required: true,
   },
   size: {
-    type: String as PropType<'16px' | '24px' | '32px' | '48px' | '72px' | '96px'>,
+    type: String as PropType<'16px' | '24px' | '32px' | '40px' | '48px' | '72px' | '96px'>,
     required: false,
     default: () => '32px',
   },

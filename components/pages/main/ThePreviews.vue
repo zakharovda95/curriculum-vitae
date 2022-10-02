@@ -1,13 +1,9 @@
 <template>
   <div class="the-previews" id="preview">
-    <h1>{{ previews }}</h1>
+    <h1>{{ preview }}</h1>
     <Shift class="shift">
       <template #button>
-        <UIIcon
-          :size="sizes"
-          class="go-to"
-          src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/common%2Farrow-go.svg?alt=media&token=7e3bf561-cbd1-44b0-83f4-136203256d33"
-        />
+        <UIIcon :size="sizes" class="go-to" :src="CONSTANTS.ARROW_IN_CIRCLE_URL" />
       </template>
     </Shift>
   </div>
@@ -19,9 +15,9 @@ import Shift from '~/components/shared/Shift.vue';
 
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 import { useMainStore } from '~/stores/main.store';
-import { preview } from '~/helpers/classes/previews.class';
 
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
+import { CONSTANTS } from '~/helpers/enums/constants.enum';
 
 import { computed, Ref } from 'vue';
 import { useRoute } from 'vue-router';
@@ -33,16 +29,16 @@ const mainStore = useMainStore();
 
 const lang: Ref<string> = computed(() => mainStore.lang);
 
-const previewByLang: Ref<PreviewsType> = computed(() => preview.getPreview(lang.value));
+const previews: Ref<PreviewsType> = computed(() => mainStore.data.previews);
 
-const previews: Ref<string> = computed(() => {
+const preview: Ref<string> = computed(() => {
   switch (route.name) {
     case PageNameEnum.summary:
-      return previewByLang.value.summary;
+      return previews.value.summary;
     case PageNameEnum.stack:
-      return previewByLang.value.stack;
+      return previews.value.stack;
     case PageNameEnum.codeExamples:
-      return previewByLang.value.codeExamples;
+      return previews.value.codeExamples;
   }
 });
 

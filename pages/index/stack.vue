@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UILoading v-if="mainStore.isLoading" />
+    <UILoading v-if="mainStore.isLoading && !stackPageStore.data" />
     <div v-else class="stack-page">
       <ThePreviews v-if="isElementHidden" class="preview" />
       <NuxtPage />

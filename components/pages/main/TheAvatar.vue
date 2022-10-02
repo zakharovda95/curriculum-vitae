@@ -9,7 +9,7 @@ defineProps({
   avatar: {
     type: String,
     required: false,
-    default: () => `url(${CONSTANTS.AvatarUrl})`,
+    default: () => `url(${CONSTANTS.AVATAR_URL})`,
   },
 });
 </script>

@@ -4,13 +4,13 @@
     <TheContacts v-if="widthX >= 1400" class="contacts" />
     <UIButton v-if="widthX > 800" class="show-contacts" @click="showContacts">
       <template #icon-right>
-        <UIIcon src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/common%2Ftap.svg?alt=media&token=c416ebf7-0ab9-4456-acc3-9732423249ce" :style="style" />
+        <UIIcon :src="CONSTANTS.TAP_URL" :style="style" />
       </template>
       {{ buttonName }}
     </UIButton>
     <UIButton v-if="widthX <= 800" class="show-contacts-mobile" @click="showContacts">
       <template #icon-right>
-        <UIIcon class="icon" src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/common%2Ftap.svg?alt=media&token=c416ebf7-0ab9-4456-acc3-9732423249ce" size="48px" />
+        <UIIcon class="icon" :src="CONSTANTS.TAP_URL" size="48px" />
       </template>
     </UIButton>
   </div>
@@ -25,6 +25,8 @@ import TheContacts from '~/components/pages/main/TheContacts.vue';
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
 import { StyleType } from '~/helpers/types/styles.types';
+
+import { CONSTANTS } from '~/helpers/enums/constants.enum';
 
 import { computed, Ref, ref } from 'vue';
 

@@ -22,7 +22,6 @@ export const useCodeExamplesPageStore = defineStore('codeExamplesPageStore', {
     },
     async getProjectData(id: string) {
       const store = useMainStore();
-      store.isLoading = true;
       this.projectData = await database.getData(`/rus/code-examples/${id}`);
       store.isLoading = false;
     },

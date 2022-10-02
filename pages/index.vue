@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="main-page">
+    <UILoading v-if="mainStore.isLoading && !mainStore.data" />
+    <div v-else class="main-page">
       <TheHeader v-if="isElementHidden" id="header" />
       <TheNavigation v-if="isElementHidden" class="navbar" />
       <div class="pages">
@@ -16,6 +17,8 @@ import TheHeader from '~/components/pages/main/TheHeader.vue';
 
 import { hidePageElement } from '~/helpers/methods/route.methods';
 
+import { useMainStore } from '~/stores/main.store';
+
 import { definePageMeta } from '#imports';
 import { computed, Ref } from 'vue';
 
@@ -24,6 +27,10 @@ definePageMeta({
 });
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
+
+const mainStore = useMainStore();
+
+mainStore.getData();
 </script>
 
 <style scoped lang="scss">

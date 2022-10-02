@@ -2,19 +2,19 @@
   <div class="the-contacts">
     <div class="header">Мои контакты:</div>
     <div class="github">
-      <UIIcon class="icon" src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/contacts%2Fgithub.svg?alt=media&token=b75c4a08-1786-417e-8aaf-3ebf83fb1f1b" size="48px" />
+      <UIIcon class="icon" :src="CONSTANTS.GITHUB_URL" size="48px" />
       <nuxt-link class="link" to="https://github.com/zakharovda95">GitHub</nuxt-link>
     </div>
     <div class="vk">
-      <UIIcon class="icon" src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/contacts%2Fvk.svg?alt=media&token=e9637104-64b8-45f0-a8ee-48776448e0f0" size="48px" />
+      <UIIcon class="icon" :src="CONSTANTS.VK_URL" size="48px" />
       <nuxt-link class="link" to="https://vk.com/id625689222">VK.com</nuxt-link>
     </div>
     <div class="telegram">
-      <UIIcon src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/contacts%2Ftelegram.svg?alt=media&token=48f04854-d0ea-4564-9ad1-91f2ac91d842" size="40px" />
+      <UIIcon :src="CONSTANTS.TELEGRAM_URL" size="40px" />
       <UIText class="text">@zakharovda95</UIText>
     </div>
     <div class="gmail">
-      <UIIcon src="https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/contacts%2Fgmail.svg?alt=media&token=038c57b4-0143-4baa-832d-6aa6a19d84a3" size="40px" />
+      <UIIcon :src="CONSTANTS.GMAIL_URL" size="40px" />
       <UIText class="text">zakharovda95@gmail.com</UIText>
     </div>
   </div>
@@ -23,6 +23,8 @@
 <script setup lang="ts">
 import UIIcon from '~/components/UI/UIIcon.vue';
 import UIText from '~/components/UI/UIText.vue';
+
+import { CONSTANTS } from '~/helpers/enums/constants.enum';
 </script>
 
 <style scoped lang="scss">

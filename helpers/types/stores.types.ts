@@ -1,20 +1,22 @@
 import {
   CodeExamplesProjectType,
-  StackContent,
-  SummaryContent,
+  MainContentType,
+  StackContentType,
+  SummaryContentType,
 } from '~/helpers/types/content.types';
 
 export interface MainStoreType {
   isLoading: boolean;
+  data: null | MainContentType;
   lang: string;
 }
 
 export interface SummaryPageStoreType {
-  data: SummaryContent | null;
+  data: SummaryContentType | null;
 }
 
 export interface StackPageStoreType {
-  data: StackContent | null;
+  data: StackContentType | null;
 }
 
 export interface CodeExamplesPageStoreType {

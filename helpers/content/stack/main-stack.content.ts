@@ -39,6 +39,18 @@ export const MAIN_STACK_RUS: SectionContentType = {
       },
     },
     {
+      title: 'Другое',
+      text: [
+        '- Люблю максимально простой и чистый код, и стараюсь так же и писать',
+        '- Трепетно отношусь к неймингу, декомпозиции и организации структуры каталогов и файлов проекта',
+        '- IDE использую только WebStorm, и не готов от нее отказаться (если это важно)',
+      ],
+      props: {
+        tag: 'h2',
+        br: true,
+      },
+    },
+    {
       title: '',
       text: 'Подробнее про каждую технологию с которой я сталкивался можно посмотреть в разделе',
       textAsLink: {
@@ -88,6 +100,18 @@ export const MAIN_STACK_EN: SectionContentType = {
       text: 'Worked with MDLite, little bit with MaterializeCSS, but within Vue I prefer component libraries as NaiveUi or Vuetify',
       props: {
         tag: 'h2',
+      },
+    },
+    {
+      title: 'Other',
+      text: [
+        '- I like the most simple and clean code, and I try to write the same way',
+        '- I am passionate about naming, decomposing, and organizing the directory and file structure of a project.',
+        '- I use only WebStorm as an IDE, and I am not ready to give it up (if it matters)',
+      ],
+      props: {
+        tag: 'h2',
+        br: true,
       },
     },
     {

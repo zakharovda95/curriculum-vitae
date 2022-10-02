@@ -5,7 +5,7 @@ export const OBJECTIVE_RUS: SectionContentType = {
   content: [
     {
       title: '',
-      text: 'Я - начинающий разработчик (занимаюсь разработкой с сентября 2021). Имею небольшой опыт в коммерческом проекте. Я ищу свою первую работу, чтобы она стала основой моей будущей карьеры. Я претендую на позицию трейни или junior frontend разработчика',
+      text: 'Я - начинающий разработчик (занимаюсь разработкой с сентября 2021). Я ищу свою первую работу, чтобы она стала основой моей будущей карьеры. Я претендую на позицию трейни или junior frontend разработчика',
       props: {
         tag: 'h2',
       },
@@ -32,7 +32,7 @@ export const OBJECTIVE_EN: SectionContentType = {
   content: [
     {
       title: '',
-      text: 'I am a beginner developer (started developing since September 2021). I have some experience in a commercial project. I am seeking my first job, which will be the basis of my future career. I am applying for the position of trainee or junior front-end developer',
+      text: 'I am a beginner developer (started developing since September 2021). I am seeking my first job, which will be the basis of my future career. I am applying for the position of trainee or junior front-end developer',
       props: {
         tag: 'h2',
       },

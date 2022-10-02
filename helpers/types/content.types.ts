@@ -1,17 +1,26 @@
+export interface MainContentType {
+  previews: PreviewsType;
+  banner: BannerType;
+}
+
+export interface BannerType {
+  [key: string]: string;
+}
+
 export interface PreviewsType {
   summary: string;
   stack: string;
   codeExamples: string;
 }
 
-export interface SummaryContent {
+export interface SummaryContentType {
   personalInformation: SectionContentType;
   objective: SectionContentType;
   education: SectionContentType;
   workExperience: SectionContentType;
 }
 
-export interface StackContent {
+export interface StackContentType {
   mainStack: SectionContentType;
   fullStack: FullStackType;
   softSkills: SectionContentType;

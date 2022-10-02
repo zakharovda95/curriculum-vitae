@@ -1,17 +1,17 @@
 <template>
   <div class="main-banner">
     <div class="text-wrapper">
-      <UIText :size="fontSizes.title" class="row-1">Привет!</UIText>
-      <UIText :size="fontSizes.title" class="row-2">Меня зовут</UIText>
-      <UIText :size="fontSizes.title" class="row-3">Дмитрий Захаров</UIText>
+      <UIText :size="fontSizes.title" class="row-1">{{ bannerText.row1 }}</UIText>
+      <UIText :size="fontSizes.title" class="row-2">{{ bannerText.row2 }}</UIText>
+      <UIText :size="fontSizes.title" class="row-3">{{ bannerText.row3 }}</UIText>
       <br />
-      <UIText :size="fontSizes.content" class="row-4">Я - начинающий frontend разработчик</UIText>
+      <UIText :size="fontSizes.content" class="row-4">{{ bannerText.row4 }}</UIText>
       <UIText
         :size="fontSizes.content"
         class="row-5"
         v-if="!isShowed || (widthX > 800 && widthX < 1400)"
       >
-        Мой основной язык программирования - JavaScript/TypeScript с фреймворком Vue.js
+        {{ bannerText.row5 }}
       </UIText>
     </div>
     <TheAvatar v-if="widthX > 800 || (widthX <= 800 && !isShowed)" class="avatar" />
@@ -32,6 +32,8 @@ import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 import { StyleType } from '~/helpers/types/styles.types';
 
 import { computed, Ref } from 'vue';
+import { useMainStore } from '~/stores/main.store';
+import { BannerType } from '~/helpers/types/content.types';
 
 const props = defineProps({
   isShowed: {
@@ -72,7 +74,14 @@ const fontSizes: Ref<StyleType> = computed(() => {
     };
   }
 });
+
+const mainStore = useMainStore();
+
+const bannerText: Ref<BannerType> = computed(() => {
+  return mainStore.data.banner;
+});
 </script>
+
 <style scoped lang="scss">
 @import '../../../assets/css/constants';
 
