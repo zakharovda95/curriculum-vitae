@@ -45,7 +45,6 @@ watch(
 
 @media (max-width: 800px) {
   .code-examples-page {
-    display: flex;
     height: 100%;
     .preview {
       margin-top: 24px;
@@ -58,7 +57,7 @@ watch(
 
 @media (min-width: 801px) and (max-width: 1399px) {
   .code-examples-page {
-    display: flex;
+    height: 100%;
     .preview {
       margin-top: 24px;
       margin-bottom: 24px;
