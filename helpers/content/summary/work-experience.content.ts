@@ -86,7 +86,7 @@ export const WORK_EXPERIENCE_EN: SectionContentType = {
       text: 'I am participating in a startup project - the browser game CastleKeepers (since March 2022). This is a non-commercial project with a small team of enthusiastic developers and a small community. More in the section',
       textAsLink: {
         name: '"Code Examples"',
-        link: 'index-work-experience-main-stack',
+        link: 'index-code-examples-project-list',
       },
       props: {
         tag: 'h2',

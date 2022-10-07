@@ -13,9 +13,14 @@ export const useMainStore = defineStore('mainStore', {
     } as MainStoreType),
 
   actions: {
-    async getData() {
+    async getData(lang: string) {
       this.isLoading = true;
-      this.data = await database.getData('/rus/main/');
+      if (lang === 'rus') {
+        this.data = await database.getData('/rus/main/');
+      }
+      if (lang === 'en') {
+        this.data = await database.getData('/en/main/');
+      }
       this.isLoading = false;
     },
   },

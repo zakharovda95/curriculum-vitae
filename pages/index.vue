@@ -19,18 +19,38 @@ import { hidePageElement } from '~/helpers/methods/route.methods';
 
 import { useMainStore } from '~/stores/main.store';
 
-import { definePageMeta } from '#imports';
-import { computed, Ref } from 'vue';
+import { definePageMeta, useHead } from '#imports';
+import { computed, onMounted, Ref, watch } from 'vue';
 
 definePageMeta({
   middleware: 'index-summary-redirect-middleware',
+});
+
+useHead({
+  title: '@zakharovda95',
 });
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const mainStore = useMainStore();
 
-mainStore.getData();
+onMounted(() => {
+  const localStorageData: string | null = localStorage.getItem('lang');
+
+  if (localStorageData && localStorageData !== 'null') {
+    mainStore.lang = JSON.parse(localStorageData);
+  }
+});
+
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+watch(
+  lang,
+  () => {
+    mainStore.getData(lang.value);
+  },
+  { deep: true, immediate: true },
+);
 </script>
 
 <style scoped lang="scss">

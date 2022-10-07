@@ -17,14 +17,27 @@ import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useStackPageStore } from '~/stores/stack-page.store';
 import { useMainStore } from '~/stores/main.store';
 
-import { computed, Ref } from 'vue';
+import { computed, Ref, watch } from 'vue';
+import { useHead } from '#imports';
+
+useHead({
+  title: 'Stack',
+});
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const stackPageStore = useStackPageStore();
 const mainStore = useMainStore();
 
-stackPageStore.getData();
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+watch(
+  lang,
+  () => {
+    stackPageStore.getData(lang.value);
+  },
+  { deep: true, immediate: true },
+);
 </script>
 
 <style scoped lang="scss">

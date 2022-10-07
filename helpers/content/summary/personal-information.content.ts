@@ -74,7 +74,7 @@ export const PERSONAL_INFORMATION_EN: SectionContentType = {
     },
     {
       title: 'Nationality',
-      text: 'Российская Федерация',
+      text: 'Russian Federation',
       props: {
         tag: 'h2',
       },

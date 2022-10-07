@@ -2,8 +2,6 @@
   <span class="ui-loading">Загрузка</span>
 </template>
 
-<script setup lang="ts"></script>
-
 <style scoped lang="scss">
 @import '../assets/css/_constants.scss';
 .ui-loading {

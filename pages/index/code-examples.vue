@@ -17,14 +17,27 @@ import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useCodeExamplesPageStore } from '~/stores/code-examples-page.store';
 import { useMainStore } from '~/stores/main.store';
 
-import { computed, Ref } from 'vue';
+import { computed, Ref, watch } from 'vue';
+import { useHead } from '#imports';
+
+useHead({
+  title: 'Code',
+});
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const codeExamplesPageStore = useCodeExamplesPageStore();
 const mainStore = useMainStore();
 
-codeExamplesPageStore.getData();
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+watch(
+  lang,
+  () => {
+    codeExamplesPageStore.getData(lang.value);
+  },
+  { deep: true, immediate: true },
+);
 </script>
 
 <style lang="scss">

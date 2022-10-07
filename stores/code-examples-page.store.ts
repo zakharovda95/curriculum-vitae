@@ -14,15 +14,27 @@ export const useCodeExamplesPageStore = defineStore('codeExamplesPageStore', {
     } as CodeExamplesPageStoreType),
 
   actions: {
-    async getData() {
+    async getData(lang: string) {
       const store = useMainStore();
       store.isLoading = true;
-      this.data = await database.getData('/rus/code-examples/');
+      if (lang === 'rus') {
+        this.data = await database.getData('/rus/code-examples/');
+      }
+      if (lang === 'en') {
+        this.data = await database.getData('/en/code-examples/');
+      }
       store.isLoading = false;
     },
-    async getProjectData(id: string) {
+
+    async getProjectData(id: string, lang: string) {
       const store = useMainStore();
-      this.projectData = await database.getData(`/rus/code-examples/${id}`);
+      store.isLoading = true;
+      if (lang === 'rus') {
+        this.projectData = await database.getData(`/rus/code-examples/${id}`);
+      }
+      if (lang === 'en') {
+        this.projectData = await database.getData(`/en/code-examples/${id}`);
+      }
       store.isLoading = false;
     },
   },

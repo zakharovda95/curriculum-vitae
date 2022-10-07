@@ -17,14 +17,27 @@ import { hidePageElement } from '~/helpers/methods/route.methods';
 import { useSummaryPageStore } from '~/stores/summary-page.store';
 import { useMainStore } from '~/stores/main.store';
 
-import { computed, Ref } from 'vue';
+import { computed, Ref, watch } from 'vue';
+import { useHead } from '#imports';
+
+useHead({
+  title: 'Summary',
+});
 
 const isElementHidden: Ref<boolean> = computed(() => hidePageElement());
 
 const summaryPageStore = useSummaryPageStore();
 const mainStore = useMainStore();
 
-summaryPageStore.getData();
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+watch(
+  lang,
+  () => {
+    summaryPageStore.getData(lang.value);
+  },
+  { deep: true, immediate: true },
+);
 </script>
 
 <style scoped lang="scss">

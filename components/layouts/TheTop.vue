@@ -1,11 +1,16 @@
 <template>
-  <div class="the-top" id="top" @click="goToHome">
-    <p class="title">@zakharovda95</p>
-    <p class="text">Click to Home</p>
+  <div class="the-top" id="top">
+    <LanguageSelection />
+    <div class="wrap" @click="goToHome">
+      <p class="title">@zakharovda95</p>
+      <p class="text">Click to Home</p>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import LanguageSelection from '~/components/layouts/LanguageSelection.vue';
+
 import { PageNameEnum } from '~/helpers/enums/page-name.enums';
 import { AnchorNamesEnum } from '~/helpers/enums/anchor-names.enum';
 
@@ -44,21 +49,26 @@ const goToHome = (): void => {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 100%;
     height: 60px;
     background: $BLACK;
-    cursor: pointer;
-    .title {
-      text-align: center;
-      color: $WHITE;
-      font-size: 1.2rem;
-      font-family: Nunito-SemiBold, sans-serif;
-    }
-    .text {
-      font-size: 0.6rem;
-      color: $WHITE;
-      font-family: Nunito-Regular, sans-serif;
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .title {
+        text-align: center;
+        color: $WHITE;
+        font-size: 1.2rem;
+        font-family: Nunito-SemiBold, sans-serif;
+      }
+      .text {
+        font-size: 0.6rem;
+        color: $WHITE;
+        font-family: Nunito-Regular, sans-serif;
+      }
     }
   }
 }
@@ -70,17 +80,22 @@ const goToHome = (): void => {
     width: 100%;
     height: 60px;
     background: $BLACK;
-    flex-direction: column;
-    cursor: pointer;
-    .title {
-      color: $WHITE;
-      font-size: 1.4rem;
-      font-family: Nunito-Regular, sans-serif;
-    }
-    .text {
-      font-size: 0.7rem;
-      color: $WHITE;
-      font-family: Nunito-Regular, sans-serif;
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .title {
+        color: $WHITE;
+        font-size: 1.4rem;
+        font-family: Nunito-Regular, sans-serif;
+      }
+      .text {
+        font-size: 0.7rem;
+        color: $WHITE;
+        font-family: Nunito-Regular, sans-serif;
+      }
     }
   }
 }

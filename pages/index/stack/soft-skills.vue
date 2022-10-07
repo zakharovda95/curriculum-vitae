@@ -1,6 +1,6 @@
 <template>
   <div class="soft-skills">
-    <AnchorGroup class="anchors" :anchors="anchors" title="Стек" />
+    <AnchorGroup class="anchors" :anchors="anchors" :title="mainStore.lang === 'rus' ? 'Стек' : 'Stack'" />
     <ContentGenerator :content="pageContent" />
     <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
   </div>

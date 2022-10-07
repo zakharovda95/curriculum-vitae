@@ -13,10 +13,15 @@ export const useStackPageStore = defineStore('stackPageStore', {
     } as StackPageStoreType),
 
   actions: {
-    async getData() {
+    async getData(lang: string) {
       const store = useMainStore();
       store.isLoading = true;
-      this.data = await database.getData('/rus/stack/');
+      if (lang === 'rus') {
+        this.data = await database.getData('/rus/stack/');
+      }
+      if (lang === 'en') {
+        this.data = await database.getData('/en/stack/');
+      }
       store.isLoading = false;
     },
   },

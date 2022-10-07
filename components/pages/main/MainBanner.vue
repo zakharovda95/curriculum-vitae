@@ -95,7 +95,7 @@ const bannerText: Ref<BannerType> = computed(() => {
     width: calc(100% - 24px);
     height: calc(100vh - 124px);
     overflow: scroll;
-    padding: 12px;
+    padding: 24px;
     .text-wrapper {
       display: flex;
       flex-direction: column;

@@ -13,10 +13,15 @@ export const useSummaryPageStore = defineStore('summaryPageStore', {
     } as SummaryPageStoreType),
 
   actions: {
-    async getData() {
+    async getData(lang: string) {
       const store = useMainStore();
       store.isLoading = true;
-      this.data = await database.getData('/rus/summary/');
+      if (lang === 'rus') {
+        this.data = await database.getData('/rus/summary/');
+      }
+      if (lang === 'en') {
+        this.data = await database.getData('/en/summary/');
+      }
       store.isLoading = false;
     },
   },

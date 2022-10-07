@@ -1,6 +1,6 @@
 <template>
   <div class="objective">
-    <AnchorGroup class="anchors" :anchors="anchors" title="Резюме" />
+    <AnchorGroup class="anchors" :anchors="anchors" :title="mainStore.lang === 'rus' ? 'Резюме' : 'Summary'" />
     <ContentGenerator :content="pageContent" />
     <MobileNavigation v-if="widthX < 1400" :anchors="anchors" />
   </div>

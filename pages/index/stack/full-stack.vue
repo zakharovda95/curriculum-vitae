@@ -1,6 +1,10 @@
 <template>
   <div class="full-stack">
-    <AnchorGroup class="anchors" :anchors="anchors" title="Стек" />
+    <AnchorGroup
+      class="anchors"
+      :anchors="anchors"
+      :title="mainStore.lang === 'rus' ? 'Стек' : 'Stack'"
+    />
     <ContentBlock class="section">
       <template #header>
         <h1>{{ pageContent.title }}</h1>

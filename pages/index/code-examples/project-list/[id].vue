@@ -1,37 +1,40 @@
 <template>
-  <div class="project-page">
-    <div class="header">
-      <UIText size="2.2rem" class="title">{{ projectData.title }}</UIText>
-    </div>
-    <div class="carousel-container">
-      <TheCarousel class="carousel" :slides="projectData.images" />
-    </div>
-    <div class="links">
-      <NuxtLink
-        v-if="projectData.links.github"
-        target="_blank"
-        class="link"
-        :to="projectData.links.github"
-      >
-        GIT HUB
-      </NuxtLink>
-      <NuxtLink
-        v-if="projectData.links.site"
-        target="_blank"
-        class="link"
-        :to="projectData.links.site"
-      >
-        DEMO VIEW
-      </NuxtLink>
-    </div>
-    <div class="description" v-if="projectData.description">
-      <SectionContainer :content="projectData.description" title="Описание" />
-    </div>
-    <div class="stack" v-if="projectData.stack">
-      <SectionContainer :content="projectData.stack" title="Стек" />
-    </div>
-    <div class="statistic" v-if="projectData.statistic">
-      <SectionContainer :content="projectData.statistic" title="Статистика" />
+  <div>
+    <UILoading v-if="mainStore.isLoading" />
+    <div v-else class="project-page">
+      <div class="header">
+        <UIText size="2.2rem" class="title">{{ projectData.title }}</UIText>
+      </div>
+      <div class="carousel-container">
+        <TheCarousel class="carousel" :slides="projectData.images" />
+      </div>
+      <div class="links">
+        <NuxtLink
+          v-if="projectData.links.github"
+          target="_blank"
+          class="link"
+          :to="projectData.links.github"
+        >
+          GIT HUB
+        </NuxtLink>
+        <NuxtLink
+          v-if="projectData.links.site"
+          target="_blank"
+          class="link"
+          :to="projectData.links.site"
+        >
+          DEMO VIEW
+        </NuxtLink>
+      </div>
+      <div class="description" v-if="projectData.description">
+        <SectionContainer :content="projectData.description" title="Описание" />
+      </div>
+      <div class="stack" v-if="projectData.stack">
+        <SectionContainer :content="projectData.stack" title="Стек" />
+      </div>
+      <div class="statistic" v-if="projectData.statistic">
+        <SectionContainer :content="projectData.statistic" title="Статистика" />
+      </div>
     </div>
   </div>
 </template>
@@ -40,22 +43,35 @@
 import TheCarousel from '~/components/pages/code-examples/TheCarousel.vue';
 import UIText from '~/components/UI/UIText.vue';
 import SectionContainer from '~/components/pages/code-examples/SectionContainer.vue';
+import UILoading from '~/components/UI/UILoading.vue';
 
 import { useCodeExamplesPageStore } from '~/stores/code-examples-page.store';
+import { useMainStore } from '~/stores/main.store';
+
 import { CodeExamplesProjectType } from '~/helpers/types/content.types';
 
 import { definePageMeta } from '#imports';
 import { useRoute } from 'vue-router';
-import { computed, Ref } from 'vue';
+import { computed, Ref, watch } from 'vue';
 
 definePageMeta({
   layout: 'section',
 });
 
 const projectPageStore = useCodeExamplesPageStore();
+const mainStore = useMainStore();
+
 const route = useRoute();
 
-await projectPageStore.getProjectData(String(route.params.id));
+const lang: Ref<string> = computed(() => mainStore.lang);
+
+watch(
+  lang,
+  () => {
+    projectPageStore.getProjectData(String(route.params.id), lang.value);
+  },
+  { deep: true, immediate: true },
+);
 
 const projectData: Ref<CodeExamplesProjectType> = computed(() => projectPageStore.projectData);
 </script>

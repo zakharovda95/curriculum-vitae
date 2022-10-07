@@ -24,6 +24,8 @@ import TheContacts from '~/components/pages/main/TheContacts.vue';
 
 import { useWindowWidthWatcher } from '~/composables/useWindowWidthWatcher';
 
+import { useMainStore } from '~/stores/main.store';
+
 import { StyleType } from '~/helpers/types/styles.types';
 
 import { CONSTANTS } from '~/helpers/enums/constants.enum';
@@ -36,9 +38,15 @@ const style: Ref<StyleType> = computed(() => ({
   transform: 'rotate(90deg)',
 }));
 
-const buttonName: Ref<string> = computed(() =>
-  isShowed.value ? 'Скрыть контакты' : 'Показать контакты',
-);
+const mainStore = useMainStore();
+
+const buttonName: Ref<string> = computed(() => {
+  if (mainStore.lang === 'rus') {
+    return isShowed.value ? 'Скрыть контакты' : 'Показать контакты';
+  } else {
+    return isShowed.value ? 'Hide contacts' : 'Show contacts';
+  }
+});
 
 const showContacts = (): void => {
   if (widthX.value < 800) {
@@ -84,8 +92,8 @@ const { widthX } = useWindowWidthWatcher();
       height: 60px;
       background: $WHITE;
       border: 3px solid $GRAY;
-      top: 30px;
-      right: 30px;
+      top: 20px;
+      right: 20px;
       border-radius: 35px;
 
       .icon {

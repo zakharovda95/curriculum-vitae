@@ -20,11 +20,11 @@ export const NAVIGATION_LINKS_RUS = [
 export const NAVIGATION_LINKS_EN: NavigationLinksType = [
   {
     name: 'Summary',
-    path: { name: AnchorNamesEnum.personalInformation },
+    path: { name: PageNameEnum.summary },
   },
   {
     name: 'Stack',
-    path: { name: AnchorNamesEnum.mainStack },
+    path: { name: PageNameEnum.stack },
   },
   {
     name: 'Code',
@@ -83,7 +83,7 @@ export const SUMMARY_ANCHORS_RUS: AnchorsType = [
 
 export const SUMMARY_ANCHORS_EN: AnchorsType = [
   {
-    name: 'Personal Information',
+    name: 'Information',
     id: AnchorNamesEnum.personalInformation,
   },
   {

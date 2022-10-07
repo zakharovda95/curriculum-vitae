@@ -1,6 +1,6 @@
 <template>
   <div class="the-contacts">
-    <div class="header">Мои контакты:</div>
+    <div class="header">{{ title }}</div>
     <div class="github">
       <UIIcon class="icon" :src="CONSTANTS.GITHUB_URL" size="48px" />
       <nuxt-link class="link" to="https://github.com/zakharovda95">GitHub</nuxt-link>
@@ -25,6 +25,20 @@ import UIIcon from '~/components/UI/UIIcon.vue';
 import UIText from '~/components/UI/UIText.vue';
 
 import { CONSTANTS } from '~/helpers/enums/constants.enum';
+
+import { useMainStore } from '~/stores/main.store';
+
+import { computed, Ref } from 'vue';
+
+const mainStore = useMainStore();
+
+const title: Ref<string> = computed(() => {
+  if (mainStore.lang === 'rus') {
+    return 'Мои Контакты:';
+  } else {
+    return 'My Contacts:';
+  }
+});
 </script>
 
 <style scoped lang="scss">
