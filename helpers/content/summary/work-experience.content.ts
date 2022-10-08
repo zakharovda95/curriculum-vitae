@@ -55,7 +55,7 @@ export const WORK_EXPERIENCE_EN: SectionContentType = {
       title: '',
       text: [
         'I have no formal experience in IT, I hope your work will be my first',
-        'I have some experience in a commercial project with a team, experience from an educational practice and experience in a start-up project',
+        'I have work experience that I got during the development of pet projects for my portfolio, experience gained during the internship and experience in developing interfaces in a start-up project',
       ],
       props: {
         tag: 'h3',
@@ -83,7 +83,7 @@ export const WORK_EXPERIENCE_EN: SectionContentType = {
     },
     {
       title: 'Start-Up',
-      text: 'I am participating in a startup project - the browser game CastleKeepers (since March 2022). This is a non-commercial project with a small team of enthusiastic developers and a small community. More in the section',
+      text: 'I am participating in a startup project - the browser game CastleKeepers (since March 2022). This is a non-commercial project with a small team of enthusiastic developers and a small community. More in the section ',
       textAsLink: {
         name: '"Code Examples"',
         link: 'index-code-examples-project-list',

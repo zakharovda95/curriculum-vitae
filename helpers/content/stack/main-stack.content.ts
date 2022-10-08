@@ -52,7 +52,7 @@ export const MAIN_STACK_RUS: SectionContentType = {
     },
     {
       title: '',
-      text: 'Подробнее про каждую технологию с которой я сталкивался можно посмотреть в разделе',
+      text: 'Подробнее про каждую технологию с которой я сталкивался можно посмотреть в разделе ',
       textAsLink: {
         name: '"Полный стек"',
         link: 'index-stack-full-stack',
@@ -116,7 +116,7 @@ export const MAIN_STACK_EN: SectionContentType = {
     },
     {
       title: '',
-      text: 'More details about each technology that I encountered can be found in the section',
+      text: 'More details about each technology that I encountered can be found in the section ',
       textAsLink: {
         name: '"Full Stack"',
         link: 'index-stack-full-stack',

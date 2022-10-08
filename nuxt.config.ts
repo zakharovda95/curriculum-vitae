@@ -2,5 +2,10 @@
 export default defineNuxtConfig({
   modules: ['@pinia/nuxt'],
   css: ['~/assets/css/main.css'],
-  link: [{ rel: 'icon', type: 'image/x-icon', href: '/public/favicon.png' }],
+
+  app: {
+    head: {
+      link: [{ rel: 'icon', type: 'image/x-icon', href: './public/favicon.ico' }],
+    },
+  },
 });

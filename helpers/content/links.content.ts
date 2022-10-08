@@ -95,7 +95,7 @@ export const SUMMARY_ANCHORS_EN: AnchorsType = [
     id: AnchorNamesEnum.education,
   },
   {
-    name: 'Work Experience',
+    name: 'Work Exp',
     id: AnchorNamesEnum.workExperience,
   },
 ];

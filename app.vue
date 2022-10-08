@@ -21,15 +21,15 @@ import {
 } from '~/helpers/content/code-examples/code-examples.content';
 import { MAIN_RUS, MAIN_EN } from '~/helpers/content/main/main.content';
 
-// database.setData('/rus/stack', STACK_RUS);
-// database.setData('/rus/summary', SUMMARY_RUS);
-// database.setData('/rus/code-examples', CODE_EXAMPLES_RUS);
-// database.setData('/rus/main', MAIN_RUS);
-//
-// database.setData('/en/summary', SUMMARY_EN);
-// database.setData('/en/stack', STACK_EN);
-// database.setData('/en/code-examples', CODE_EXAMPLES_EN);
-// database.setData('/en/main', MAIN_EN);
+database.setData('/rus/stack', STACK_RUS);
+database.setData('/rus/summary', SUMMARY_RUS);
+database.setData('/rus/code-examples', CODE_EXAMPLES_RUS);
+database.setData('/rus/main', MAIN_RUS);
+
+database.setData('/en/summary', SUMMARY_EN);
+database.setData('/en/stack', STACK_EN);
+database.setData('/en/code-examples', CODE_EXAMPLES_EN);
+database.setData('/en/main', MAIN_EN);
 
 // const contacts = await storage.getAllImageUrls('/contacts/');
 // const common = await storage.getAllImageUrls('/common/');
