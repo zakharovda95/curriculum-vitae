@@ -56,9 +56,9 @@ export const SECOND_PROJECT_CONTENT_EN: CodeExamplesProjectType = {
   title: 'Japanese Sweets Store',
   preview: {
     image:
-        'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F1.jpg?alt=media&token=89c60489-7f80-4e4c-a5ff-82af3b0f42f2',
+      'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F1.jpg?alt=media&token=89c60489-7f80-4e4c-a5ff-82af3b0f42f2',
     description:
-        'Online store on TypeScript and Vue 3 Composition API. State Management - Pinia. LernaJS monorepository. Content management and authorization - StrapiCMS. Hosting - Render/Heroku',
+      'Online store on TypeScript and Vue 3 Composition API. State Management - Pinia. LernaJS monorepository. Content management and authorization - StrapiCMS. Hosting - Render/Heroku',
   },
   images: [
     'https://firebasestorage.googleapis.com/v0/b/zakharovda95-17636.appspot.com/o/project-images%2F2%2F1.jpg?alt=media&token=89c60489-7f80-4e4c-a5ff-82af3b0f42f2',
@@ -73,7 +73,7 @@ export const SECOND_PROJECT_CONTENT_EN: CodeExamplesProjectType = {
     'The project is an online store selling sweets from Japan. Products are arranged by category. For a convenient search, there is a filter panel where you can select a price range, a manufacturer, sort in ascending/descending prices, and only products with a discount.',
     'For each product there is a separate page with a detailed description, rating and reviews, as well as the ability to add the desired amount of product to the cart',
     'Products can be evaluated on a five-point scale and a review can be left, which is moderated in the admin panel, and if the fields are filled in correctly, it is published on the product page. From all ratings, the average rating of the product is formed',
-    'All added products are added to the user\'s cart. On the shopping cart page, you can edit the order: change the quantity or delete selected products',
+    "All added products are added to the user's cart. On the shopping cart page, you can edit the order: change the quantity or delete selected products",
     'It is possible to register and create a personal account, where your data, orders and product reviews will be displayed. It is possible to edit personal data (in development process)',
     'The site is adapted for different devices, and is easy to use on both mobile and desktop devices.',
     'All data is written to a SQLite database. All images in the Strapi Media Library repository. Content management takes place in the Strapi admin panel',
@@ -97,7 +97,7 @@ export const SECOND_PROJECT_CONTENT_EN: CodeExamplesProjectType = {
   ],
   links: {
     github: 'https://github.com/zakharovda95/vue_ts-composition_api-japanese_sweets_store',
-    site: 'https://github.com/zakharovda95/vue_ts-composition_api-japanese_sweets_store',
+    site: null,
   },
   statistic: ['.vue: 38 files, 3259 rows', '.ts: 44 files, 1312 rows'],
 };

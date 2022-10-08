@@ -27,13 +27,22 @@
         </NuxtLink>
       </div>
       <div class="description" v-if="projectData.description">
-        <SectionContainer :content="projectData.description" title="Описание" />
+        <SectionContainer
+          :content="projectData.description"
+          :title="mainStore.lang === 'rus' ? 'Описание' : 'Description'"
+        />
       </div>
       <div class="stack" v-if="projectData.stack">
-        <SectionContainer :content="projectData.stack" title="Стек" />
+        <SectionContainer
+          :content="projectData.stack"
+          :title="mainStore.lang === 'rus' ? 'Стек' : 'Stack'"
+        />
       </div>
       <div class="statistic" v-if="projectData.statistic">
-        <SectionContainer :content="projectData.statistic" title="Статистика" />
+        <SectionContainer
+          :content="projectData.statistic"
+          :title="mainStore.lang === 'rus' ? 'Статистика' : 'Statistic'"
+        />
       </div>
     </div>
   </div>
