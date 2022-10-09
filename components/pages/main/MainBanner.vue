@@ -212,6 +212,14 @@ const bannerText: Ref<BannerType> = computed(() => {
         font-family: Nunito-SemiBold, sans-serif;
       }
     }
+    .avatar {
+      align-self: center;
+      margin-top: 20px;
+    }
+
+    .contacts {
+      align-self: center;
+    }
   }
 }
 </style>
