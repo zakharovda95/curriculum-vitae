@@ -46,7 +46,7 @@ export const SECOND_PROJECT_CONTENT_RUS: CodeExamplesProjectType = {
   ],
   links: {
     github: 'https://github.com/zakharovda95/vue_ts-composition_api-japanese_sweets_store',
-    site: 'https://github.com/zakharovda95/vue_ts-composition_api-japanese_sweets_store',
+    site: 'https://japanese-sweets-store.onrender.com',
   },
   statistic: ['.vue: 38 файлов, 3259 строк', '.ts: 44 файла, 1312 строк'],
 };
@@ -97,7 +97,7 @@ export const SECOND_PROJECT_CONTENT_EN: CodeExamplesProjectType = {
   ],
   links: {
     github: 'https://github.com/zakharovda95/vue_ts-composition_api-japanese_sweets_store',
-    site: null,
+    site: 'https://japanese-sweets-store.onrender.com',
   },
   statistic: ['.vue: 38 files, 3259 rows', '.ts: 44 files, 1312 rows'],
 };
